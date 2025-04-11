@@ -3,6 +3,13 @@ import pandas as pd
 import re
 import pickle
 
+##Drugs per drug class used in this study
+INIs=['RAL', 'EVG', 'DTG', 'BIC']
+NNRTIs=['EFV', 'NVP', 'ETR', 'RPV'] 
+NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
+PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
+
+
 ###HIVDB offline implementation
 def HIVDB(mut_list, dataset, score = "SR"):
     '''Calculates the HIVDB score given a set of mutations using the HIVDB scores for mutations and combinations extracted from StanfordHIVDB HIVDB program.
@@ -16,11 +23,6 @@ def HIVDB(mut_list, dataset, score = "SR"):
         OUTPUT:
         resistance_pred_df: dataframe with the predicted resistance labels for each drug in the drug class.
     '''
-    ##Drug classes
-    INIs=['RAL', 'EVG', 'DTG', 'BIC']
-    NNRTIs=['EFV', 'NVP', 'ETR', 'RPV'] 
-    NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
-    PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
 
     if dataset == "INI":
         drug_class = INIs
@@ -28,12 +30,8 @@ def HIVDB(mut_list, dataset, score = "SR"):
         drug_class = NNRTIs
     elif dataset == "NRTI":
         drug_class = NRTIs
-    
-    if pd.isnull(mut_list):
-        print('No mutations provided')
-        mut_list = []
-    else:
-        mut_list = mut_list.split(', ')
+    elif dataset == "PI":
+        drug_class = PIs
 
     mutation_scores = pd.read_csv(f'HIVDB_rules/{dataset}_muts_score_Stanford_HIVDB', sep=',') #we read the mutation scores
     combination_scores = pd.read_csv(f'HIVDB_rules/{dataset}_combinations_score_Stanford_HIVDB', sep=',') #we read the combination scores
@@ -112,24 +110,18 @@ def HIVDB(mut_list, dataset, score = "SR"):
 def LSR_res_pred(mut_list, dataset, report_RF = False):
     '''Calculates the resistance factor given a set of mutations using the coefficients obtained from LSR with TSM features.
         INPUT:
-        mut_list: list of mutations i.e M41L, L90M. 
+        mut_list: list of mutations i.e [M41L,L90M]. 
         dataset: drug class to be used. 'INI', 'NNRTI', 'NRTI', 'PI'.
         report_RF: if True, the resistance factor will be reported
 
         OUTPUT:
         resistance_pred_df: dataframe with the predicted resistance labels for each drug in the drug class.       
     '''
-    cutoff = {'FPV':3, 'ATV':3, 'IDV':3, 'LPV':9, 'NFV':3, 'SQV':3, 'TPV':2, 'DRV':10,
+    cutoff = {'FPV':3, 'ATV':3, 'IDV':3, 'LPV':9, 'NFV':3, 'SQV':3, 'TPV':2, 'DRV':10, #resistance fold cutoff defined to decide drug resistance
               '3TC':3, 'ABC':2, 'AZT':3, 'D4T':1.5, 'DDI':1.5, 'TDF':1.5, 
               'EFV':3, 'ETR':3, 'NVP':3, 'RPV':3,
               'RAL': 4, 'EVG': 4, 'DTG': 3.5, 'BIC':3.5}
 
-    
-    ##Drug classes
-    INIs=['RAL', 'EVG', 'DTG', 'BIC']
-    NNRTIs=['EFV', 'NVP', 'ETR', 'RPV'] 
-    NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
-    PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
 
     if dataset == "INI":
         drug_class = INIs
@@ -140,14 +132,7 @@ def LSR_res_pred(mut_list, dataset, report_RF = False):
     elif dataset == "PI":
         drug_class = PIs
     
-    #we read the mutation list
-    if pd.isnull(mut_list):
-        print('No mutations provided')
-        mut_list = []
-    else:
-        mut_list = mut_list.split(', ')
-        mut_list = [mut[1:] for mut in mut_list] 
-
+    mut_list = [mut[1:] for mut in mut_list] 
     
     resistance_pred_df = pd.DataFrame(columns=drug_class) #we create the dataframe to store the results
 
@@ -226,17 +211,12 @@ def LSR_res_pred(mut_list, dataset, report_RF = False):
 def RandomForest_HIV(mut_list, dataset):
     '''The function performs anti-HIV drug resistance prediction with a Random Forest classification based on Raposo et al. 2020 implementation.
     INPUT:
-    mut_list: list of mutations i.e M41L, L90M. 
+    mut_list: list of mutations i.e [M41L,L90M]. 
     dataset: drug class to be used. 'INI', 'NNRTI', 'NRTI', 'PI'.
 
     OUTPUT:
     resistance_pred_df: dataframe with the predicted resistance labels for each drug in the drug class.
     '''
-    ##Drug classes
-    INIs=['RAL', 'EVG', 'DTG', 'BIC']
-    NNRTIs=['EFV', 'NVP', 'ETR', 'RPV'] 
-    NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
-    PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
 
     if dataset == "INI":
         drug_class = INIs
@@ -247,13 +227,7 @@ def RandomForest_HIV(mut_list, dataset):
     elif dataset == "PI":
         drug_class = PIs
 
-    # we read the mutation list
-    if pd.isnull(mut_list):
-        print('No mutations provided')
-        mut_list = []
-    else:
-        mut_list = mut_list.split(', ')
-        mut_list = [mut[1:] for mut in mut_list] 
+    mut_list = [mut[1:] for mut in mut_list] 
 
     resistance_df = pd.DataFrame(columns=drug_class) #we create the dataframe to store the results
 
@@ -266,9 +240,9 @@ def RandomForest_HIV(mut_list, dataset):
     elif dataset == "INI":
         ref_seq = "FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKIILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTIHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVVESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPLWKGPAKLLWKGEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED"
 
-    X = pd.DataFrame([list(ref_seq)], columns=[f'V{i+1}' for i in range(len(ref_seq))])
+    X = pd.DataFrame([list(ref_seq)], columns=[f'V{i+1}' for i in range(len(ref_seq))]) #we create a dataframe with a column for each position in the sequence as input
         
-    for mut in mut_list:
+    for mut in mut_list: 
         pos = int(mut[:-1])
         aa = mut[-1]
         X.loc[0, f'V{pos}'] = aa
@@ -301,4 +275,67 @@ def RandomForest_HIV(mut_list, dataset):
         resistance_df.loc[0, drug] = predictions[0]
 
     return resistance_df
+
+###Ensemble prediction
+def ensemble_predictions(mut_list, dataset):
+    '''Generates an ensemble prediction by majority voting of the HIVDB, Linear Regression and Random Forest predictions.
+
+    INPUT:
+    mut_list: list of mutations i.e [M41L,L90M].
+    dataset: drug class. 'INI', 'NNRTI', 'NRTI', 'PI'.
+    
+    OUTPUT:
+    resistance_df: dataframe with the predicted resistance labels for each drug in the drug class.
+    '''
+    ##we predict the resistance with the different methods
+    ##HIVDB
+    HIVDB_results = HIVDB(mut_list, dataset)
+    ##Linear Regression
+    LSR_results = LSR_res_pred(mut_list, dataset)
+    ##Random Forest
+    RF_results = RandomForest_HIV(mut_list, dataset)
+
+    ##We concatenate the dataframes to store the results
+    ensemble_results = pd.concat([HIVDB_results, LSR_results, RF_results], axis=0, ignore_index=True)
+    ensemble_results.index = ['HIVDB', 'LSR', 'RF']
+    ensemble_results.loc['Ensemble'] = ensemble_results.mode().iloc[0] #we get the most voted prediction out of the three methods
+
+    ensemble_results = ensemble_results.drop(index=['HIVDB', 'LSR', 'RF'])
+    ensemble_results = ensemble_results.iloc[-1]
+    
+    return ensemble_results
+
+def check_mut_input(input_mut):
+    '''Checks if the input mutations are valid. If not, it returns an Error message.
+    
+    INPUT:
+    input_mut: input string with the list of mutations i.e "M41L, L90M".
+    
+    OUTPUT:
+    valid_mut: list of valid mutations or empty list.
+    '''
+    # Check if the input is a string
+    if not isinstance(input_mut, str):
+        print("Input mutations should be a string")
+        return
+
+    # Check if the input is empty
+    if pd.isnull(input_mut):
+        print("No mutations provided")
+        return []
+    elif len(input_mut) == 0:
+        print("No mutations provided")
+        return []
+    
+    # Check if the input is correctly formatted
+    mutations = input_mut.split(',')
+    mutations = [mut.strip() for mut in mutations]  # Remove leading/trailing spaces
+   
+    for mut in mutations: #we check if the mutations are in the required format [A-Z][0-9]+[A-Z]
+        if not re.match(r'^[A-Z]\d+[A-Z]$', mut):
+            print(f"Invalid mutation format: {mut}. Please input a list of comma separated mutations in the correct format. i.e. M41L,L90M")
+            return
+    
+    return mutations
+
 
