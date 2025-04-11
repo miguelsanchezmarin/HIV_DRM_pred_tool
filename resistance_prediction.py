@@ -302,6 +302,3 @@ def RandomForest_HIV(mut_list, dataset):
 
     return resistance_df
 
-print(HIVDB("T66I, E138K, Q148K", "INI"))
-print(LSR_res_pred("T66I, E138K, Q148K", "INI"))
-print(RandomForest_HIV("T66I, E138K, Q148K", "INI"))
