@@ -9,9 +9,47 @@ NNRTIs=['EFV', 'NVP', 'ETR', 'RPV']
 NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
 PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
 
+def HIVDB_singlemut_annot(mut_list, dataset: str):
+    '''Retrieves the HIVDB annotation for each mutation in a list of mutations.
+    INPUT:
+    mut_list: list of mutations i.e [M41L,L90M].
+    dataset: drug class to be used. 'INI', 'NNRTI', 'NRTI', 'PI'.
+
+    OUTPUT:
+    mut_annot_df: dataframe with the mutations and their HIVDB annotations.
+    '''
+    #we read the comments files for the dataset
+    comments_file = pd.read_csv(f'HIVDB_rules/{dataset}_comments_Stanford_HIVDB', sep=',')
+    comments_file.columns = comments_file.columns.str.replace('\n','')
+
+    mut_list = [mut[1:] for mut in mut_list] #we remove the first letter of the mutations
+    mut_annot = []
+    for mut in mut_list:
+        position = re.sub(r'\D+', '', mut)
+        mut_aa = re.sub(r'\d+', '', mut)
+        comment_in = False
+        for i, comm in enumerate(comments_file['Condition'].values):
+            if re.match(r'^\d+[A-Z]+$', comm) and comm.startswith(position):
+                comm_ambig = re.sub(r'\d+', '', comm)
+                if mut_aa in comm_ambig:
+                    mut_annot.append([comments_file['Condition'].values[i], 
+                                     comments_file['Comment/Mutation Type'].values[i], 
+                                     comments_file['Comment'].values[i]])
+                    comment_in = True
+                    break
+        
+        if not comment_in:
+            mut_annot.append([mut, "Unknown", "Unknown"])
+                       
+    mut_annot_df = pd.DataFrame(mut_annot, columns=['Mutation', 'Annotation', 'Comment'])
+    return mut_annot_df
+
+
+print(HIVDB_singlemut_annot(["M41L","H67d", "K68D", "L90M", "M215L"], "NRTI")) #we test the function
+
 
 ###HIVDB offline implementation
-def HIVDB(mut_list, dataset, score = "SR"):
+def HIVDB_pred(mut_list, dataset: str, score = "SR"):
     '''Calculates the HIVDB score given a set of mutations using the HIVDB scores for mutations and combinations extracted from StanfordHIVDB HIVDB program.
         Scores downloaded on 10th April 2025.
         
@@ -107,7 +145,7 @@ def HIVDB(mut_list, dataset, score = "SR"):
     return resistance_pred_df
 
 ###Linear regression implementation
-def LSR_res_pred(mut_list, dataset, report_RF = False):
+def LSR_res_pred(mut_list, dataset: str, report_RF = False):
     '''Calculates the resistance factor given a set of mutations using the coefficients obtained from LSR with TSM features.
         INPUT:
         mut_list: list of mutations i.e [M41L,L90M]. 
@@ -208,7 +246,7 @@ def LSR_res_pred(mut_list, dataset, report_RF = False):
     return resistance_pred_df
 
 ###Random Forest implementation
-def RandomForest_HIV(mut_list, dataset):
+def RandomForest_HIV(mut_list, dataset:str):
     '''The function performs anti-HIV drug resistance prediction with a Random Forest classification based on Raposo et al. 2020 implementation.
     INPUT:
     mut_list: list of mutations i.e [M41L,L90M]. 
@@ -276,36 +314,58 @@ def RandomForest_HIV(mut_list, dataset):
 
     return resistance_df
 
+###Allow prediction of only one of the methods with options
+###Also get the resistance factor for the LSR method
+
 ###Ensemble prediction
-def ensemble_predictions(mut_list, dataset):
+def ensemble_predictions(mut_list, dataset: str, HIVDB:bool = True, LSR: bool = True, RF: bool = True):
     '''Generates an ensemble prediction by majority voting of the HIVDB, Linear Regression and Random Forest predictions.
 
     INPUT:
     mut_list: list of mutations i.e [M41L,L90M].
     dataset: drug class. 'INI', 'NNRTI', 'NRTI', 'PI'.
+    HIVDB: if True, the HIVDB prediction will be used.
+    LSR: if True, the Linear Regression prediction will be used.
+    RF: if True, the Random Forest prediction will be used.
     
     OUTPUT:
     resistance_df: dataframe with the predicted resistance labels for each drug in the drug class.
     '''
-    ##we predict the resistance with the different methods
-    ##HIVDB
-    HIVDB_results = HIVDB(mut_list, dataset)
-    ##Linear Regression
-    LSR_results = LSR_res_pred(mut_list, dataset)
-    ##Random Forest
-    RF_results = RandomForest_HIV(mut_list, dataset)
-
-    ##We concatenate the dataframes to store the results
-    ensemble_results = pd.concat([HIVDB_results, LSR_results, RF_results], axis=0, ignore_index=True)
-    ensemble_results.index = ['HIVDB', 'LSR', 'RF']
-    ensemble_results.loc['Ensemble'] = ensemble_results.mode().iloc[0] #we get the most voted prediction out of the three methods
-
-    ensemble_results = ensemble_results.drop(index=['HIVDB', 'LSR', 'RF'])
-    ensemble_results = ensemble_results.iloc[-1]
+    if not HIVDB and not LSR and not RF:
+        print("At least one method should be selected")
+        return
     
+    ##we predict the resistance with the different methods
+    available_preds, available_index = [], []
+    ##HIVDB
+    if HIVDB:
+        HIVDB_results = HIVDB_pred(mut_list, dataset)
+        HIVDB_results_five_labels = HIVDB_pred(mut_list, dataset, score = "HIVDB") #we get the five labels for the HIVDB method
+        available_preds.append(HIVDB_results), available_preds.append(HIVDB_results_five_labels)
+        available_index.append('HIVDB'), available_index.append('HIVDB_five_labels')
+    ##Linear Regression
+    if LSR:
+        LSR_results = LSR_res_pred(mut_list, dataset)
+        LSR_RF = LSR_res_pred(mut_list, dataset, report_RF = True) #we get the resistance factor for the LSR method
+        available_preds.append(LSR_results), available_preds.append(LSR_RF)
+        available_index.append('LSR'), available_index.append('LSR_RF')
+    ##Random Forest
+    if RF:
+        RF_results = RandomForest_HIV(mut_list, dataset)
+        available_preds.append(RF_results)
+        available_index.append('RF')
+
+    ##We concatenate the available dataframes
+    ensemble_results = pd.concat(available_preds, axis=0, ignore_index=True)
+    ensemble_results.index = available_index
+
+    if HIVDB and LSR and RF:
+        ensemble_results.loc['Ensemble'] = ensemble_results.drop(['HIVDB_five_labels', 'LSR_RF']).mode().iloc[0] #we get the mode of the predictions
+
+    ensemble_results = ensemble_results.T
     return ensemble_results
 
-def check_mut_input(input_mut):
+def check_mut_input(input_mut: str):
     '''Checks if the input mutations are valid. If not, it returns an Error message.
     
     INPUT:
@@ -339,3 +399,15 @@ def check_mut_input(input_mut):
     return mutations
 
 
+
+
+# ###Main function to be used
+
+# def main(input_mut: str):
+#     # Example usage
+#     mut_list = check_mut_input(input_mut)
+#     print(ensemble_predictions(mut_list, "NRTI", HIVDB = True, LSR = True, RF = True))
+
+# input_mut = "K20R, V35I, T39A, M41L, S68G, K103N, I135T, M184V, T200K, Q207E, T215Y" 
+# if __name__ == "__main__":
+#     main(input_mut)
