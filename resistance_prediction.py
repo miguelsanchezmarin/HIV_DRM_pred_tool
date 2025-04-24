@@ -2,6 +2,8 @@
 import pandas as pd
 import re
 import pickle
+import typer
+from typing_extensions import Annotated, Optional
 
 ##Drugs per drug class used in this study
 INIs=['RAL', 'EVG', 'DTG', 'BIC']
@@ -45,10 +47,7 @@ def HIVDB_singlemut_annot(mut_list, dataset: str):
     return mut_annot_df
 
 
-print(HIVDB_singlemut_annot(["M41L","H67d", "K68D", "L90M", "M215L"], "NRTI")) #we test the function
-
-
-###HIVDB offline implementation
+###HIVDB offline implementation for the prediction of the resistance
 def HIVDB_pred(mut_list, dataset: str, score = "SR"):
     '''Calculates the HIVDB score given a set of mutations using the HIVDB scores for mutations and combinations extracted from StanfordHIVDB HIVDB program.
         Scores downloaded on 10th April 2025.
@@ -398,16 +397,33 @@ def check_mut_input(input_mut: str):
     
     return mutations
 
+###Main function
+def main(input_mut: Annotated[str ,typer.Argument(help="Input string to process, should be a list of mutations separated by commas")],
+            HIVDB: Annotated[Optional[bool], typer.Option('--HIVDB', '-H', help='Use HIVDB method for prediction')] = None,
+            LSR: Annotated[Optional[bool], typer.Option('--LSR', '-L', help='Use Linear Regression method for prediction')] = None,
+            RF: Annotated[Optional[bool], typer.Option('--RF', '-R', help='Use Random Forest method for prediction')] = None):
+    # Example usage
+    mut_list = check_mut_input(input_mut)
+
+    annotations = HIVDB_singlemut_annot(mut_list, "NRTI") #we get the single mutation annotations
+    print("Single mutation annotations:")
+    print(annotations)
+
+    if HIVDB == None and LSR == None and RF == None:
+        ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = True, LSR = True, RF = True)
+    else:
+        if HIVDB == None:
+            HIVDB = False
+        if LSR == None:
+            LSR = False
+        if RF == None:
+            RF = False
+
+        ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = HIVDB, LSR = LSR, RF = RF)
+    print(ensemble_preds)
 
 
+input_mut = "K20R, V35I, T39A, M41L, S68G, K103N, I135T, M184V, T200K, Q207E, T215Y" 
 
-# ###Main function to be used
-
-# def main(input_mut: str):
-#     # Example usage
-#     mut_list = check_mut_input(input_mut)
-#     print(ensemble_predictions(mut_list, "NRTI", HIVDB = True, LSR = True, RF = True))
-
-# input_mut = "K20R, V35I, T39A, M41L, S68G, K103N, I135T, M184V, T200K, Q207E, T215Y" 
-# if __name__ == "__main__":
-#     main(input_mut)
+if __name__ == "__main__":
+    typer.run(main)
