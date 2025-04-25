@@ -166,7 +166,6 @@ class Annotator(object):
                     # record.INFO['RefCodon'] = ''.join(record.INFO['RefCodon'])
                     # # END MODIFICATION
 
-
                     # Adjust for ambiguous base and negative strand.
                     if feature.strand == -1:
                         alt_base = str(
@@ -291,12 +290,22 @@ class GenBank(object):
 
     def codon_by_position(self, pos):
         """Retrieve the codon given a postion of a CDS feature."""
-        if self._index not in self.gene_codons[self._accession]:
-            self.split_into_codons()
+        # if self._index not in self.gene_codons[self._accession]: ###COMMENTED OUT BY MSM  
+        #     self.split_into_codons()
+        self.split_into_codons()
         gene_position = self.position_in_gene(pos) 
         codon_position = gene_position // 3
         # print(self.feature.strand, self.feature.location.start, self.feature.location.end)
-        # print(codon_position, self.gene_codons[self._accession][self._index][codon_position-5: codon_position +1])
+        print(codon_position, self.gene_codons[self._accession][self._index][codon_position-5:codon_position+5])
+
+        # translation = []
+        # for cod in self.gene_codons[self._accession][self._index]:
+        #     if len(cod) == 3:
+        #         translation.append(Seq(cod).translate())
+        #     else:
+        #         print("Codon length is not 3: ", cod)
+        # print(translation)
+
         return [self.gene_codons[self._accession][self._index][codon_position],  
                 gene_position % 3,
                 codon_position + 1]
@@ -306,6 +315,10 @@ class GenBank(object):
         start = self.feature.location.start
         end = self.feature.location.end
         seq = ''.join(list(self.__gb.seq[start:end]))
+        # print(seq[1295:1310]) ###MODIFIED BY MSM TO FIX DIFFERENCE BETWEEN ONE REFERENCE AND THE OTHER
+        ##we add in this seq an 'a' on the position 1302
+        seq = seq[:1302] + 'A' + seq[1302:]
+        # print(seq[1295:1310])
 
         if self.feature.strand == -1:
             seq = Seq(seq).reverse_complement()
@@ -392,12 +405,18 @@ class VCFTools(object):
         for record in self.records:
             vcf_writer.write_record(record)
     
-    def write_tsv(self, output='/dev/stdout'):
+    def write_tsv(self, output='/dev/stdout'): ###ADDED BY MSM TO GET THE TSV FILE WE WANT
         """Write the VCF mutations to a given output file in .tsv format."""
         df_list = []
         for record in self.records:
-            df_list.append([record.INFO['CodonPosition'], record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF']])
-        df = pd.DataFrame(df_list, columns=['Position', 'Ref', 'Mut', 'Freq'])
+            if record.INFO['CodonPosition'] > 488 and record.INFO['CodonPosition'] < 588: ##Protease aminoacids
+                df_list.append([record.INFO['CodonPosition']-488, record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "PR"])
+            elif record.INFO['CodonPosition'] > 587 and record.INFO['CodonPosition'] < 828: ##RT aminoacids ###827 is the last aminoacid from our ref sequence, but on the .gb the final aa is 1027.
+                df_list.append([record.INFO['CodonPosition']-587, record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "RT"])
+            elif record.INFO['CodonPosition'] > 1147 and record.INFO['CodonPosition'] < 1436: ##IN aminoacids
+                df_list.append([record.INFO['CodonPosition']-1147, record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "IN"])
+            # df_list.append([record.INFO['CodonPosition'], record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "GAG-POL"])
+        df = pd.DataFrame(df_list, columns=['Position', 'Ref', 'Mut', 'Freq', 'Prot'])
         df.to_csv(output, index=False, sep='\t')
 
 def update_vcf_chrom(in_vcf, out_vcf, chrom_name):
