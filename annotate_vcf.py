@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
 CORRECTED:
-Instead of using the base that is in the references_seq to compute the
-refrence-amino-acid, we use what is in the vcf file in the column REF
 Basically copied this file:
 https://github.com/rpetit3/vcf-annotator/blob/master/vcf-annotator.py
 We copied it from:
@@ -202,19 +200,12 @@ class Annotator(object):
                             record.INFO['IsSynonymous'] = 1
                         else:
                             record.INFO['IsSynonymous'] = 0
-                
-        #     ###ADDED BY MSM FOR DATAFRAME FORMAT
-        #     mutation_freq_list.append([record.INFO['CodonPosition'], record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF']])
-        
-        # #we create a dataframe from the mutation_freq_list
-        # mutation_freq_df = pd.DataFrame(mutation_freq_list, columns=['Position', 'Ref', 'Mut', 'Freq'])
-        # mutation_freq_df.to_csv('example_files/mutation_freq.tsv', index=False, sep='\t')
 
     def write_vcf(self, output='/dev/stdout'):
         """Write the VCF to the specified output."""
         self.__vcf.write_vcf(output)
     
-    def write_tsv(self, output='/dev/stdout'):
+    def write_tsv(self, output='/dev/stdout'): ###ADDED BY MSM TO GET THE TSV FILE WE WANT
         """Write the VCF mutations to a given output file in .tsv format."""
         self.__vcf.write_tsv(output)
 
@@ -295,8 +286,6 @@ class GenBank(object):
         self.split_into_codons()
         gene_position = self.position_in_gene(pos) 
         codon_position = gene_position // 3
-        # print(self.feature.strand, self.feature.location.start, self.feature.location.end)
-        print(codon_position, self.gene_codons[self._accession][self._index][codon_position-5:codon_position+5])
 
         # translation = []
         # for cod in self.gene_codons[self._accession][self._index]:
@@ -315,10 +304,10 @@ class GenBank(object):
         start = self.feature.location.start
         end = self.feature.location.end
         seq = ''.join(list(self.__gb.seq[start:end]))
-        # print(seq[1295:1310]) ###MODIFIED BY MSM TO FIX DIFFERENCE BETWEEN ONE REFERENCE AND THE OTHER
+        ###MODIFIED BY MSM TO FIX DIFFERENCE BETWEEN ONE REFERENCE AND THE OTHER
         ##we add in this seq an 'a' on the position 1302
         seq = seq[:1302] + 'A' + seq[1302:]
-        # print(seq[1295:1310])
+        ###END MODIFICATION MSM
 
         if self.feature.strand == -1:
             seq = Seq(seq).reverse_complement()
@@ -415,7 +404,7 @@ class VCFTools(object):
                 df_list.append([record.INFO['CodonPosition']-587, record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "RT"])
             elif record.INFO['CodonPosition'] > 1147 and record.INFO['CodonPosition'] < 1436: ##IN aminoacids
                 df_list.append([record.INFO['CodonPosition']-1147, record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "IN"])
-            # df_list.append([record.INFO['CodonPosition'], record.INFO['RefAminoAcid'], record.INFO['AltAminoAcid'], record.INFO['AF'], "GAG-POL"])
+
         df = pd.DataFrame(df_list, columns=['Position', 'Ref', 'Mut', 'Freq', 'Prot'])
         df.to_csv(output, index=False, sep='\t')
 

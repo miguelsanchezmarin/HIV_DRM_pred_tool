@@ -11,6 +11,94 @@ NNRTIs=['EFV', 'NVP', 'ETR', 'RPV']
 NRTIs=['3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF']
 PIs=['FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV']
 
+def HIVDB_table(mut_tsv, lower_cutoff: float = 0.015):
+    '''Generates a table with the observed mutations and their HIVDB classifications for all drugs and drug class.
+    INPUT:
+    mut_tsv: tsv file output from annotate_vcf.py with the observed mutations. Columns are Position, Ref, Mut, Freq and Prot. 
+    lower_cutoff: minimum frequency to be considered as a mutation.
+
+    OUTPUT:
+    mutations_df: dataframe with the mutations for all drugs and drug classes and their HIVDB annotations.
+    '''
+    mutations_df = pd.read_csv(mut_tsv, sep='\t')#we read the tsv file
+    mutations_filter_freq = mutations_df[mutations_df['Freq'] > lower_cutoff]#we apply the frequency cutoff
+    mutations_filter_freq = mutations_filter_freq[mutations_filter_freq['Ref'] != mutations_filter_freq['Mut']]##We filter out the rows where Ref == Mut
+    PR_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'PR')
+    RT_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'RT')
+    IN_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'IN')
+    INI_annot_df = HIVDB_singlemut_annot(list(IN_mut_freq.keys()), 'INI')
+    NNRTI_annot_df = HIVDB_singlemut_annot(list(RT_mut_freq.keys()), 'NNRTI')
+    NRTI_annot_df = HIVDB_singlemut_annot(list(RT_mut_freq.keys()), 'NRTI')
+    PI_annot_df = HIVDB_singlemut_annot(list(PR_mut_freq.keys()), 'PI')
+    INI_annot_df['Freq'] = IN_mut_freq.values()
+    INI_annot_df['Prot'] = 'IN'
+    NNRTI_annot_df['Freq'] = RT_mut_freq.values()
+    NNRTI_annot_df['Prot'] = 'RT'
+    NRTI_annot_df['Freq'] = RT_mut_freq.values()
+    NRTI_annot_df['Prot'] = 'RT'
+    PI_annot_df['Freq'] = PR_mut_freq.values()
+    PI_annot_df['Prot'] = 'PR'
+    mutations_df = pd.concat([INI_annot_df, NNRTI_annot_df, NRTI_annot_df, PI_annot_df], axis=0, ignore_index=True)
+    mutations_df = mutations_df[['Mutation', 'Freq', 'Prot', 'Annotation', 'Comment']]
+
+    return mutations_df
+
+def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR: bool = True, RF: bool = True):
+    '''Generates a table with the ensemble predictions for the mutation list above the high cutoff for all drugs and drug class.
+    INPUT:
+    mut_tsv: tsv file output from annotate_vcf.py with the observed mutations. Columns are Position, Ref, Mut, Freq and Prot.
+    higher_cutoff: minimum frequency to be considered into the majority mutation list.
+
+    OUTPUT:
+    ensemble_preds_df: dataframe with the ensemble predictions for all drugs and drug classes.
+    '''
+    mutations_df = pd.read_csv(mut_tsv, sep='\t')#we read the tsv file
+    mutations_filter_freq = mutations_df[mutations_df['Freq'] > higher_cutoff]#we apply the frequency cutoff
+    mutations_filter_freq = mutations_filter_freq[mutations_filter_freq['Ref'] != mutations_filter_freq['Mut']]##We filter out the rows where Ref == Mut
+    ##We check if for a same Prot and Position there are different mutations
+    IN_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'IN')
+    RT_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'RT')
+    PR_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'PR')
+    INI_ensemble_df = ensemble_predictions(IN_mut_freq.keys(), 'INI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+    NNRTI_ensemble_df = ensemble_predictions(RT_mut_freq.keys(), 'NNRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+    NRTI_ensemble_df = ensemble_predictions(RT_mut_freq.keys(), 'NRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+    PI_ensemble_df = ensemble_predictions(PR_mut_freq.keys(), 'PI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+
+    print("INI list: ", IN_mut_freq.keys())
+    print(INI_ensemble_df)
+    print("NNRTI list: ", RT_mut_freq.keys())
+    print(NNRTI_ensemble_df)
+    print("NRTI list: ", RT_mut_freq.keys())
+    print(NRTI_ensemble_df)
+    print("PI list: ", PR_mut_freq.keys())
+    print(PI_ensemble_df)
+
+
+    return
+
+def extract_prot_mut_freq(mutations_df, prot = ''):
+    '''Outputs a list with the mutations for a given protein, coming from a mutation_freq.tsv file.
+    INPUT:
+    mutations_df: tsv file output from annotate_vcf.py with the observed mutations. Columns are Position, Ref, Mut, Freq and Prot.
+    prot: protein to filter the mutations. PR, RT or IN. If not one of those, it will return all mutations.
+    
+    OUTPUT:
+    prot_mut_freq: dictionary with the mutations for the given proteinas keys and the frequencies as values.
+    '''
+    if prot in ['PR', 'RT', 'IN']:
+        mutations_df = mutations_df[mutations_df['Prot'] == prot]
+
+    prot_mut_freq = {} #we get a dictionary with the mutations as keys and the frequencies as values
+    for i, row in mutations_df.iterrows():
+        full_mut = mutations_df.loc[i, 'Ref'] + mutations_df.loc[i, 'Position'].astype(str) + mutations_df.loc[i, 'Mut']
+        if full_mut not in prot_mut_freq:
+            prot_mut_freq[full_mut] = row['Freq']
+        else:
+            prot_mut_freq[full_mut] += row['Freq']
+    
+    return prot_mut_freq
+
+
 def HIVDB_singlemut_annot(mut_list, dataset: str):
     '''Retrieves the HIVDB annotation for each mutation in a list of mutations.
     INPUT:
@@ -31,7 +119,7 @@ def HIVDB_singlemut_annot(mut_list, dataset: str):
         mut_aa = re.sub(r'\d+', '', mut)
         comment_in = False
         for i, comm in enumerate(comments_file['Condition'].values):
-            if re.match(r'^\d+[A-Z]+$', comm) and comm.startswith(position):
+            if re.match(r'^\d+[A-Z]+$', comm) and position==re.sub(r'\D+', '', comm): #we check if the mutation is in the comment
                 comm_ambig = re.sub(r'\d+', '', comm)
                 if mut_aa in comm_ambig:
                     mut_annot.append([comments_file['Condition'].values[i], 
@@ -46,6 +134,7 @@ def HIVDB_singlemut_annot(mut_list, dataset: str):
     mut_annot_df = pd.DataFrame(mut_annot, columns=['Mutation', 'Annotation', 'Comment'])
     return mut_annot_df
 
+# print(HIVDB_table('example_files/mutation_freq.tsv')) #we test the function with the mutation_freq.tsv file
 
 ###HIVDB offline implementation for the prediction of the resistance
 def HIVDB_pred(mut_list, dataset: str, score = "SR"):
@@ -397,33 +486,35 @@ def check_mut_input(input_mut: str):
     
     return mutations
 
-###Main function
-def main(input_mut: Annotated[str ,typer.Argument(help="Input string to process, should be a list of mutations separated by commas")],
-            HIVDB: Annotated[Optional[bool], typer.Option('--HIVDB', '-H', help='Use HIVDB method for prediction')] = None,
-            LSR: Annotated[Optional[bool], typer.Option('--LSR', '-L', help='Use Linear Regression method for prediction')] = None,
-            RF: Annotated[Optional[bool], typer.Option('--RF', '-R', help='Use Random Forest method for prediction')] = None):
-    # Example usage
-    mut_list = check_mut_input(input_mut)
+# ###Main function
+# def main(input_mut: Annotated[str ,typer.Argument(help="Input string to process, should be a list of mutations separated by commas")],
+#             HIVDB: Annotated[Optional[bool], typer.Option('--HIVDB', '-H', help='Use HIVDB method for prediction')] = None,
+#             LSR: Annotated[Optional[bool], typer.Option('--LSR', '-L', help='Use Linear Regression method for prediction')] = None,
+#             RF: Annotated[Optional[bool], typer.Option('--RF', '-R', help='Use Random Forest method for prediction')] = None):
+#     # Example usage
+#     mut_list = check_mut_input(input_mut)
 
-    annotations = HIVDB_singlemut_annot(mut_list, "NRTI") #we get the single mutation annotations
-    print("Single mutation annotations:")
-    print(annotations)
+#     annotations = HIVDB_singlemut_annot(mut_list, "NRTI") #we get the single mutation annotations
+#     print("Single mutation annotations:")
+#     print(annotations)
 
-    if HIVDB == None and LSR == None and RF == None:
-        ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = True, LSR = True, RF = True)
-    else:
-        if HIVDB == None:
-            HIVDB = False
-        if LSR == None:
-            LSR = False
-        if RF == None:
-            RF = False
+#     if HIVDB == None and LSR == None and RF == None:
+#         ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = True, LSR = True, RF = True)
+#     else:
+#         if HIVDB == None:
+#             HIVDB = False
+#         if LSR == None:
+#             LSR = False
+#         if RF == None:
+#             RF = False
 
-        ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = HIVDB, LSR = LSR, RF = RF)
-    print(ensemble_preds)
+#         ensemble_preds = ensemble_predictions(mut_list, "NRTI", HIVDB = HIVDB, LSR = LSR, RF = RF)
+#     print(ensemble_preds)
 
 
-input_mut = "K20R, V35I, T39A, M41L, S68G, K103N, I135T, M184V, T200K, Q207E, T215Y" 
+# input_mut = "K20R, V35I, T39A, M41L, S68G, K103N, I135T, M184V, T200K, Q207E, T215Y" 
 
-if __name__ == "__main__":
-    typer.run(main)
+# if __name__ == "__main__":
+#     typer.run(main)
+
+print(ensemble_table('example_files/mutation_freq.tsv'))
