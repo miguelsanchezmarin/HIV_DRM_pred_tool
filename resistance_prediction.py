@@ -4,6 +4,7 @@ import re
 import pickle
 import typer
 from typing_extensions import Annotated, Optional
+from itertools import product
 
 ##Drugs per drug class used in this study
 INIs=['RAL', 'EVG', 'DTG', 'BIC']
@@ -59,25 +60,63 @@ def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR:
     IN_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'IN')
     RT_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'RT')
     PR_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'PR')
-    INI_ensemble_df = ensemble_predictions(IN_mut_freq.keys(), 'INI', HIVDB = HIVDB, LSR = LSR, RF = RF)
-    NNRTI_ensemble_df = ensemble_predictions(RT_mut_freq.keys(), 'NNRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
-    NRTI_ensemble_df = ensemble_predictions(RT_mut_freq.keys(), 'NRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
-    PI_ensemble_df = ensemble_predictions(PR_mut_freq.keys(), 'PI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+    IN_mut_freq_allcombs = get_mutlist_comb(list(IN_mut_freq.keys()))
+    RT_mut_freq_allcombs = get_mutlist_comb(list(RT_mut_freq.keys()))
+    PR_mut_freq_allcombs = get_mutlist_comb(list(PR_mut_freq.keys()))
+    INI_mut_dic, NNRTI_mut_dic, NRTI_mut_dic, PI_mut_dic = {}, {}, {}, {}
+    for mut_list in IN_mut_freq_allcombs:
+        INI_ensemble_preds_df = ensemble_predictions(mut_list, 'INI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+        INI_ensemble_preds_binary = INI_ensemble_preds_df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(INI_ensemble_preds_df.columns)))
+        INI_binary_dic = [df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(INI_ensemble_preds_df.columns))) for df in INI_mut_dic.values()]
+        INI_is_df, INI_df_idx = df_in_list(INI_ensemble_preds_binary, INI_binary_dic)
+        if not INI_is_df:
+            INI_mut_dic[', '.join(mut_list)] = INI_ensemble_preds_df
+        elif calc_HIVDB_score(mut_list, 'INI') > calc_HIVDB_score(list(INI_mut_dic.keys())[INI_df_idx], 'INI'): ##When resistance for all drugs is the same, we keep the mutations with the highest HIVDB score
+            INI_mut_dic[', '.join(mut_list)] = INI_ensemble_preds_df
+            INI_mut_dic.pop(list(INI_mut_dic.keys())[INI_df_idx])
+    
+    for mut_list in RT_mut_freq_allcombs:
+        NRTI_ensemble_preds_df = ensemble_predictions(mut_list, 'NRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+        NRTI_ensemble_preds_binary = NRTI_ensemble_preds_df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(NRTI_ensemble_preds_df.columns)))
+        NNRTI_ensemble_preds_df = ensemble_predictions(mut_list, 'NNRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+        NNRTI_ensemble_preds_binary = NNRTI_ensemble_preds_df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(NNRTI_ensemble_preds_df.columns)))
+        NRTI_binary_dic = [df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(NRTI_ensemble_preds_df.columns))) for df in NRTI_mut_dic.values()]
+        NNRTI_binary_dic = [df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(NNRTI_ensemble_preds_df.columns))) for df in NNRTI_mut_dic.values()]
+        is_NRTI_df, NRTI_df_idx = df_in_list(NRTI_ensemble_preds_binary, NRTI_binary_dic)
+        is_NNRTI_df, NNRTI_df_idx = df_in_list(NNRTI_ensemble_preds_binary, NNRTI_binary_dic)
+        print(mut_list, is_NRTI_df, NRTI_df_idx)
+        print(mut_list, is_NNRTI_df, NNRTI_df_idx)
+        if not is_NRTI_df:
+            NRTI_mut_dic[', '.join(mut_list)] = NRTI_ensemble_preds_df
+        elif calc_HIVDB_score(mut_list, 'NRTI') > calc_HIVDB_score(list(NRTI_mut_dic.keys())[NRTI_df_idx], 'NRTI'):
+            NRTI_mut_dic[', '.join(mut_list)] = NRTI_ensemble_preds_df
+            NRTI_mut_dic.pop(list(NRTI_mut_dic.keys())[NRTI_df_idx])
 
-    print("INI list: ", IN_mut_freq.keys())
-    print(INI_ensemble_df)
-    print("NNRTI list: ", RT_mut_freq.keys())
-    print(NNRTI_ensemble_df)
-    print("NRTI list: ", RT_mut_freq.keys())
-    print(NRTI_ensemble_df)
-    print("PI list: ", PR_mut_freq.keys())
-    print(PI_ensemble_df)
+        if not is_NNRTI_df:
+            NNRTI_mut_dic[', '.join(mut_list)] = NNRTI_ensemble_preds_df
+        elif calc_HIVDB_score(mut_list, 'NNRTI') > calc_HIVDB_score(list(NNRTI_mut_dic.keys())[NNRTI_df_idx], 'NNRTI'):
+            NNRTI_mut_dic[', '.join(mut_list)] = NNRTI_ensemble_preds_df
+            NNRTI_mut_dic.pop(list(NNRTI_mut_dic.keys())[NNRTI_df_idx])
+    
+    for mut_list in PR_mut_freq_allcombs:
+        PI_ensemble_preds_df = ensemble_predictions(mut_list, 'PI', HIVDB = HIVDB, LSR = LSR, RF = RF)
+        PI_ensemble_preds_binary = PI_ensemble_preds_df.drop(['HIVDB_five_labels', 'LSR_RF'], errors='ignore')
+        PI_binary_dic = [df.drop(['HIVDB_five_labels', 'LSR_RF'], errors='ignore') for df in PI_mut_dic.values()]
+        PI_is_df, PI_df_idx = df_in_list(PI_ensemble_preds_binary, PI_binary_dic)
+        if not PI_is_df:
+            PI_mut_dic[', '.join(mut_list)] = PI_ensemble_preds_df
+        elif calc_HIVDB_score(mut_list, 'PI') > calc_HIVDB_score(list(PI_mut_dic.keys())[PI_df_idx], 'PI'):
+            PI_mut_dic.pop(list(PI_mut_dic.keys())[PI_df_idx])
+            PI_mut_dic[', '.join(mut_list)] = PI_ensemble_preds_df
 
+    ####PROBLEMS, IT MAY BE DIFFERENT THE 5-LABEL HIVDB CLASSIFICATION AND RESISTANCE FACTOR FOR SIMILAR PREDICTIONS
+    ###PROBLEMS AGAIN, RESISTANCE FACTOR AND HIVDB CLASSIFICATION ARE NOT ASSESSED
 
-    return
+    return [INI_mut_dic, NNRTI_mut_dic, NRTI_mut_dic, PI_mut_dic]
 
 def extract_prot_mut_freq(mutations_df, prot = ''):
-    '''Outputs a list with the mutations for a given protein, coming from a mutation_freq.tsv file.
+    '''Outputs a list of dictionaries, one for each alternative list of mutations.
+       Each dictionary presents the mutations for a given protein and their observed frequency, coming from a mutation_freq.tsv file.
     INPUT:
     mutations_df: tsv file output from annotate_vcf.py with the observed mutations. Columns are Position, Ref, Mut, Freq and Prot.
     prot: protein to filter the mutations. PR, RT or IN. If not one of those, it will return all mutations.
@@ -87,10 +126,12 @@ def extract_prot_mut_freq(mutations_df, prot = ''):
     '''
     if prot in ['PR', 'RT', 'IN']:
         mutations_df = mutations_df[mutations_df['Prot'] == prot]
-
+    
     prot_mut_freq = {} #we get a dictionary with the mutations as keys and the frequencies as values
     for i, row in mutations_df.iterrows():
+        
         full_mut = mutations_df.loc[i, 'Ref'] + mutations_df.loc[i, 'Position'].astype(str) + mutations_df.loc[i, 'Mut']
+
         if full_mut not in prot_mut_freq:
             prot_mut_freq[full_mut] = row['Freq']
         else:
@@ -98,6 +139,140 @@ def extract_prot_mut_freq(mutations_df, prot = ''):
     
     return prot_mut_freq
 
+def get_mutlist_comb(mut_list: list):
+    ''' Generates a list of all possible combinations of mutations in the input list.
+    INPUT:
+    mut_list: list of mutations i.e [M41L,L90M].
+    
+    OUTPUT:
+    comb_list: list of all possible combinations of mutations. List of lists.
+    '''
+    pos_list = [re.sub(r'\D+', '', mut) for mut in mut_list] #we get the positions of the mutations
+    
+    pos_dict = {}    #we make a dictionary with the positions as keys and a list of their index as values
+    for i, pos in enumerate(pos_list):
+        if pos not in pos_dict:
+            pos_dict[pos] = [i]
+        else:
+            pos_dict[pos].append(i)
+
+    comb_list = []    #we create a list of all possible combinations of mutations
+    for i in range(len(pos_dict)):
+        pos = list(pos_dict.keys())[i]
+        if len(pos_dict[pos]) > 1:
+            comb_list.append([mut_list[j] for j in pos_dict[pos]])
+        else:
+            comb_list.append([mut_list[pos_dict[pos][0]]])
+    
+    comb_list = list(product(*comb_list))#we create all the combinations of the mutations
+    comb_list = [list(comb) for comb in comb_list]
+
+    return comb_list
+
+def unify_mut_list(list_of_mut_list: list):
+    '''Unifies a list of lists of mutations into a single list of mutations.
+    INPUT:
+    list_of_mut_list: list of lists of mutations i.e [[M41L,L90M], [M41K,L90M]].
+    
+    OUTPUT:
+    unified_list: list of unique mutations. i.e [M41LK, L90M].
+    '''
+    mut_dic = {}
+    for mut_list in list_of_mut_list:
+        for mut in mut_list:
+            pos = re.sub(r'\D+', '', mut)
+            aa_ref = re.sub(r'\d+', '', mut)[0]
+            aa_mut = re.sub(r'\d+', '', mut)[1:]
+            if pos not in mut_dic.keys():
+                mut_dic[pos] = aa_ref + aa_mut
+            elif mut_dic[pos][1] != aa_mut:
+                mut_dic[pos] = mut_dic[pos] + aa_mut
+
+    unified_list = []
+    for pos in mut_dic.keys():
+        unified_list.append(mut_dic[pos][0] + pos + ''.join(mut_dic[pos][1:]))
+    
+    return unified_list
+
+def calc_HIVDB_score(mut_list: list, dataset: str):
+    '''Calculates the HIVDB score for a list of mutations.
+    INPUT:
+    mutation_list: list of mutations i.e [M41L,L90M].
+    dataset: drug class to be used. 'INI', 'NNRTI', 'NRTI', 'PI'.
+
+    OUTPUT:
+    score: HIVDB score for the mutations.
+    '''
+    if dataset == "INI":
+        drug_class = INIs
+    elif dataset == "NNRTI":
+        drug_class = NNRTIs
+    elif dataset == "NRTI":
+        drug_class = NRTIs
+    elif dataset == "PI":
+        drug_class = PIs
+
+    mutation_scores = pd.read_csv(f'HIVDB_rules/{dataset}_muts_score_Stanford_HIVDB', sep=',') #we read the mutation scores
+    combination_scores = pd.read_csv(f'HIVDB_rules/{dataset}_combinations_score_Stanford_HIVDB', sep=',') #we read the combination scores
+        
+    mutation_scores.columns = mutation_scores.columns.str.replace('/r','')
+    combination_scores.columns = combination_scores.columns.str.replace('/r','')    
+    
+    HIVDB_score_total = 0
+    for drug in drug_class:
+        
+        drug_score = 0
+            
+        ###We add the single mutation scores
+        for mut in mut_list:
+            if mut in mutation_scores['Rule'].values and drug in mutation_scores.columns:
+                drug_score += float(mutation_scores[mutation_scores['Rule']==mut][f'{drug}'].iloc[0]) #we add the score
+
+        ##We add the combination scores
+        for combination_rule in combination_scores['Combination Rule'].values:
+            combination_rule = combination_rule.split(' + ')
+            all_in = True
+            for mut_c_rule in combination_rule:
+                #we separate the mutation from the position
+                position = re.sub(r'\D+', '', mut_c_rule)
+                mut_aa = re.sub(r'\d+', '', mut_c_rule)
+                mut_aa_1 = mut_aa[0]
+                mut_aa_2 = mut_aa[1:]
+                if len(mut_aa_2) == 1:
+                    if mut_c_rule not in mut_list:
+                        all_in = False
+                        break
+                else:
+                    posib_mut = False
+                    for l in mut_aa_2:
+                        if mut_aa_1+position+l in mut_list:
+                            posib_mut = True
+                            break
+                        else:
+                            posib_mut = False
+
+                    if not posib_mut:
+                        all_in = False
+                        break
+                
+            if all_in: #if all mutations in the combination rule are in the input list
+                if drug in combination_scores.columns:
+                    drug_score += float(combination_scores[combination_scores['Combination Rule']==' + '.join(combination_rule)][f'{drug}'].iloc[0])
+            
+        HIVDB_score_total += drug_score ##We add it to the total score
+
+    return HIVDB_score_total
+
+
+def df_in_list(df, list_of_dfs):
+    '''Checks if a dataframe is in a list of dataframes.
+    Outputs the index of the dataframe in the list if it is found.'''
+    df = df.sort_index(axis=1).reset_index(drop=True)
+    for i, other_df in enumerate(list_of_dfs):
+        other_df = other_df.sort_index(axis=1).reset_index(drop=True)
+        if df.equals(other_df):
+            return True, i
+    return False, None
 
 def HIVDB_singlemut_annot(mut_list, dataset: str):
     '''Retrieves the HIVDB annotation for each mutation in a list of mutations.
@@ -134,7 +309,6 @@ def HIVDB_singlemut_annot(mut_list, dataset: str):
     mut_annot_df = pd.DataFrame(mut_annot, columns=['Mutation', 'Annotation', 'Comment'])
     return mut_annot_df
 
-# print(HIVDB_table('example_files/mutation_freq.tsv')) #we test the function with the mutation_freq.tsv file
 
 ###HIVDB offline implementation for the prediction of the resistance
 def HIVDB_pred(mut_list, dataset: str, score = "SR"):
@@ -217,7 +391,7 @@ def HIVDB_pred(mut_list, dataset: str, score = "SR"):
                 resistance_pred_df.loc[0, drug] = "Resistant"
             else:
                 resistance_pred_df.loc[0, drug] = "Susceptible"
-    elif score == "HIVDB": #we label them follwoing the original HIVDB labeling
+    elif score == "HIVDB": #we label them following the original HIVDB labeling
         for drug in resistance_pred_df.columns:
             if resistance_pred_df.loc[0, drug] > 59:
                 resistance_pred_df.loc[0, drug] = "High-Level Resistance"
@@ -517,4 +691,10 @@ def check_mut_input(input_mut: str):
 # if __name__ == "__main__":
 #     typer.run(main)
 
-print(ensemble_table('example_files/mutation_freq.tsv'))
+# table = pd.read_csv('example_files/mutation_freq.tsv', sep='\t')
+# table = table[table['Freq'] > 0.05]
+# print(extract_prot_mut_freq(table, 'RT'))
+input_list = [["K20R", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"], ["K20M", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"]]
+# print(get_mutlist_comb(input_list))
+print(ensemble_table('example_files/mutation_freq.tsv', higher_cutoff = 0.05, HIVDB = True, LSR = True, RF = True))
+# print(unify_mut_list(input_list))
