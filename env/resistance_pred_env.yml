@@ -2,6 +2,9 @@ name: HIV_pred
 dependencies:
 - python=3.10
 - pandas
+- matplotlib
 - scikit-learn
 - typer
+- pandoc
+- tectonic
 - pip

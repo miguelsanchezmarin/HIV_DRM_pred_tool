@@ -5,6 +5,7 @@ import pickle
 import typer
 from typing_extensions import Annotated, Optional
 from itertools import product
+import matplotlib.pyplot as plt
 
 ##Drugs per drug class used in this study
 INIs=['RAL', 'EVG', 'DTG', 'BIC']
@@ -39,7 +40,16 @@ def HIVDB_table(mut_tsv, lower_cutoff: float = 0.015):
     NRTI_annot_df['Prot'] = 'RT'
     PI_annot_df['Freq'] = PR_mut_freq.values()
     PI_annot_df['Prot'] = 'PR'
-    mutations_df = pd.concat([INI_annot_df, NNRTI_annot_df, NRTI_annot_df, PI_annot_df], axis=0, ignore_index=True)
+    
+    merged_NNRTI_NRTI = pd.merge(NNRTI_annot_df, NRTI_annot_df, on=['Mutation', 'Freq', 'Prot'], how='outer', suffixes=('_NNRTI', '_NRTI'))##We unify NNRTI and NRTI dataframes
+    merged_NNRTI_NRTI['Annotation'] = merged_NNRTI_NRTI.apply(lambda row: row['Annotation_NNRTI'] if row['Annotation_NNRTI'] != 'Unknown' else row['Annotation_NRTI'], axis=1) ##The NRTI and NNRTI commented positions do not overlap
+    merged_NNRTI_NRTI['Comment'] = merged_NNRTI_NRTI.apply(lambda row: row['Comment_NNRTI'] if row['Comment_NNRTI'] != 'Unknown' else row['Comment_NRTI'], axis=1)
+    merged_NNRTI_NRTI = merged_NNRTI_NRTI[['Mutation', 'Freq', 'Prot', 'Annotation', 'Comment']]
+    merged_NNRTI_NRTI["Pos"] = merged_NNRTI_NRTI['Mutation'].apply(lambda x: int(re.sub(r'\D+', '', x)))
+    merged_NNRTI_NRTI = merged_NNRTI_NRTI.sort_values(by=['Pos'], ascending = True).drop(columns=['Pos'], axis=1)
+
+
+    mutations_df = pd.concat([INI_annot_df, merged_NNRTI_NRTI, PI_annot_df], axis=0, ignore_index=True)
     mutations_df = mutations_df[['Mutation', 'Freq', 'Prot', 'Annotation', 'Comment']]
 
     return mutations_df
@@ -74,6 +84,17 @@ def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR:
         elif calc_HIVDB_score(mut_list, 'INI') > calc_HIVDB_score(list(INI_mut_dic.keys())[INI_df_idx], 'INI'): ##When resistance for all drugs is the same, we keep the mutations with the highest HIVDB score
             INI_mut_dic[', '.join(mut_list)] = INI_ensemble_preds_df
             INI_mut_dic.pop(list(INI_mut_dic.keys())[INI_df_idx])
+        elif calc_HIVDB_score(mut_list, 'INI') == calc_HIVDB_score(list(INI_mut_dic.keys())[INI_df_idx], 'INI'):          
+            new_mut_freq = 0 ##we get the summed frequency of the mutations
+            for mut in mut_list:
+                new_mut_freq += IN_mut_freq[mut]
+            old_mut_freq = 0
+            for mut in list(INI_mut_dic.keys())[INI_df_idx].split(', '):
+                old_mut_freq += IN_mut_freq[mut]
+            if new_mut_freq > old_mut_freq: ##we keep the most frequent of them
+                INI_mut_dic[', '.join(mut_list)] = INI_ensemble_preds_df
+                INI_mut_dic.pop(list(INI_mut_dic.keys())[INI_df_idx])
+
     
     for mut_list in RT_mut_freq_allcombs:
         NRTI_ensemble_preds_df = ensemble_predictions(mut_list, 'NRTI', HIVDB = HIVDB, LSR = LSR, RF = RF)
@@ -84,19 +105,39 @@ def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR:
         NNRTI_binary_dic = [df.drop(columns = list(set(['HIVDB_five_labels', 'LSR_RF'])&set(NNRTI_ensemble_preds_df.columns))) for df in NNRTI_mut_dic.values()]
         is_NRTI_df, NRTI_df_idx = df_in_list(NRTI_ensemble_preds_binary, NRTI_binary_dic)
         is_NNRTI_df, NNRTI_df_idx = df_in_list(NNRTI_ensemble_preds_binary, NNRTI_binary_dic)
-        print(mut_list, is_NRTI_df, NRTI_df_idx)
-        print(mut_list, is_NNRTI_df, NNRTI_df_idx)
+
         if not is_NRTI_df:
             NRTI_mut_dic[', '.join(mut_list)] = NRTI_ensemble_preds_df
         elif calc_HIVDB_score(mut_list, 'NRTI') > calc_HIVDB_score(list(NRTI_mut_dic.keys())[NRTI_df_idx], 'NRTI'):
             NRTI_mut_dic[', '.join(mut_list)] = NRTI_ensemble_preds_df
             NRTI_mut_dic.pop(list(NRTI_mut_dic.keys())[NRTI_df_idx])
+        elif calc_HIVDB_score(mut_list, 'NRTI') == calc_HIVDB_score(list(NRTI_mut_dic.keys())[NRTI_df_idx], 'NRTI'):
+            new_mut_freq = 0
+            for mut in mut_list:
+                new_mut_freq += RT_mut_freq[mut]
+            old_mut_freq = 0
+            for mut in list(NRTI_mut_dic.keys())[NRTI_df_idx].split(', '):
+                old_mut_freq += RT_mut_freq[mut]
+            if new_mut_freq > old_mut_freq:
+                NRTI_mut_dic[', '.join(mut_list)] = NRTI_ensemble_preds_df
+                NRTI_mut_dic.pop(list(NRTI_mut_dic.keys())[NRTI_df_idx])
 
         if not is_NNRTI_df:
             NNRTI_mut_dic[', '.join(mut_list)] = NNRTI_ensemble_preds_df
         elif calc_HIVDB_score(mut_list, 'NNRTI') > calc_HIVDB_score(list(NNRTI_mut_dic.keys())[NNRTI_df_idx], 'NNRTI'):
             NNRTI_mut_dic[', '.join(mut_list)] = NNRTI_ensemble_preds_df
             NNRTI_mut_dic.pop(list(NNRTI_mut_dic.keys())[NNRTI_df_idx])
+        elif calc_HIVDB_score(mut_list, 'NNRTI') == calc_HIVDB_score(list(NNRTI_mut_dic.keys())[NNRTI_df_idx], 'NNRTI'):
+            new_mut_freq = 0
+            for mut in mut_list:
+                new_mut_freq += RT_mut_freq[mut]
+            old_mut_freq = 0
+            for mut in list(NNRTI_mut_dic.keys())[NNRTI_df_idx].split(', '):
+                old_mut_freq += RT_mut_freq[mut]
+            if new_mut_freq > old_mut_freq:
+                NNRTI_mut_dic[', '.join(mut_list)] = NNRTI_ensemble_preds_df
+                NNRTI_mut_dic.pop(list(NNRTI_mut_dic.keys())[NNRTI_df_idx])
+        
     
     for mut_list in PR_mut_freq_allcombs:
         PI_ensemble_preds_df = ensemble_predictions(mut_list, 'PI', HIVDB = HIVDB, LSR = LSR, RF = RF)
@@ -108,9 +149,16 @@ def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR:
         elif calc_HIVDB_score(mut_list, 'PI') > calc_HIVDB_score(list(PI_mut_dic.keys())[PI_df_idx], 'PI'):
             PI_mut_dic.pop(list(PI_mut_dic.keys())[PI_df_idx])
             PI_mut_dic[', '.join(mut_list)] = PI_ensemble_preds_df
-
-    ####PROBLEMS, IT MAY BE DIFFERENT THE 5-LABEL HIVDB CLASSIFICATION AND RESISTANCE FACTOR FOR SIMILAR PREDICTIONS
-    ###PROBLEMS AGAIN, RESISTANCE FACTOR AND HIVDB CLASSIFICATION ARE NOT ASSESSED
+        elif calc_HIVDB_score(mut_list, 'PI') == calc_HIVDB_score(list(PI_mut_dic.keys())[PI_df_idx], 'PI'):
+            new_mut_freq = 0
+            for mut in mut_list:
+                new_mut_freq += PR_mut_freq[mut]
+            old_mut_freq = 0
+            for mut in list(PI_mut_dic.keys())[PI_df_idx].split(', '):
+                old_mut_freq += PR_mut_freq[mut]
+            if new_mut_freq > old_mut_freq:
+                PI_mut_dic.pop(list(PI_mut_dic.keys())[PI_df_idx])
+                PI_mut_dic[', '.join(mut_list)] = PI_ensemble_preds_df
 
     return [INI_mut_dic, NNRTI_mut_dic, NRTI_mut_dic, PI_mut_dic]
 
@@ -297,7 +345,7 @@ def HIVDB_singlemut_annot(mut_list, dataset: str):
             if re.match(r'^\d+[A-Z]+$', comm) and position==re.sub(r'\D+', '', comm): #we check if the mutation is in the comment
                 comm_ambig = re.sub(r'\d+', '', comm)
                 if mut_aa in comm_ambig:
-                    mut_annot.append([comments_file['Condition'].values[i], 
+                    mut_annot.append([mut, 
                                      comments_file['Comment/Mutation Type'].values[i], 
                                      comments_file['Comment'].values[i]])
                     comment_in = True
@@ -660,6 +708,200 @@ def check_mut_input(input_mut: str):
     
     return mutations
 
+def write_HIVDB_table(HIVDB_table, cutoff, handle, unknown: bool = False, comments: bool = False):
+    '''Writes the ensemble results to a markdown file.
+    INPUT:
+    HIVDB_table: Dataframe with the single mutations, frequency and HIVDB comments. Output from HIVDB_table function.
+    cutoff: frequency cutoff to consider the mutations.
+    handle: file handle to write the results.
+    unknown: if True, the unknown annotations will be written.
+    comments: if True, the comments will be written.
+    '''
+
+    handle.write("Single mutation annotations obtained from HIVDB program.")
+    handle.write("Mutations below " + str(cutoff) + " frequency were not included in the analysis.\n")
+    IN_table, RT_table, PR_table = HIVDB_table[HIVDB_table["Prot"]=="IN"], HIVDB_table[HIVDB_table["Prot"]=="RT"], HIVDB_table[HIVDB_table["Prot"]=="PR"]
+    if not unknown:
+        IN_table, RT_table, PR_table = IN_table[IN_table["Annotation"] != "Unknown"], RT_table[RT_table["Annotation"] != "Unknown"], PR_table[PR_table["Annotation"] != "Unknown"]
+
+    if IN_table.shape[0] > 0:
+        handle.write("**INTEGRASE** mutations:\n")
+        handle.write("|{: ^14}|{: ^11}|{: ^12}|\n".format('Mutation','Frequency', 'Annotation'))
+        handle.write('|:{:-^12}:|:{:-^9}:|:{:-^10}:|'.format('', '', ''))
+        handle.write('\n')
+        for n in range(IN_table.shape[0]):    
+            handle.write('|{: ^14}|{: ^11}|{: ^12}|'.format(IN_table["Mutation"].iloc[n], IN_table["Freq"].iloc[n], IN_table["Annotation"].iloc[n]))
+            handle.write("\n")
+        
+        if comments:
+            handle.write("\nComments:\n\n")
+            for n in range(IN_table.shape[0]):
+                if IN_table["Comment"].iloc[n] != "Unknown":
+                    handle.write(f"- **{IN_table['Mutation'].iloc[n]}**: {IN_table['Comment'].iloc[n]}\n") 
+    else:
+        handle.write("\nNo **INTEGRASE** mutations found.\n")
+    
+    
+    if RT_table.shape[0] > 0:
+        handle.write("\n**REVERSE TRANSCRIPTASE** mutations:\n\n")
+        handle.write("|{: ^14}|{: ^11}|{: ^12}|\n".format('Mutation','Frequency', 'Annotation'))
+        handle.write('|:{:-^12}:|:{:-^9}:|:{:-^10}:|'.format('', '', ''))
+        handle.write('\n')
+        for n in range(RT_table.shape[0]):
+            handle.write('|{: ^14}|{: ^11}|{: ^12}|'.format(RT_table["Mutation"].iloc[n], RT_table["Freq"].iloc[n], RT_table["Annotation"].iloc[n]))
+            handle.write("\n")
+        
+        if comments:
+            handle.write("\nComments:\n\n")
+            for n in range(RT_table.shape[0]):
+                if RT_table["Comment"].iloc[n] != "Unknown":
+                    handle.write(f"- **{RT_table['Mutation'].iloc[n]}**: {RT_table['Comment'].iloc[n]}\n")    
+    else:
+        handle.write("\nNo **REVERSE TRANSCRIPTASE** mutations found.\n")
+
+
+
+    if PR_table.shape[0] > 0:
+        handle.write("\n**PROTEASE** mutations:\n\n")
+        handle.write("|{: ^14}|{: ^11}|{: ^12}|\n".format('Mutation','Frequency', 'Annotation'))
+        handle.write('|:{:-^12}:|:{:-^9}:|:{:-^10}:|'.format('', '', ''))
+        handle.write('\n')
+        for n in range(PR_table.shape[0]):
+            handle.write('|{: ^14}|{: ^11}|{: ^12}|'.format(PR_table["Mutation"].iloc[n], PR_table["Freq"].iloc[n], PR_table["Annotation"].iloc[n]))
+            handle.write("\n")
+        
+        if comments:
+            handle.write("\nComments:\n\n")
+            for n in range(PR_table.shape[0]):
+                if PR_table["Comment"].iloc[n] != "Unknown":
+                    handle.write(f"- **{PR_table['Mutation'].iloc[n]}**: {PR_table['Comment'].iloc[n]}\n")    
+    else:
+        handle.write("\nNo **PROTEASE** mutations found.\n")  
+    
+
+
+def write_ensemble_table(ensemble_results, cutoff, handle, HIVDB = True, LSR = True, RF = True):
+    '''Writes the ensemble results to a markdown file.
+    INPUT:
+    ensemble_results: List of dictionaries for each drug class containing ensemble predictions for each mutation list combination. Output from ensemble_predictions function.
+    cutoff: cutoff for the mutations.
+    handle: file handle to write the results.
+    '''
+    handle.write("Mutations below " + str(cutoff) + " frequency were not included in the analysis.\n\n")
+    
+    for i, drug_class_dic in enumerate(ensemble_results):
+
+        if '' in drug_class_dic.keys(): #we skip the empty keys
+            continue
+
+        if i == 0:
+            handle.write("**INI** predictions:\n")
+            dataset = "INI"
+        elif i == 1:
+            handle.write("\n**NNRTI** predictions:\n")
+            dataset = "NNRTI"
+        elif i == 2:
+            handle.write("\n**NRTI** predictions:\n")
+            dataset = "NRTI"
+        elif i == 3:
+            handle.write("\n**PI** predictions:\n")
+            dataset = "PI"
+        
+        for mut_comb in drug_class_dic.keys():
+
+            handle.write("\n**" + mut_comb.replace(", ", "+") + "**\n\n")
+
+            mut_df = drug_class_dic[mut_comb]
+            mut_df["LSR_RF"] = mut_df["LSR_RF"].astype(float).round(4)
+            mut_df["Drug"] = mut_df.index
+            print(mut_df)
+
+            keep_cols, keep_color = ["Drug"], ["Drug"]
+            if HIVDB:
+                keep_cols.append("HIVDB_five_labels")
+                keep_color.append("HIVDB")
+            if LSR:
+                keep_cols.append("LSR_RF")
+                keep_color.append("LSR")
+            if RF:
+                keep_cols.append("RF")
+                keep_color.append("RF")
+            if HIVDB and LSR and RF:
+                keep_cols.append("Ensemble")
+                keep_color.append("Ensemble")
+
+            mut_df_plot = mut_df[keep_cols]
+            mut_df_color = mut_df[keep_color]
+            # columns = mut_df_plot.columns
+            mut_df_plot.columns = [col.replace("_five_labels", "").replace("LSR_RF", "Linear Regression").replace("RF", "Random Forest") for col in list(mut_df_plot.columns)]
+            
+            fig, ax = plt.subplots(figsize=(10, mut_df_plot.shape[0] * 0.25))
+            ax.axis('off')
+            
+            table = ax.table(cellText=mut_df_plot.values, colLabels=mut_df_plot.columns, cellLoc='center', loc='center')
+            table.auto_set_font_size(False)
+            table.set_fontsize(12)
+            table.scale(1.4, 1.4)
+            table.auto_set_column_width([0,1])
+
+            for i in range(mut_df_plot.shape[1]):
+                table[(0, i)].set_fontsize(13)
+                table[(0, i)].set_text_props(weight="bold")
+
+            for i in range(mut_df_plot.shape[0]):
+                table[(i+1, 0)].set_text_props(weight="bold")
+                for j in range(mut_df_plot.shape[1]):
+                    if mut_df_color.iloc[i, j] == "Resistant":
+                        table[(i+1, j)].set_facecolor("red")
+                        table[(i+1, j)].set_alpha(0.5)
+                    elif mut_df_color.iloc[i, j] == "Susceptible":
+                        table[(i+1, j)].set_facecolor("green")
+                        table[(i+1, j)].set_alpha(0.3)
+                    else:
+                        table[(i+1, j)].set_facecolor("white")
+
+            s=f"example_files/{dataset}_{mut_comb.replace(', ', '_')}.pdf"
+            plt.tight_layout()
+            plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+            plt.savefig(s, bbox_inches='tight', pad_inches = 0.05, transparent=True)
+            plt.close(fig)
+            handle.write(r"\begin{center}")
+            handle.write("\n")
+            handle.write(r"\includegraphics[width=\textwidth]")
+            handle.write("{%s}\n" % s)
+            handle.write("\end{center}\n")
+
+
+write_coverage_disclaimer(coverage_tsv, handle):
+    '''Write the coverage disclaimer and writes a step plot showing the position of the sample's coverage.
+    INPUT:
+    coverage_tsv: tsv file with the coverage data, annotated with annotate_vcf.py. Similar to samtools depth.
+    handle: file handle to write the results.
+
+    
+   
+            
+def write_report_md(mut_tsv, higher_cutoff: float = 0.15, lower_cutoff: float = 0.015, HIVDB:bool = True, LSR: bool = True, RF: bool = True):
+    ''' Writes the report in markdown format.'''
+    HIVDB_single_table = HIVDB_table(mut_tsv, lower_cutoff = lower_cutoff)
+
+    md = open('example_files/report.md', 'w')
+    md.write("# HIV-1 drug resistance report\n")
+    md.write("## Drug resistance prediction\n")
+    ensemble_predictions = ensemble_table(mut_tsv, higher_cutoff = higher_cutoff, HIVDB = HIVDB, LSR = LSR, RF = RF)
+    write_ensemble_table(ensemble_predictions, cutoff = higher_cutoff, handle = md, HIVDB = HIVDB, LSR = LSR, RF = RF)
+    md.write("\\newpage\n")    
+    md.write("\n## Single mutation annotation\n")
+    md.write("### HIVDB single mutation relevant annotations\n\n")
+    write_HIVDB_table(HIVDB_single_table, cutoff = lower_cutoff, handle = md, unknown = False, comments = True)
+    md.write("\\newpage\n")
+    md.write("\n### All single mutations\n")
+    write_HIVDB_table(HIVDB_single_table, cutoff = lower_cutoff, handle = md, unknown = True, comments = False)
+
+
+
+
+
 # ###Main function
 # def main(input_mut: Annotated[str ,typer.Argument(help="Input string to process, should be a list of mutations separated by commas")],
 #             HIVDB: Annotated[Optional[bool], typer.Option('--HIVDB', '-H', help='Use HIVDB method for prediction')] = None,
@@ -694,7 +936,8 @@ def check_mut_input(input_mut: str):
 # table = pd.read_csv('example_files/mutation_freq.tsv', sep='\t')
 # table = table[table['Freq'] > 0.05]
 # print(extract_prot_mut_freq(table, 'RT'))
-input_list = [["K20R", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"], ["K20M", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"]]
+# input_list = [["K20R", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"], ["K20M", "V35I", "T39A", "M41L", "S68G", "K103N", "I135T", "M184V", "T200K", "Q207E", "T215Y"]]
 # print(get_mutlist_comb(input_list))
-print(ensemble_table('example_files/mutation_freq.tsv', higher_cutoff = 0.05, HIVDB = True, LSR = True, RF = True))
+# print(ensemble_table('example_files/mutation_freq.tsv', higher_cutoff = 0.05, HIVDB = True, LSR = True, RF = True))
 # print(unify_mut_list(input_list))
+write_report_md('example_files/mutation_freq.tsv', higher_cutoff = 0.15, lower_cutoff = 0.015, HIVDB = True, LSR = True, RF = True)
