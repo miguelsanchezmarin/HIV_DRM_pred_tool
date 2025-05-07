@@ -66,6 +66,8 @@ def ensemble_table(mut_tsv, higher_cutoff: float = 0.15, HIVDB:bool = True, LSR:
     mutations_df = pd.read_csv(mut_tsv, sep='\t')#we read the tsv file
     mutations_filter_freq = mutations_df[mutations_df['Freq'] > higher_cutoff]#we apply the frequency cutoff
     mutations_filter_freq = mutations_filter_freq[mutations_filter_freq['Ref'] != mutations_filter_freq['Mut']]##We filter out the rows where Ref == Mut
+    mutations_filter_freq = mutations_filter_freq[mutations_filter_freq['Mut'] != '*']
+
     ##We check if for a same Prot and Position there are different mutations
     IN_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'IN')
     RT_mut_freq = extract_prot_mut_freq(mutations_filter_freq, 'RT')
@@ -812,7 +814,6 @@ def write_ensemble_table(ensemble_results, cutoff, handle, HIVDB = True, LSR = T
             handle.write("\n**" + mut_comb.replace(", ", "+") + "**\n\n")
 
             mut_df = drug_class_dic[mut_comb]
-            mut_df["LSR_RF"] = mut_df["LSR_RF"].astype(float).round(4)
             mut_df["Drug"] = mut_df.index
             print(mut_df)
 
@@ -821,6 +822,7 @@ def write_ensemble_table(ensemble_results, cutoff, handle, HIVDB = True, LSR = T
                 keep_cols.append("HIVDB_five_labels")
                 keep_color.append("HIVDB")
             if LSR:
+                mut_df["LSR_RF"] = mut_df["LSR_RF"].astype(float).round(4)
                 keep_cols.append("LSR_RF")
                 keep_color.append("LSR")
             if RF:
@@ -872,16 +874,108 @@ def write_ensemble_table(ensemble_results, cutoff, handle, HIVDB = True, LSR = T
             handle.write("\end{center}\n")
 
 
-write_coverage_disclaimer(coverage_tsv, handle):
-    '''Write the coverage disclaimer and writes a step plot showing the position of the sample's coverage.
+def write_coverage_disclaimer(coverage_tsv, handle, read_cutoff:int = 1):
+    '''Writes the coverage disclaimer and writes a step plot showing the position of the sample's coverage.
     INPUT:
     coverage_tsv: tsv file with the coverage data, annotated with annotate_vcf.py. Similar to samtools depth.
+    read_cutoff: minimum number of reads to consider a position as covered.
     handle: file handle to write the results.
+    '''
+    handle.write("\n## Coverage disclaimer\n\n")
+    handle.write(f"The coverage of the sample was calculated from the FASTQ files. Only Drug Resistance Mutation (DRM) positions are analysed for robustness assessment. Positions were considered as covered above {read_cutoff} read(s).\n")
+
+    coverage_data = pd.read_csv(coverage_tsv, sep='\t')
+    coverage_data.columns = ['Reference','Position', 'Reads']#, 'Protein']
+
+    for dataset in ["INI", "NNRTI", "NRTI", "PI"]:
+        if dataset == "INI":
+            drm_positions = [51, 66, 74, 75, 92, 95, 97, 118, 121, 122, 138, 140, 143, 145, 146, 147, 148, 151, 153, 155, 157, 163, 230, 232, 263]
+            prot = "IN"
+        elif dataset == "NNRTI":
+            drm_positions = [90, 98, 100, 101, 103, 106, 108, 138, 179, 181, 188, 190, 221, 225, 227, 230, 234, 236, 238, 318, 348]
+            prot = "RT"
+        elif dataset == "NRTI":
+            drm_positions = [41, 62, 65, 67, 68, 69, 70, 74, 75, 77, 115, 116, 151, 184, 210, 215, 219]
+            prot = "RT"
+        elif dataset == "PI":
+            drm_positions = [10, 20, 24, 32, 33, 46, 47, 48, 50, 53, 54, 73, 74, 76, 82, 83, 84, 88, 89, 90]
+            prot = "PR"
+
+        # coverage_data_prot = coverage_data[coverage_data['Protein'] == prot]
+        coverage_data_prot = coverage_data
+        coverage_data_drm = coverage_data_prot[coverage_data_prot['Position'].isin(drm_positions)]
+        #we calculate the % of covered positions
+        sample_drm_coverage = coverage_data_drm[coverage_data_drm['Reads'] > read_cutoff].shape[0] / len(drm_positions) * 100
+
+        handle.write(f"\n* {dataset} coverage\n")
+        if sample_drm_coverage == 0:
+            handle.write(f"\nNo DRM positions were covered for the {dataset} dataset.\n")
+            continue
+
+        robustness_step_plot(dataset, sample_drm_coverage, handle) #we plot the robustness step plot
+    
+    handle.write("\n\n\*Balanced accuracy takes into account the ability to predict both resistant and susceptible mutations. In contrast with accuracy, it is calculated as the mean of sensitivity and specificity.\n")
+
+
+
+
+
+def robustness_step_plot(dataset: str , coverage_value: float, handle):
+    '''Writes a step plot showing the balanced accuracy on the Y axis and the % of covered DRM positions on the X axis.
+    We also plot with a red line the position of the analyzed sample coverage.
+    INPUT:
+    dataset: drug class to be used. 'INI', 'NNRTI', 'NRTI', 'PI'.
+    coverage_value: coverage value of the analyzed sample as a %. i.e. 80% coverage = 80 .
+    '''
+    if coverage_value > 100 or coverage_value < 0:
+        raise ValueError(f'Coverage value should be between 0 and 100. {coverage_value} provided.')
+    
+    if dataset == "INI":
+        step_data = pd.read_csv(f"robustness_data/{dataset}_step_data.tsv", sep="\t")
+    elif dataset == "NNRTI":
+        step_data = pd.read_csv(f"robustness_data/{dataset}_step_data.tsv", sep="\t")
+    elif dataset == "NRTI":
+        step_data = pd.read_csv(f"robustness_data/{dataset}_step_data.tsv", sep="\t")
+    elif dataset == "PI":
+        step_data = pd.read_csv(f"robustness_data/{dataset}_step_data.tsv", sep="\t")
+    else:
+        raise ValueError(f'Unknown dataset: {dataset}')
+
+    fig, axs = plt.subplots(1, 1, figsize=(10, 5))
+    x = [0.5*m+1 for m in range(11)]
+    y = step_data.drop('Drug', axis=1).groupby(["Miss_muts"]).mean()
+    max_accuracy = y["Balanced_Accuracy"].max()
+    coverage_step = 1-(int(coverage_value/10)+1)/10
+    #we get the accuracy for the coverage step
+    y_coverage = y.loc[coverage_step]["Balanced_Accuracy"]
+    # print(f"Coverage step: {coverage_step}, y_coverage: {y_coverage}, max_accuracy: {max_accuracy}, coverage_value: {coverage_value}")
+    handle.write(f"\nThe expected (balanced) accuracy for the {dataset} dataset drug resistance prediction is **{round(y_coverage, 2)}** at {round(coverage_value, 2)}% DRM positions coverage. The reported performance for a 100% coverage is {round(max_accuracy,2)}.\n\n")
+    
+    axs.axvline(x=((100-coverage_value)/10)*0.5 +1, color='red', linewidth = 2, label=f'Your sample ({round(coverage_value, 2)}% coverage)')#we plot a red line at the coverage value
+    axs.step(x, y["Balanced_Accuracy"], where = 'post', alpha = 0.7, linewidth = 2, color='blue')
+    axs.axhline(y=y_coverage, color='blue', linestyle='--', alpha = 0.35)
+    axs.set_xticks([0.5*i+1 for i in range(11)])
+    axs.set_xticklabels([100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0], fontsize=12)
+    axs.set_ylim(0, 1)
+    axs.set_xlabel('% of covered DRM positions', fontsize=15)
+    axs.set_ylabel('Balanced Accuracy', fontsize=15)
+    axs.set_title(f'Balanced accuracy for {dataset} class', fontsize=15)
+    axs.legend(loc='upper right', fontsize=10)    #and we plot a small legend 
+
+    path_to_plot = f'example_files/robustness_{dataset}.pdf'
+    plt.savefig(path_to_plot)
+
+    handle.write(r"\begin{center}")
+    handle.write("\n")
+    handle.write(r"\includegraphics[width=\textwidth]")
+    handle.write("{%s}\n" % path_to_plot)
+    handle.write("\end{center}\n")
+
+    return f'example_files/coverage_robustness_{dataset}.pdf'
 
     
-   
             
-def write_report_md(mut_tsv, higher_cutoff: float = 0.15, lower_cutoff: float = 0.015, HIVDB:bool = True, LSR: bool = True, RF: bool = True):
+def write_report_md(mut_tsv, coverage_tsv, higher_cutoff: float = 0.15, lower_cutoff: float = 0.015, HIVDB:bool = True, LSR: bool = True, RF: bool = True):
     ''' Writes the report in markdown format.'''
     HIVDB_single_table = HIVDB_table(mut_tsv, lower_cutoff = lower_cutoff)
 
@@ -890,6 +984,7 @@ def write_report_md(mut_tsv, higher_cutoff: float = 0.15, lower_cutoff: float = 
     md.write("## Drug resistance prediction\n")
     ensemble_predictions = ensemble_table(mut_tsv, higher_cutoff = higher_cutoff, HIVDB = HIVDB, LSR = LSR, RF = RF)
     write_ensemble_table(ensemble_predictions, cutoff = higher_cutoff, handle = md, HIVDB = HIVDB, LSR = LSR, RF = RF)
+    write_coverage_disclaimer(coverage_tsv, handle = md)
     md.write("\\newpage\n")    
     md.write("\n## Single mutation annotation\n")
     md.write("### HIVDB single mutation relevant annotations\n\n")
@@ -940,4 +1035,5 @@ def write_report_md(mut_tsv, higher_cutoff: float = 0.15, lower_cutoff: float = 
 # print(get_mutlist_comb(input_list))
 # print(ensemble_table('example_files/mutation_freq.tsv', higher_cutoff = 0.05, HIVDB = True, LSR = True, RF = True))
 # print(unify_mut_list(input_list))
-write_report_md('example_files/mutation_freq.tsv', higher_cutoff = 0.15, lower_cutoff = 0.015, HIVDB = True, LSR = True, RF = True)
+write_report_md('example_files/mutation_freq.tsv', 'example_files/CAP257/week_54/alignments/coverage.tsv', higher_cutoff = 0.15, lower_cutoff = 0.015, HIVDB = True, LSR = True, RF = True)
+# robustness_step_plot("NNRTI", 78)
