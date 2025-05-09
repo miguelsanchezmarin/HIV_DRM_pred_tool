@@ -485,14 +485,14 @@ def main(fname_snv_in, fname_genbank_file, fname_cov_in, fname_snv_out, fname_co
 
 if __name__ == "__main__":
     main(
-        # snakemake.input.fname_snvs_vcf,
-        # snakemake.input.fname_genbank_file,
-        # snakemake.input.fname_coverage,
-        # snakemake.output.fname_snvs_vcf,
-        # snakemake.output.fname_coverage,
-        "./example_files/mix_12_variants_chromchange.vcf",
-        "./ref/reference_gagpol_only.gb",
-        "./example_files/CAP257/week_54/alignments/coverage.tsv",
-        "./example_files/mutation_freq.tsv",
-        "./example_files/coverage_annotated.tsv"
+        snakemake.input.fname_vcf,
+        snakemake.input.ref,
+        snakemake.input.fname_cov,
+        snakemake.output.fname_vcf,
+        snakemake.output.fname_cov,
+        # "./example_files/mix_12_variants_chromchange.vcf",
+        # "./ref/reference_gagpol_only.gb",
+        # "./example_files/CAP257/week_54/alignments/coverage.tsv",
+        # "./example_files/mutation_freq.tsv",
+        # "./example_files/coverage_annotated.tsv"
     )
