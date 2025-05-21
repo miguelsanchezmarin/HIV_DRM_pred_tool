@@ -8,3 +8,6 @@
 /output_vcfs/*
 /snakemake_trial/*
 /env/snakemake_all.yml
+/tmpdir_hiv/*
+/slurm*
+/input_vcfs/*
