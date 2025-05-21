@@ -2,3 +2,9 @@
 /vp-analysis/*
 /ref/reference_pol_only.gb
 /.snakemake/*
+/__pycache__/*
+/HIV_prediction_output/*
+/HIV_resistance_reports/*
+/output_vcfs/*
+/snakemake_trial/*
+/env/snakemake_all.yml

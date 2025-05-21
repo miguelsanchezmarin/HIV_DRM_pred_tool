@@ -1,0 +1,253 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                      count
+---------------------  -------
+HIV_resistance               1
+aggregate_all_samples        1
+all                          1
+annotate_vcf                 1
+convert_md_to_pdf            1
+generate_md_report           1
+total                        6
+
+Select jobs to execute...
+
+[Tue May 20 16:22:38 2025]
+rule annotate_vcf:
+    input: input_vcfs/CAP30/mix_12_variants_chromchange.vcf, input_vcfs/CAP30/coverage.tsv, ref/reference_gagpol_only.gb
+    output: snakemake_trial/output_vcfs/CAP30/mut_freq.tsv, snakemake_trial/output_vcfs/CAP30/coverage_annotated.tsv
+    jobid: 3
+    reason: Missing output files: snakemake_trial/output_vcfs/CAP30/coverage_annotated.tsv, snakemake_trial/output_vcfs/CAP30/mut_freq.tsv
+    wildcards: samples=CAP30
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+self.record_ids[value] {'NC_001802.1': 'NC_001802'}
+[Tue May 20 16:22:45 2025]
+Finished job 3.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Tue May 20 16:22:45 2025]
+rule HIV_resistance:
+    input: snakemake_trial/output_vcfs/CAP30/mut_freq.tsv, snakemake_trial/output_vcfs/CAP30/coverage_annotated.tsv
+    output: snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv
+    jobid: 2
+    reason: Missing output files: snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv; Input files updated by another job: snakemake_trial/output_vcfs/CAP30/coverage_annotated.tsv, snakemake_trial/output_vcfs/CAP30/mut_freq.tsv
+    wildcards: samples=CAP30
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Select jobs to execute...
+Single sample detected. Running in serial...
+Saved HIV resistance files to snakemake_trial/output_vcfs/CAP30 directory.
+[Tue May 20 16:22:51 2025]
+Finished job 2.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Tue May 20 16:22:52 2025]
+rule generate_md_report:
+    input: snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv
+    output: snakemake_trial/output_vcfs/CAP30/report_CAP30.md
+    jobid: 5
+    reason: Missing output files: snakemake_trial/output_vcfs/CAP30/report_CAP30.md; Input files updated by another job: snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv
+    wildcards: samples=CAP30
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+[Tue May 20 16:22:52 2025]
+rule aggregate_all_samples:
+    input: snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv
+    output: snakemake_trial/output_vcfs/ensemble_predictions.tsv, snakemake_trial/output_vcfs/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/single_mut_annotations.tsv
+    jobid: 1
+    reason: Missing output files: snakemake_trial/output_vcfs/single_mut_annotations.tsv, snakemake_trial/output_vcfs/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/ensemble_predictions.tsv; Input files updated by another job: snakemake_trial/output_vcfs/CAP30/single_mut_annotations.tsv, snakemake_trial/output_vcfs/CAP30/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/CAP30/ensemble_predictions.tsv; Set of input files has changed since last execution
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+Building DAG of jobs...
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Select jobs to execute...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Select jobs to execute...
+[Tue May 20 16:22:56 2025]
+Finished job 1.
+3 of 6 steps (50%) done
+[Tue May 20 16:22:57 2025]
+Finished job 5.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Tue May 20 16:22:57 2025]
+rule convert_md_to_pdf:
+    input: snakemake_trial/output_vcfs/CAP30/report_CAP30.md
+    output: snakemake_trial/output_vcfs/CAP30/report_CAP30.pdf
+    jobid: 4
+    reason: Missing output files: snakemake_trial/output_vcfs/CAP30/report_CAP30.pdf; Input files updated by another job: snakemake_trial/output_vcfs/CAP30/report_CAP30.md
+    wildcards: samples=CAP30
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+[Tue May 20 16:23:00 2025]
+Finished job 4.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Tue May 20 16:23:00 2025]
+localrule all:
+    input: snakemake_trial/output_vcfs/ensemble_predictions.tsv, snakemake_trial/output_vcfs/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/single_mut_annotations.tsv, snakemake_trial/output_vcfs/CAP30/report_CAP30.pdf
+    jobid: 0
+    reason: Input files updated by another job: snakemake_trial/output_vcfs/single_mut_annotations.tsv, snakemake_trial/output_vcfs/CAP30/report_CAP30.pdf, snakemake_trial/output_vcfs/coverage_disclaimer.tsv, snakemake_trial/output_vcfs/ensemble_predictions.tsv
+    resources: tmpdir=/scratch/tmp.32591139.msanche
+
+[Tue May 20 16:23:00 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-05-20T162232.085121.snakemake.log

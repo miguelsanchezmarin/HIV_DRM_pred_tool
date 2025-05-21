@@ -7,4 +7,5 @@ dependencies:
 - typer
 - pandoc
 - tectonic
+- tqdm
 - pip

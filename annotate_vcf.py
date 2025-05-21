@@ -15,6 +15,7 @@ from fuc import pyvcf
 import subprocess
 import collections
 import pandas as pd
+import os
 
 # ---------------
 # from here it is copied
@@ -151,7 +152,7 @@ class Annotator(object):
 
                     # Determine codon information
                     codon = self.__gb.codon_by_position(record.POS)  ###Modified by MSM to fit the Genbank .gbff file
-                    print(record.POS, codon)
+                    # print(record.POS, codon)
                     record.INFO['RefCodon'] = ''.join(list(codon[0]))
                     record.INFO['SNPCodonPosition'] = codon[1]
                     record.INFO['CodonPosition'] = codon[2]
@@ -210,16 +211,16 @@ class Annotator(object):
             )
             self.__coverage_file.columns = ["Chromosome", "Position", "Coverage"]
             self.__coverage_file['CodonPosition'] = '.'
-            print(self.__coverage_file)
+            # print(self.__coverage_file)
             for i in range(self.__coverage_file.shape[0]):
                 self._accession = self.__coverage_file.iloc[i]['Chromosome']
                 self._index = self.__coverage_file.iloc[i]['Position']
-                print(self.__coverage_file.iloc[i]['Position'], i)
-                print(self.__gb.codon_by_position(self.__coverage_file.iloc[i]['Position'])[2])
-                #we set CodonPosition to the value of the position in the coverage file
+                # print(self.__coverage_file.iloc[i]['Position'], i)
+                # print(self.__gb.codon_by_position(self.__coverage_file.iloc[i]['Position'])[2])
+                ## we set CodonPosition to the value of the position in the coverage file
                 self.__coverage_file.at[i, 'CodonPosition'] = self.__gb.codon_by_position(
                     self.__coverage_file.iloc[i]['Position'])[2]
-                print("Pos:", self.__coverage_file['Position'][i], self.__coverage_file['CodonPosition'][i])
+                # print("Pos:", self.__coverage_file['Position'][i], self.__coverage_file['CodonPosition'][i])
                 if i == 4308:
                     break
 
@@ -343,7 +344,7 @@ class GenBank(object):
         #         print("Codon length is not 3: ", cod)
         # print(translation)
 
-        print("Length:", len(self.gene_codons[self._accession][self._index]))
+        # print("Length:", len(self.gene_codons[self._accession][self._index]))
 
         return [self.gene_codons[self._accession][self._index][codon_position],  
                 gene_position % 3,
@@ -464,7 +465,7 @@ def update_vcf_chrom(in_vcf, out_vcf, chrom_name):
     #vf.df = vf.df[vf.df['ALT']!='-']
     vf.to_file(out_vcf)
 
-def main(fname_snv_in, fname_genbank_file, fname_cov_in, fname_snv_out, fname_cov_out):
+def main(fname_snv_in, fname_cov_in, fname_genbank_file, fname_snv_out, fname_cov_out):
 
     # chrom_name = 'NC_045512.2'
     chrom_name = 'NC_001802.1' ##CHANGED MSM
@@ -474,10 +475,22 @@ def main(fname_snv_in, fname_genbank_file, fname_cov_in, fname_snv_out, fname_co
 
     #update_vcf_chrom(fname_snv_in, fname_snv_temp, chrom_name)
 
+    # for vcf_file, coverage_file, out_vcf_file, out_coverage_file in zip(fname_snv_in, fname_cov_in, fname_snv_out, fname_cov_out):
+    #     # annotator = Annotator(gb_file=fname_genbank_file, vcf_file=fname_snv_in + '/' + sample_id + '/mix_12_variants_chromchange.vcf', coverage_file=fname_snv_in + '/' + sample_id + '/coverage.tsv')
+    #     annotator = Annotator(gb_file=fname_genbank_file, vcf_file=vcf_file, coverage_file=coverage_file)
+    #     annotator.annotate_vcf_records()
+    #     annotator.annotate_coverage()
+    #     # annotator.write_vcf(fname_snv_out)
+    #     if not os.path.exists(fname_snv_out):
+    #         os.makedirs(fname_snv_out)
+    #     # os.makedirs(fname_snv_out + '/' + sample_id, exist_ok=True)
+    #     # annotator.write_tsv(fname_snv_out + '/' + sample_id + '/mut_freq.tsv')
+    #     # annotator.write_coverage(fname_snv_out + '/' + sample_id + '/coverage_annotated.tsv')
+    #     annotator.write_tsv(out_vcf_file)
+    #     annotator.write_coverage(out_coverage_file)
     annotator = Annotator(gb_file=fname_genbank_file, vcf_file=fname_snv_in, coverage_file=fname_cov_in)
     annotator.annotate_vcf_records()
     annotator.annotate_coverage()
-    # annotator.write_vcf(fname_snv_out)
     annotator.write_tsv(fname_snv_out)
     annotator.write_coverage(fname_cov_out)
 
@@ -486,13 +499,15 @@ def main(fname_snv_in, fname_genbank_file, fname_cov_in, fname_snv_out, fname_co
 if __name__ == "__main__":
     main(
         snakemake.input.fname_vcf,
-        snakemake.input.ref,
         snakemake.input.fname_cov,
+        snakemake.input.ref,
+        # snakemake.input.fname_output
+        # snakemake.input.fname_cov,
         snakemake.output.fname_vcf,
-        snakemake.output.fname_cov,
+        snakemake.output.fname_cov
         # "./example_files/mix_12_variants_chromchange.vcf",
-        # "./ref/reference_gagpol_only.gb",
         # "./example_files/CAP257/week_54/alignments/coverage.tsv",
+        # "./ref/reference_gagpol_only.gb",
         # "./example_files/mutation_freq.tsv",
         # "./example_files/coverage_annotated.tsv"
     )
