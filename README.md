@@ -1,7 +1,7 @@
 # HIV_DRM_pred_tool
 Drug resistance prediction tool for HIV NGS .vcf files.
 
-## Runing instructions
+## Running instructions
 
 0. (Variant calling should be done with ref/reference.fa gag-pol sequence, not done in this tool. Indexed on ref/reference.fa.fai ).
 1. The current tool uses as input a directory with all samples data organised in directories with their sample ID as names. You should organise your input data the following way:
