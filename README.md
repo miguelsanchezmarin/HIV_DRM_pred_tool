@@ -5,15 +5,15 @@ Drug resistance prediction tool for HIV NGS .vcf files.
 
 0. (Variant calling should be done with ref/reference.fa gag-pol sequence, not done in this tool. Indexed on ref/reference.fa.fai ).
 1. The current tool uses as input a directory with all samples data organised in directories with their sample ID as names. You should organise your input data the following way:
-input_dir/\n
-          |_ sample_ID_1/\n
-                         |_ coverage.tsv\n
-                         |_ snvs.vcf\n
-          |_ sample_ID_2/\n
-                         |_ coverage.tsv\n
-                         |_ snvs.vcf\n
-          |_ ...\n
-          ...\n
+input_dir/  
+          |_ sample_ID_1/  
+                         |_ coverage.tsv  
+                         |_ snvs.vcf  
+          |_ sample_ID_2/  
+                         |_ coverage.tsv  
+                         |_ snvs.vcf  
+          |_ ...  
+          ...  
 
 2. input_dir path should be specified on the Snakefile sample_dir variable (line 14).
 3. If snvs.vcf or coverage.tsv files have a different naming, specify it on the Snakefile annotate_vcf rule input variables fname_vcf and fname_cov respectively (lines 31 and 32).
@@ -34,9 +34,9 @@ And run:
    - env/resistance_pred_env.yml : requirements file for HIV_pred environment used in Snakefile for latter rules.
    - env/snakemake_all.yml : requirements file of both environments above. If active, Snakemake can be run without --use-conda option.
 * HIVDB_rules/
-      - HIVDB_rules/{drug_class}_combinations_score_Stanford_HIVDB : .tsv files with single mutation scores for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/mut-scores/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
-      - HIVDB_rules/{drug_class}_comments_Stanford_HIVDB : .tsv files with single mutation annotations and comments for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/comments/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
-      - HIVDB_rules/{drug_class}_muts_score_Stanford_HIVDB : .tsv files with single mutation scores for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/mut-scores/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
+    - HIVDB_rules/{drug_class}_combinations_score_Stanford_HIVDB : .tsv files with single mutation scores for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/mut-scores/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
+    - HIVDB_rules/{drug_class}_comments_Stanford_HIVDB : .tsv files with single mutation annotations and comments for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/comments/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
+    - HIVDB_rules/{drug_class}_muts_score_Stanford_HIVDB : .tsv files with single mutation scores for each drug class from the HIVDB program (https://hivdb.stanford.edu/dr-summary/mut-scores/PI/). Files downloaded from StanfordHIV Data Base on 11th April 2025.
 * linear_regression_coefficients/
     - linear_regression_coefficients/OLS_{drug}_combinations_tsm_all_folds.txt : for each drug, files with coefficients for the different features (single and combined mutations) comming from Ordinary Least Squares Regression implementation based on Rhee et al. (https://doi.org/10.1073/pnas.0607274103).
 * random_forest_models/
