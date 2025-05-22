@@ -79,4 +79,5 @@ And run:
 |    1000     |    1h 36m 56s  |      12m 18s    |
 
 </div>
+Runs were done withouth --use-conda option, with the snakemake_all environment already active.
 (1GB RAM / core)

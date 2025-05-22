@@ -12,7 +12,7 @@ Output is a report on HIV drug resistance prediction of the sample and these dat
 import os
 sample_dir = "input_vcfs" #directory with a subdirectory for each sample with the sampleID as the name and the .vcf and coverage.tsv files inside.
 sample_list = os.listdir(sample_dir)
-sample_list = sample_list[:500]
+sample_list = sample_list[:6]
 # sample_list = ["CAP30", "CAP54", "CAP80", "CAP135", "CAP161", "CAP191"]
 
 # rule definitions
@@ -137,7 +137,13 @@ rule convert_md_to_pdf:
         """
         pandoc {input.report} -o {output.report} --pdf-engine=tectonic --template=resources/template.tex
         rm {input.report}
-        
+        rm -rf tmpdir_hiv/{wildcards.samples}_PI_* tmpdir_hiv/{wildcards.samples}_INI_* tmpdir_hiv/{wildcards.samples}_NRTI_* tmpdir_hiv/{wildcards.samples}_NNRTI_* tmpdir_hiv/{wildcards.samples}_robustness_*
         """
-        #rm -r tmpdir_hiv/{wildcards.samples}*
-# os.rmdir("tmpdir_hiv") #we remove the temporal directory we created
+        
+
+
+# if os.path.exists("tmpdir_hiv") and os.path.isdir("tmpdir_hiv"):
+#     if len(os.listdir("tmpdir_hiv")) == 0: #if the directoty is already empty we delete it
+#         os.rmdir("tmpdir_hiv")
+    
+
