@@ -12,5 +12,5 @@
 # /env/snakemake_all.yml
 /tmpdir_hiv/*
 /slurm_jobs/*
-/input_vcfs/*
 /generate_vcfs.py
+/input_vcfs/*
