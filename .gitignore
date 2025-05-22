@@ -11,6 +11,6 @@
 /snakemake_trial/*
 # /env/snakemake_all.yml
 /tmpdir_hiv/*
-/slurm*.out
+/slurm-3*.out
 /input_vcfs/*
 /generate_vcfs.py
