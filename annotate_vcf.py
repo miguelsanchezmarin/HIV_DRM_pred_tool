@@ -287,7 +287,7 @@ class GenBank(object):
     def accession(self, value):
 
         if value not in self.records:
-            print("self.record_ids[value]", self.record_ids)
+            # print("self.record_ids[value]", self.record_ids)
             value = self.record_ids[value]
 
         self._accession = value
@@ -465,15 +465,29 @@ def update_vcf_chrom(in_vcf, out_vcf, chrom_name):
     #vf.df = vf.df[vf.df['ALT']!='-']
     vf.to_file(out_vcf)
 
+def update_coverage_chrom(in_cov, out_cov, chrom_name):
+    cov = pd.read_csv(in_cov, sep="\t")
+    #we remove the ref column and add a new one in first position
+    # cov = cov.drop(columns=['ref'])
+    cov['ref'] = chrom_name
+
+    # cov_columns = cov.columns.tolist()
+    # cov = cov[[cov_columns[-1]] + cov_columns[:-1]]
+    # print(cov)
+    cov.to_csv(out_cov, sep="\t", index=False)
+
 def main(fname_snv_in, fname_cov_in, fname_genbank_file, fname_snv_out, fname_cov_out):
 
     # chrom_name = 'NC_045512.2'
     chrom_name = 'NC_001802.1' ##CHANGED MSM
 
     # sample = str(fname_snv_out).split("/variants")[0].split("/")[-4] SILENCED MSM
-    # fname_snv_temp = str(fname_snv_in).split('.vcf')[0]+'.temp.vcf' SILENCED MSM
+    fname_snv_temp = str(fname_snv_in).split('.vcf')[0]+'.temp.vcf'
+    fname_cov_temp = str(fname_cov_in).split('.tsv')[0]+'.temp.tsv'
 
-    #update_vcf_chrom(fname_snv_in, fname_snv_temp, chrom_name)
+    # update_vcf_chrom(fname_snv_in, fname_snv_temp, chrom_name)
+    update_vcf_chrom(fname_snv_in, fname_snv_temp, chrom_name)
+    update_coverage_chrom(fname_cov_in, fname_cov_temp, chrom_name)
 
     # for vcf_file, coverage_file, out_vcf_file, out_coverage_file in zip(fname_snv_in, fname_cov_in, fname_snv_out, fname_cov_out):
     #     # annotator = Annotator(gb_file=fname_genbank_file, vcf_file=fname_snv_in + '/' + sample_id + '/mix_12_variants_chromchange.vcf', coverage_file=fname_snv_in + '/' + sample_id + '/coverage.tsv')
@@ -488,11 +502,13 @@ def main(fname_snv_in, fname_cov_in, fname_genbank_file, fname_snv_out, fname_co
     #     # annotator.write_coverage(fname_snv_out + '/' + sample_id + '/coverage_annotated.tsv')
     #     annotator.write_tsv(out_vcf_file)
     #     annotator.write_coverage(out_coverage_file)
-    annotator = Annotator(gb_file=fname_genbank_file, vcf_file=fname_snv_in, coverage_file=fname_cov_in)
+    annotator = Annotator(gb_file=fname_genbank_file, vcf_file=fname_snv_temp, coverage_file=fname_cov_temp)
     annotator.annotate_vcf_records()
     annotator.annotate_coverage()
     annotator.write_tsv(fname_snv_out)
     annotator.write_coverage(fname_cov_out)
+
+    os.remove(fname_snv_temp), os.remove(fname_cov_temp) #we remove the temp files created
 
 
 

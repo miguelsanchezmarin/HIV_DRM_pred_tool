@@ -5,9 +5,12 @@
 /__pycache__/*
 /HIV_prediction_output/*
 /HIV_resistance_reports/*
+/input_samples/*
+/input_vcfs/*
 /output_vcfs/*
 /snakemake_trial/*
-/env/snakemake_all.yml
+# /env/snakemake_all.yml
 /tmpdir_hiv/*
-/slurm*
+/slurm*.out
 /input_vcfs/*
+/generate_vcfs.py

@@ -1,36 +1,27 @@
 """
 Input to the workflow is a .vcf and coverage.tsv.
-Output is a report on HIV drug resistance prediction of the sample.
+Output is a report on HIV drug resistance prediction of the sample and these data on .tsv machine readable tables.
 
-1. Annotate .vcf and coverage.tsv bp files to Pol gene proteins of interest.
-2. Predict HIV drug resistance and generate a .pdf report on these results.
+1. Annotate .vcf and coverage.tsv bp files to Gag-Pol gene proteins of interest.
+2. Predict HIV drug resistance, estimate the balanced accuracy of the predictions based on the sample coverage and annotate single mutations with HIVDB comments.
+2b. Aggregate all samples into a single machine readable file. One for each of the three tasks.
+3. Generate a per sample .md report on the results of the analysis.
+4. Convert the .md report to .pdf
 
 """
 import os
 sample_dir = "input_vcfs" #directory with a subdirectory for each sample with the sampleID as the name and the .vcf and coverage.tsv files inside.
 sample_list = os.listdir(sample_dir)
-sample_list = [sample_list[0]]
+sample_list = sample_list[:500]
 # sample_list = ["CAP30", "CAP54", "CAP80", "CAP135", "CAP161", "CAP191"]
 
 # rule definitions
 rule all:
     input:
-        # "HIV_resistance_reports/report_{samples}.pdf"
-        # "HIV_resistance_reports/report_000001.pdf",
-        # "HIV_resistance_reports/report_000002.pdf",
-        # "HIV_resistance_reports/report_000003.pdf",
-        # "HIV_resistance_reports/report_000004.pdf",
-        # "HIV_resistance_reports/report_000005.pdf"
-        # expand("snakemake_trial/output_vcfs/{samples}/mut_freq.tsv", samples=["CAP30", "CAP54", "CAP80", "CAP135", "CAP161", "CAP191"]),
-        # expand("snakemake_trial/output_vcfs/{samples}/coverage_annotated.tsv", samples=["CAP30", "CAP54", "CAP80", "CAP135", "CAP161", "CAP191"])
-        # expand("snakemake_trial/output_vcfs/{samples}/coverage_disclaimer.tsv", samples=sample_list),
-        # expand("snakemake_trial/output_vcfs/{samples}/ensemble_predictions.tsv", samples=sample_list),
-        # expand("snakemake_trial/output_vcfs/{samples}/single_mut_annotations.tsv", samples=sample_list),
         "snakemake_trial/output_vcfs/ensemble_predictions.tsv",
         "snakemake_trial/output_vcfs/coverage_disclaimer.tsv",
         "snakemake_trial/output_vcfs/single_mut_annotations.tsv",
         expand("snakemake_trial/output_vcfs/{samples}/report_{samples}.pdf", samples=sample_list)
-
 
 
 ## 1. Annotated vcf and coverage.tsv files with aminoacids
@@ -39,12 +30,9 @@ rule annotate_vcf:
         fname_vcf= sample_dir + "/{samples}/mix_12_variants_chromchange.vcf",
         fname_cov= sample_dir + "/{samples}/coverage.tsv",
         ref="ref/reference_gagpol_only.gb",
-        # dir_output = "output_vcfs"
-        # 
     output:
         fname_vcf="snakemake_trial/output_vcfs/{samples}/mut_freq.tsv",
         fname_cov="snakemake_trial/output_vcfs/{samples}/coverage_annotated.tsv"
-        # fname_cov="snakemake_trial/coverage_annotated.tsv"
     conda:
         "env/annotate_vcf_env.yml"
     script:
