@@ -5,15 +5,17 @@ Drug resistance prediction tool for HIV NGS .vcf files.
 
 0. (Variant calling should be done with ref/reference.fa gag-pol sequence, not done in this tool. Indexed on ref/reference.fa.fai ).
 1. The current tool uses as input a directory with all samples data organised in directories with their sample ID as names. You should organise your input data the following way:
-input_dir/  
-          |_ sample_ID_1/  
-                         |_ coverage.tsv  
-                         |_ snvs.vcf  
-          |_ sample_ID_2/  
-                         |_ coverage.tsv  
-                         |_ snvs.vcf  
-          |_ ...  
-          ...  
+``` bash  
+|--input_dir/  
+|           |-- sample_ID_1/  
+|           |              |-- coverage.tsv  
+|           |              |--snvs.vcf  
+|           |-- sample_ID_2/  
+|           |              |-- coverage.tsv  
+|           |              |-- snvs.vcf  
+|           ...  
+|   
+```  
 
 2. input_dir path should be specified on the Snakefile sample_dir variable (line 14).
 3. If snvs.vcf or coverage.tsv files have a different naming, specify it on the Snakefile annotate_vcf rule input variables fname_vcf and fname_cov respectively (lines 31 and 32).
