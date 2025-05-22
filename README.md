@@ -68,7 +68,7 @@ And run:
 
 ## Scaling analysis
 
-<center>
+<div align="center">
 
 | Samples (n) | Time (4 cores) | Time (32 cores) |
 |:-----------:|:--------------:|:---------------:|
@@ -78,5 +78,5 @@ And run:
 |     500     |     54m 46s    |      7m 50s     |
 |    1000     |    1h 36m 56s  |      12m 18s    |
 
-</center>
+</div>
 (1GB RAM / core)
