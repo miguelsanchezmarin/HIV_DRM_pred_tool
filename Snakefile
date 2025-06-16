@@ -2,7 +2,8 @@
 Input to the workflow is a .vcf and coverage.tsv.
 Output is a report on HIV drug resistance prediction of the sample and these data on .tsv machine readable tables.
 
-1. Annotate .vcf and coverage.tsv bp files to Gag-Pol gene proteins of interest.
+1. Annotate .vcf and coverage.tsv bp files to Gag-Pol gene proteins of interest.(only subtype B)
+1B. Annotate .vcf and coverage.tsv bp files to Pol gene proteins of interest for all subtypes. PRELIMINARY
 2. Predict HIV drug resistance, estimate the balanced accuracy of the predictions based on the sample coverage and annotate single mutations with HIVDB comments.
 2b. Aggregate all samples into a single machine readable file. One for each of the three tasks.
 3. Generate a per sample .md report on the results of the analysis.
