@@ -12,8 +12,6 @@ Output is a report on HIV drug resistance prediction of the sample and these dat
 import os
 sample_dir = "input_vcfs" #directory with a subdirectory for each sample with the sampleID as the name and the .vcf and coverage.tsv files inside.
 sample_list = os.listdir(sample_dir)
-sample_list = sample_list[:6]
-# sample_list = ["CAP30", "CAP54", "CAP80", "CAP135", "CAP161", "CAP191"]
 
 # rule definitions
 rule all:
@@ -37,6 +35,20 @@ rule annotate_vcf:
         "env/annotate_vcf_env.yml"
     script:
         "annotate_vcf.py"
+
+# ## 1B. Annotated vcf and coverage.tsv files with aminoacids for all subtypes. In this case, .vcf files should be annotated with only Pol region sequence (see ref/pol_refs). See README running instructions.
+# rule annotate_vcf:
+#     input:
+#         fname_vcf= sample_dir + "/{samples}/mix_12_variants_chromchange.vcf",
+#         fname_cov= sample_dir + "/{samples}/coverage.tsv",
+#         ref="ref/pol_refs/pol_ref_CONSENSUS_B.fasta"
+#     output:
+#         fname_vcf="snakemake_trial/output_vcfs/{samples}/mut_freq.tsv",
+#         fname_cov="snakemake_trial/output_vcfs/{samples}/coverage_annotated.tsv"
+#     conda:
+#         "env/annotate_vcf_env.yml"
+#     script:
+#         "annotate_pol.py"
 
 ## 2. Drug resistance prediction to machine readable format
 from resistance_prediction import load_hivdb_data, load_lsr_coef, load_random_forest, load_robustness_data #we first load the necessary data for the ensemble imputation and coverage disclaimer
@@ -141,9 +153,5 @@ rule convert_md_to_pdf:
         """
         
 
-
-# if os.path.exists("tmpdir_hiv") and os.path.isdir("tmpdir_hiv"):
-#     if len(os.listdir("tmpdir_hiv")) == 0: #if the directoty is already empty we delete it
-#         os.rmdir("tmpdir_hiv")
     
 

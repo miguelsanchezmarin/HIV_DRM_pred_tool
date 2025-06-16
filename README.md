@@ -24,7 +24,7 @@ Drug resistance prediction tool for HIV NGS .vcf files.
 5. If **you don't want to use --use-conda option** (as I did). You can create a conda environment from the env/snakemake_all.yml file:
 ``` conda env create -f env/snakemake_all.yml ```.
 Activate the environment:
-``` conda activate create -f env/snakemake_all.yml ```.
+``` conda activate snakemake_all ```.
 And run:
 ``` snakemake --cores 4  ```.
 
@@ -81,3 +81,6 @@ And run:
 </div>
 Runs were done withouth --use-conda option, with the snakemake_all environment already active.
 (1GB RAM / core)
+
+## *Running annotation for all subtypes
+Standard and tested annotation is only done for subtype B samples using the whole gag-pol sequence (see instructions above). Annotation for all subtypes was developed but not tested, available to use at your own risk. In this case, variant calling should be done with just the pol sequence from the defined subtype (available in ref/pol_refs). Then, the Snakefile rule 1 should be silenced and the rule 1B should be uncommented and the reference file original used set on the 'ref' variable (line 46). The subtype is automatically retrieved from the FASTA reference. Annotation is done with annotate_pol.py script.

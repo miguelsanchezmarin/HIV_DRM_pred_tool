@@ -1,6 +1,5 @@
 import pandas as pd
 
-# import matplotlib.pyplot as plt
 
 ##Drugs per drug class used in this study
 INIs=['RAL', 'EVG', 'DTG', 'BIC']

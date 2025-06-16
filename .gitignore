@@ -9,8 +9,11 @@
 /input_vcfs/*
 /output_vcfs/*
 /snakemake_trial/*
-# /env/snakemake_all.yml
 /tmpdir_hiv/*
 /slurm_jobs/*
 /generate_vcfs.py
 /input_vcfs/*
+/ref/*.zip
+/ref/pol_refs/*.py
+/ref/pol_refs/*.fa
+/annotate_pol.py

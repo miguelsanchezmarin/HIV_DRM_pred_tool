@@ -150,9 +150,3 @@ def load_robustness_data(pathtodir:str = 'robustness_data'):
                 robustness_data[dataset][muts][drug] = dataset_robustness_data_muts[dataset_robustness_data_muts["Drug"] == drug]["Balanced_Accuracy"].values[0]
 
     return robustness_data
-
-# print(load_hivdb_data())
-# print(load_lsr_coef())
-# print(load_random_forest())
-# print(load_sample_data())
-# print(load_robustness_data())

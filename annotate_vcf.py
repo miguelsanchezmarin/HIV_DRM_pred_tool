@@ -517,13 +517,7 @@ if __name__ == "__main__":
         snakemake.input.fname_vcf,
         snakemake.input.fname_cov,
         snakemake.input.ref,
-        # snakemake.input.fname_output
-        # snakemake.input.fname_cov,
         snakemake.output.fname_vcf,
         snakemake.output.fname_cov
-        # "./example_files/mix_12_variants_chromchange.vcf",
-        # "./example_files/CAP257/week_54/alignments/coverage.tsv",
-        # "./ref/reference_gagpol_only.gb",
-        # "./example_files/mutation_freq.tsv",
-        # "./example_files/coverage_annotated.tsv"
+
     )

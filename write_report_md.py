@@ -2,8 +2,6 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 
-# from multiprocessing import Pool
-# from tqdm import tqdm
 
 from load_data import load_robustness_data
 
@@ -187,11 +185,6 @@ def write_coverage_disclaimer(coverage_tsv, robustness_data, sample_id, handle):
     handle: file handle to write the results.
     '''
 
-    # ###If we don't find "Ensemble" in the handle we raise an error
-    # if not "Ensemble" in handle:
-    #     handle.write("\nCoverage disclaimer is only available for ensemble (HIVDB + Linear Regression + Random Forest) predictions.\n\n")
-    #     return
-
     read_cutoff = coverage_tsv.iloc[0]['Read_Cutoff']
 
     handle.write("\n## Ensemble prediction coverage disclaimer\n\n")
@@ -241,7 +234,7 @@ def robustness_step_plot(robustness_data, dataset: str , coverage_tsv_dataset, s
     
     #we get the accuracy for the coverage step
     # y_coverage = y.loc[coverage_step]["Balanced_Accuracy"]
-    handle.write(f"\nThe estimated balanced accuracy for the {dataset} dataset drug resistance prediction is **{round(y_coverage, 2)}** at {round(coverage_value, 2)}% DRM positions coverage. The reported balanced accuracy for a 100% coverage is {round(max_accuracy,2)}.\n\n")
+    handle.write(f"\nThe estimated balanced accuracy for the {dataset} drug resistance prediction is **{round(y_coverage, 2)}** at {round(coverage_value, 2)}% DRM positions coverage. The reported balanced accuracy for a 100% coverage is {round(max_accuracy,2)}.\n\n")
     
     axs.axvline(x=((100-coverage_value)/10)*0.5 +1, color='red', linewidth = 2, label=f'Your sample ({round(coverage_value, 2)}% coverage)')#we plot a red line at the coverage value
     axs.step(x, y, where = 'post', alpha = 0.7, linewidth = 2, color='blue')
@@ -294,40 +287,5 @@ def main(ensemble_tsv, coverage_tsv, single_mut_annotations_tsv, output_file, ro
     ensemble_preds_table.fillna('No mutations', inplace=True)
     coverage_data = pd.read_csv(coverage_tsv, sep="\t")#, dtype={"Sample_ID":str})
     single_mut_annotations = pd.read_csv(single_mut_annotations_tsv, sep="\t")#, dtype={"Sample_ID":str})
-
-    # robustness_data = load_robustness_data()
-
-    # for sample_ID in ensemble_preds_table["Sample_ID"].unique():
-    #     print(f"Writing report for sample {sample_ID}...")
-    #     sample_ensemble_preds = ensemble_preds_table[ensemble_preds_table["Sample_ID"] == sample_ID]
-    #     sample_coverage_data = coverage_data[coverage_data["Sample_ID"] == sample_ID]
-    #     sample_single_mut_annotations = single_mut_annotations[single_mut_annotations["Sample_ID"] == sample_ID]
-
-    #     write_report_md(sample_ensemble_preds, sample_coverage_data, sample_single_mut_annotations, robustness_data, sample_ID)
-    #     print(f"Report .md for sample {sample_ID} written to HIV_resistance_reports/report_{sample_ID}.md file.")
     
     write_report_md(ensemble_preds_table, coverage_data, single_mut_annotations, output_file, robustness_data, sample_id)
-    
-    # #parallelization trial ###21 seconds for 5 samples
-    # ncores = 4
-    # pool = Pool(ncores)
-    # pool.starmap(
-    #     write_report_md,
-    #     tqdm(
-    #         [(ensemble_preds_table[ensemble_preds_table["Sample_ID"] == sample_ID],
-    #           coverage_data[coverage_data["Sample_ID"] == sample_ID],
-    #           single_mut_annotations[single_mut_annotations["Sample_ID"] == sample_ID],
-    #           robustness_data,
-    #           sample_ID) for sample_ID in ensemble_preds_table["Sample_ID"].unique()]
-    #     )
-    # )
-    # pool.close()
-
-# if __name__ == "__main__":
-#     main(
-#         "HIV_prediction_output/ensemble_predictions.tsv",
-#         "HIV_prediction_output/coverage_disclaimer.tsv",
-#         "HIV_prediction_output/single_mut_annotations.tsv"
-#     )
-    
-##16 seconds for 5 samples
