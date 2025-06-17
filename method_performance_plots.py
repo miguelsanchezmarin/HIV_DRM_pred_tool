@@ -1,9 +1,9 @@
 ###We create barplots with error bars to compare the different methods performance
 import pandas as pd
-from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
+import seaborn as sns
 
 #data for 5 folds
 hivdb = pd.read_csv("method_predictions/HIVDB_performance_5folds.tsv", sep="\t")
@@ -37,9 +37,8 @@ NRTIs=["3TC", "ABC", "AZT", "D4T", "DDI", "TDF"]
 classes_drugs = [INIs, NNRTIs, NRTIs, PIs]
 classes_names = ["INIs", "NNRTIs", "NRTIs", "PIs"]
 
-methods = ["HIVDB", "LSR", "LSR_I", "LARS", "LARS_comb", "G2P_RF", "G2P_Prob", "rf",  "CNN", "HIVDB+LSR_C+RF_P", "HIVDB+LSR_C+LARS_C+RF_P+CNN"]
+methods = ["HIVDB", "LSR", "LSR-I", "LARS", "LARS-I", "RandomForest",  "CNN", "HIVDB+LSR-I+RF", "HIVDB+LSR-I+LARS-I+RF+CNN"]
 
-##ACCURACY
 performance_list = []
 for cl in classes_drugs:
     #we select the drugs in the defined class
@@ -87,7 +86,7 @@ for cl in classes_drugs:
                              
 performance_table = pd.DataFrame(performance_list, columns=["Metric", "Drug_Class", "HIVDB_mean", "HIVDB_std", "LSR_mean", "LSR_std", "LSR_I_mean", "LSR_I_std", "LARS_mean", "LARS_std", "LARS_I_mean", "LARS_I_std", "rf_mean", "rf_std", "CNN_mean", "CNN_std", "small_ensemble_mean", "small_ensemble_std", "large_ensemble_mean", "large_ensemble_std"])
 
-###Now we do a bar plot where we will plot the mean as bars and +-std in the errror bars.
+##PERFORMANCE BARPLOTS (Figure 2)
 
 for metric in ["Accuracy", "Balanced_accuracy", "F1_score", "MCC"]:
 
@@ -164,3 +163,97 @@ for metric in ["Accuracy", "Balanced_accuracy", "F1_score", "MCC"]:
     ax.legend(handles = legend_elements, loc="upper left", bbox_to_anchor=(1,1), ncol=1, title="Method", fontsize="small")
     plt.tight_layout()
     plt.savefig(f"figures/method_performance_{metric.lower()}_barplot.png")
+    print(f"{metric.replace('_',' ')} barplot saved as figures/method_performance_{metric.lower()}_barplot.png")
+
+
+
+#PERFORMANCE HEATMAPS (Supplementary Figures 1-4)
+for metric in ["Accuracy", "Balanced_accuracy", "F1_score", "MCC"]:
+    heatmap_table = pd.DataFrame(index=test_drugs, columns=methods)
+    heatmap_table = heatmap_table.fillna(float(0)).infer_objects(copy=False)
+    for drug in test_drugs:
+        heatmap_table.loc[drug, 'HIVDB'] = float(hivdb[hivdb['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'LSR'] = float(lsr[lsr['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'LSR-I'] = float(lsr_i[lsr_i['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'LARS'] = float(lars[lars['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'LARS-I'] = float(lars_i[lars_i['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'RandomForest'] = float(random_forest[random_forest['Drug'] == drug][metric].mean())
+        if pd.isnull(cnn[cnn['Drug'] == drug][metric].mean()): #for INI drugs there is no CNN predictions
+            heatmap_table.loc[drug, 'CNN'] = '-'
+        else:
+            heatmap_table.loc[drug, 'CNN'] = float(cnn[cnn['Drug'] == drug][metric].mean())
+
+        heatmap_table.loc[drug, 'HIVDB+LSR-I+RF'] = float(small_ensemble[small_ensemble['Drug'] == drug][metric].mean())
+        heatmap_table.loc[drug, 'HIVDB+LSR-I+LARS-I+RF+CNN'] = float(large_ensemble[large_ensemble['Drug'] == drug][metric].mean())
+
+    #we add a Mean row of the tested drugs
+    for j in range(heatmap_table.shape[1]):
+        values = heatmap_table.loc[test_drugs, heatmap_table.columns[j]].values
+        values = [x for x in values if x != '-']
+        mean = sum(values)/len(values)
+        heatmap_table.loc['Mean', heatmap_table.columns[j]] = mean
+
+    #We add a Mean without INIs
+    for j in range(heatmap_table.shape[1]):
+        values = heatmap_table.loc[test_drugs_no_INIs, heatmap_table.columns[j]].values
+        values = [x for x in values if x != '-']# and x != 0]
+        mean = sum(values)/len(values)
+        heatmap_table.loc['Mean_WO_INIs', heatmap_table.columns[j]] = mean
+
+    #we add a row for the mean of drugs in each class
+    heatmap_table.loc['INI'] = heatmap_table.loc[INIs].mean(numeric_only=True)
+    heatmap_table.loc['PI'] = heatmap_table.loc[PIs].mean()
+    heatmap_table.loc['NNRTI'] = heatmap_table.loc[NNRTIs].mean()
+    heatmap_table.loc['NRTI'] = heatmap_table.loc[NRTIs].mean()
+    
+    heatmap_table = heatmap_table.reindex(['RAL', 'EVG', 'DTG', 'BIC', 'INI', 'EFV', 'NVP', 'ETR', 'RPV', 'NNRTI', '3TC', 'ABC', 'AZT', 'D4T', 'DDI', 'TDF', 'NRTI', 'FPV', 'ATV', 'IDV', 'LPV', 'NFV', 'SQV', 'TPV', 'DRV', 'PI', 'Mean_WO_INIs','Mean'])
+    heatmap_table = heatmap_table.round(4)
+
+    #We plot the heatmaps
+    heatmap_table = heatmap_table.apply(pd.to_numeric, errors='coerce')
+    
+    null_coordinates = []   #we get the coordinates of the NaN values
+    min_val, max_val = 1, 0
+    for i in range(heatmap_table.shape[0]):
+        for j in range(heatmap_table.shape[1]):
+            if pd.isnull(heatmap_table.iloc[i, j]):
+                null_coordinates.append((i, j))
+            else:
+                if heatmap_table.iloc[i, j] < min_val:
+                    min_val = heatmap_table.iloc[i, j]
+                if heatmap_table.iloc[i, j] > max_val:
+                    max_val = heatmap_table.iloc[i, j]
+
+    sns.set(font_scale=1.5)
+    fig, ax = plt.subplots(figsize=(20, 20))
+    sns.heatmap(heatmap_table, cmap='crest', ax=ax, vmin=min_val, vmax=max_val)
+    ax.hlines([4, 5, 9, 10, 16, 17, 25, 26,27], *ax.get_xlim(), color='black', lw=2, edgecolor='black')
+    ax.yaxis.set_tick_params(rotation=0)
+    for i in [4, 9, 16, 25, 26,27]:
+        ax.get_yticklabels()[i].set_weight('bold')
+        ax.get_yticklabels()[i].set_size(15)
+
+    for i, j in null_coordinates:
+        ax.add_patch(plt.Rectangle((j, i), 1, 1, color = 'white',  lw=2))
+
+    #we plot the values in the cells
+    for i in range(heatmap_table.shape[0]):
+        for j in range(heatmap_table.shape[1]):
+            if pd.notnull(heatmap_table.iloc[i, j]) and not i in [4, 9, 16, 25, 26,27]:
+                ax.text(j+0.5, i+0.5, round(heatmap_table.iloc[i, j], 3), ha='center', va='center', color='white', fontsize=18)
+            elif i in [4, 9, 16, 25, 26,27]:
+                ax.text(j+0.5, i+0.5, round(heatmap_table.iloc[i, j], 3), ha='center', va='center', color='white', fontsize=18, fontweight='bold')
+
+    ax.set_title(f'{metric.replace("_", " ")} of the different methods\n', fontsize=20, fontweight='bold')
+    ax.set_xlabel('Methods', fontsize=20, fontweight='bold')
+    ax.xaxis.set_label_coords(0.5, -0.1)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=25, horizontalalignment='right')
+    ax.set_ylabel('Drugs', fontsize=20, fontweight='bold')
+
+    labels = ax.get_yticklabels()
+    labels[26] = 'Mean (without INIs)'
+    ax.set_yticklabels(labels)
+    ax.set_xticklabels(["HIVDB", "LSR", "LSR-I", "LARS", "LARS-I", "RandomForest", "CNN", "HIVDB+LSR-I+RF", "HIVDB+LSR-I+LARS-I+RF+CNN"], rotation=25, horizontalalignment='right')
+
+    plt.savefig(f"figures/method_performance_{metric.lower()}_heatmap.png")
+    print(f"{metric.replace('_',' ')} heatmap saved as figures/method_performance_{metric.lower()}_heatmap.png")
