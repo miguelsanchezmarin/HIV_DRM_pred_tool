@@ -1,0 +1,636 @@
+SeqID	PtID	PubYear	RAL	RAL_res	EVG	EVG_res	DTG	DTG_res	BIC	BIC_res	CAB	CAB_res	CompMutList	fold
+100673	0	2007			4.0	Resistant							E10D, H51Y, I72V, S123G, T124A, K127R, D232N	1.0
+100674	1	2007	1.4	Susceptible	14.5	Resistant							E10D, T66I, I72V, S123G, T124A, K127R, D232N	0.0
+100675	2	2007	9.8	Resistant	33.7	Resistant							E10D, T66I, I72V, F121Y, S123G, T124A, K127R, D232N	0.0
+100676	3	2007	1.0	Susceptible	37.4	Resistant							E10D, T66I, I72V, S123G, T124A, K127R, S153Y, D232N	2.0
+100677	4	2007	1.0	Susceptible	93.8	Resistant							E10D, T66I, I72V, S123G, T124A, K127R, D232N, R263K	3.0
+100678	5	2007	6.0	Resistant	32.5	Resistant							E10D, I72V, E92Q, S123G, T124A, K127R, D232N	4.0
+100679	6	2007	7.7	Resistant	76.0	Resistant							E10D, I72V, E92Q, S123G, T124A, K127R, S147G, D232N	3.0
+100680	7	2007	6.4	Resistant	100.0	Resistant							E10D, H51Y, I72V, E92Q, S123G, T124A, K127R, S147G, D232N	1.0
+100681	8	2007	5.7	Resistant	100.0	Resistant							E10D, H51Y, I72V, E92Q, S123G, T124A, K127R, S147G, E157Q, D232N	2.0
+100682	9	2007	6.9	Resistant	10.7	Resistant							E10D, I72V, F121Y, S123G, T124A, K127R, D232N	4.0
+100683	10	2007			8.0	Resistant							E10D, I72V, S123G, T124A, K127R, S147G, D232N	4.0
+100684	11	2007	1.6	Susceptible	4.4	Resistant							E10D, I72V, S123G, T124A, K127R, S153Y, D232N	1.0
+100685	12	2007			2.5	Susceptible							E10D, I72V, S123G, T124A, K127R, E157Q, D232N	2.0
+100686	13	2007	1.4	Susceptible	4.9	Resistant							E10D, I72V, S123G, T124A, K127R, D232N, R263K	0.0
+105335	14	2010	1.4	Susceptible	15.0	Resistant							T66I, I72V, I113V, L234V	4.0
+105336	15	2010	6.0	Resistant	33.0	Resistant							I72V, E92Q, I113V, L234V	3.0
+105337	16	2010	0.9	Susceptible	0.7	Susceptible							I72V, I113V, E138K, L234V	0.0
+105338	17	2010	2.0	Susceptible	5.0	Resistant							I72V, I113V, G140S, L234V	3.0
+105339	18	2010	1.0	Susceptible	8.0	Resistant							I72V, I113V, S147G, L234V	1.0
+105340	19	2010	20.0	Resistant	6.4	Resistant							I72V, I113V, Q148H, L234V	2.0
+105341	20	2010	34.0	Resistant	67.0	Resistant							I72V, I113V, Q148K, L234V	4.0
+105342	21	2010	30.0	Resistant	100.0	Resistant							I72V, I113V, Q148R, L234V	0.0
+105343	22	2010	23.0	Resistant	38.0	Resistant							I72V, I113V, N155H, L234V	2.0
+105344	23	2010	2.5	Susceptible	46.0	Resistant							T66I, I72V, I113V, S147G, L234V	0.0
+105345	24	2010	33.0	Resistant	100.0	Resistant							T66I, I72V, E92Q, I113V, L234V	4.0
+105346	25	2010	100.0	Resistant	100.0	Resistant							I72V, E92Q, I113V, N155H, L234V	1.0
+105347	26	2010	100.0	Resistant	100.0	Resistant							I72V, I113V, G140S, Q148H, L234V	3.0
+105348	27	2010	34.0	Resistant	100.0	Resistant							I72V, I113V, E138K, S147G, Q148R, L234V	1.0
+123016	28	2010	0.9	Susceptible	0.9	Susceptible							E10D, L68I, I72V, S123G, T124A, K127R, D232N	0.0
+123017	29	2010	1.0	Susceptible	1.6	Susceptible							E10D, L68V, I72V, S123G, T124A, K127R, D232N	2.0
+123018	30	2010	6.0	Resistant	40.0	Resistant							E10D, I72V, E92Q, S123G, T124A, K127R, D232N	4.0
+123019	31	2010	7.6	Resistant	43.0	Resistant							E10D, L68I, I72V, E92Q, S123G, T124A, K127R, D232N	3.0
+123020	32	2010	14.0	Resistant	67.0	Resistant							E10D, L68V, I72V, E92Q, S123G, T124A, K127R, D232N	3.0
+123021	33	2010	21.0	Resistant	36.0	Resistant							E10D, I72V, S123G, T124A, K127R, N155H, D232N	0.0
+123022	34	2010	24.0	Resistant	51.0	Resistant							E10D, L68V, I72V, S123G, T124A, K127R, N155H, D232N	1.0
+123023	35	2010	35.0	Resistant	100.0	Resistant							E10D, I72V, S123G, T124A, K127R, Q148R, D232N	2.0
+123024	36	2010	53.0	Resistant	100.0	Resistant							E10D, L68V, I72V, S123G, T124A, K127R, Q148R, D232N	4.0
+123025	37	2010	27.0	Resistant	50.0	Resistant							E10D, I72V, S123G, T124A, K127R, Q148K, D232N	2.0
+123026	38	2010	1.6	Susceptible	4.0	Resistant							E10D, I72V, S123G, T124A, K127R, G140S, D232N	0.0
+123027	39	2010	18.0	Resistant	5.3	Resistant							E10D, I72V, S123G, T124A, K127R, Q148H, D232N	3.0
+123028	40	2010	100.0	Resistant	100.0	Resistant							E10D, I72V, S123G, T124A, K127R, G140S, Q148H, D232N	1.0
+123029	41	2010	0.9	Susceptible	0.6	Susceptible							E10D, I72V, S123G, T124A, K127R, E138K, D232N	0.0
+123030	42	2010	1.0	Susceptible	9.4	Resistant							E10D, I72V, S123G, T124A, K127R, S147G, D232N	4.0
+123031	43	2010	34.0	Resistant	100.0	Resistant							E10D, I72V, S123G, T124A, K127R, E138K, S147G, Q148R, D232N	1.0
+123032	44	2010	100.0	Resistant	100.0	Resistant							E10D, I72V, E92Q, S123G, T124A, K127R, N155H, D232N	2.0
+123033	45	2010	100.0	Resistant	100.0	Resistant							E10D, I72V, S123G, T124A, K127R, Q148R, N155H, D232N	1.0
+219526	46	2013	0.9	Susceptible	7.6	Resistant	0.3	Susceptible					T66A	0.0
+219527	47	2013	1.1	Susceptible	4.1	Resistant	1.0	Susceptible					S147G	4.0
+219528	48	2013	15.0	Resistant	4.9	Resistant	0.4	Susceptible					Q148H	2.0
+219529	49	2013	37.0	Resistant	94.0	Resistant	1.5	Susceptible					Q148K	4.0
+219530	50	2013	29.0	Resistant	92.0	Resistant	1.1	Susceptible					Q148R	3.0
+219531	51	2013	12.0	Resistant	30.0	Resistant	1.3	Susceptible					N155H	1.0
+219532	52	2013	13.0	Resistant	94.0	Resistant	0.6	Susceptible					T66I, E92Q	2.0
+219533	53	2013	53.0	Resistant	94.0	Resistant	3.4	Susceptible					T66I, Q148R	1.0
+219534	54	2013	19.0	Resistant	94.0	Resistant	1.1	Susceptible					T66I, N155H	0.0
+219535	55	2013	95.0	Resistant	94.0	Resistant	4.2	Resistant					E92Q, Q148R	3.0
+219536	56	2013	65.0	Resistant	94.0	Resistant	1.9	Susceptible					E92Q, N155H	2.0
+219537	57	2013	0.9	Susceptible	9.7	Resistant	0.3	Susceptible					T66I	1.0
+219538	58	2013	100.0	Resistant	94.0	Resistant	6.4	Resistant					Q148R, N155H	0.0
+219539	59	2013	8.0	Resistant	40.0	Resistant	1.7	Susceptible					T66K	3.0
+219540	60	2013	1.5	Susceptible	9.0	Resistant	1.0	Susceptible					E92G	4.0
+219541	61	2013	4.5	Resistant	26.0	Resistant	1.3	Susceptible					E92Q	0.0
+219542	62	2013	1.2	Susceptible	2.4	Susceptible	0.5	Susceptible					T97A	3.0
+219543	63	2013	3.4	Susceptible	1.1	Susceptible	0.8	Susceptible					Y143C	1.0
+219544	64	2013	2.1	Susceptible	1.2	Susceptible	0.9	Susceptible					Y143H	2.0
+219545	65	2013	18.0	Resistant	2.1	Susceptible	1.3	Susceptible					Y143R	4.0
+255237	66	2013	1.0	Susceptible	2.0	Susceptible	1.0	Susceptible					H51Y, I72V, I113V, L234V	4.0
+255238	67	2013	1.0	Susceptible	3.0	Susceptible	2.0	Susceptible					I72V, I113V, L234V, R263K	2.0
+255239	68	2013	3.0	Susceptible	42.0	Resistant	7.0	Resistant					H51Y, I72V, I113V, L234V, R263K	0.0
+259377	69	2013	30.9	Resistant	4.1	Resistant							I72V, L74M, I113V, Y143R, L234V	1.0
+259378	70	2013	23.9	Resistant	5.0	Resistant							I72V, L74M, T97A, I113V, Y143S, L234V	3.0
+259379	71	2013	21.8	Resistant	3.0	Susceptible							I72V, I113V, Y143R, G163R, L234V	0.0
+259380	72	2013	14.1	Resistant	3.5	Susceptible							I72V, T97A, I113V, Y143S, L234V	1.0
+259381	73	2013	100.0	Resistant	61.0	Resistant							I72V, L74M, T97A, I113V, Y143A, S230R, L234V	3.0
+259382	74	2013	23.1	Resistant	4.6	Resistant							I72V, I113V, Y143A, G163R, L234V	4.0
+259383	75	2013	4.4	Resistant	1.5	Susceptible							I72V, I113V, Y143C, L234V	2.0
+259384	76	2013	39.0	Resistant	8.8	Resistant							I72V, L74I, T97A, I113V, Y143G, L234V	0.0
+259385	77	2013	100.0	Resistant	45.0	Resistant							I72V, L74M, T97A, I113V, Y143R, S230R, L234V	2.0
+259386	78	2013	14.8	Resistant	3.2	Susceptible							I72V, I113V, Y143G, G163R, L234V	1.0
+259387	79	2013	45.0	Resistant	9.8	Resistant							I72V, L74I, T97A, I113V, Y143A, L234V	3.0
+259388	80	2013	6.7	Resistant	2.2	Susceptible							I72V, L74M, I113V, Y143C, L234V	4.0
+259389	81	2013	9.9	Resistant	3.9	Susceptible							I72V, L74M, T97A, I113V, Y143H, L234V	2.0
+259390	82	2013	100.0	Resistant	55.0	Resistant							I72V, L74I, T97A, I113V, Y143G, S230R, L234V	3.0
+259391	83	2013	12.7	Resistant	4.4	Resistant							I72V, T97A, I113V, Y143H, G163R, L234V	0.0
+259392	84	2013	2.7	Susceptible	1.8	Susceptible							I72V, I113V, Y143H, G163R, L234V	1.0
+259393	85	2013	100.0	Resistant	34.0	Resistant							I72V, L74I, T97A, I113V, Y143R, S230R, L234V	4.0
+259394	86	2013	11.1	Resistant	4.4	Resistant							I72V, L74I, T97A, I113V, Y143H, L234V	3.0
+259395	87	2013	7.1	Resistant	2.7	Susceptible							I72V, L74M, I113V, Y143S, L234V	1.0
+259396	88	2013	15.2	Resistant	2.9	Susceptible							I72V, L74M, T97A, I113V, Y143C, L234V	4.0
+259397	89	2013	100.0	Resistant	34.0	Resistant							I72V, T97A, I113V, Y143R, G163R, L234V	0.0
+259398	90	2013	7.7	Resistant	3.0	Susceptible							I72V, L74I, I113V, Y143S, L234V	2.0
+259399	91	2013	19.6	Resistant	2.9	Susceptible							I72V, I113V, Y143R, L234V	4.0
+259400	92	2013	22.3	Resistant	9.0	Resistant							I72V, L74M, T97A, I113V, Y143H, S230R, L234V	3.0
+259401	93	2013	100.0	Resistant	39.0	Resistant							I72V, T97A, I113V, Y143R, S230R, L234V	0.0
+259402	94	2013	20.5	Resistant	7.0	Resistant							I72V, L74I, T97A, I113V, Y143H, S230R, L234V	1.0
+259403	95	2013	8.2	Resistant	1.6	Susceptible							I72V, I113V, Y143C, G163R, L234V	2.0
+259404	96	2013	100.0	Resistant	25.0	Resistant							I72V, L74M, T97A, I113V, Y143R, L234V	3.0
+259405	97	2013	18.7	Resistant	5.9	Resistant							I72V, I113V, Y143S, S230R, L234V	4.0
+259406	98	2013	40.0	Resistant	8.0	Resistant							I72V, L74M, T97A, I113V, Y143A, L234V	2.0
+259407	99	2013	100.0	Resistant	55.0	Resistant							I72V, L74M, T97A, I113V, Y143G, S230R, L234V	0.0
+259408	100	2013	3.9	Susceptible	2.5	Susceptible							I72V, I113V, Y143H, S230R, L234V	1.0
+259409	101	2013	91.6	Resistant	26.0	Resistant							I72V, T97A, I113V, Y143S, S230R, L234V	3.0
+259410	102	2013	100.0	Resistant	49.0	Resistant							I72V, L74I, T97A, I113V, Y143S, S230R, L234V	0.0
+259411	103	2013	24.2	Resistant	4.5	Resistant							I72V, I113V, Y143R, S230R, L234V	4.0
+259412	104	2013	67.4	Resistant	18.0	Resistant							I72V, T97A, I113V, Y143A, G163R, L234V	1.0
+259413	105	2013	76.1	Resistant	25.0	Resistant							I72V, T97A, I113V, Y143C, S230R, L234V	3.0
+259414	106	2013	11.2	Resistant	3.1	Susceptible							I72V, L74I, I113V, Y143G, L234V	2.0
+259415	107	2013	100.0	Resistant	50.0	Resistant							I72V, L74M, T97A, I113V, Y143S, S230R, L234V	4.0
+259416	108	2013	8.0	Resistant	2.5	Susceptible							I72V, I113V, Y143A, L234V	2.0
+259417	109	2013	100.0	Resistant	53.0	Resistant							I72V, T97A, I113V, Y143A, S230R, L234V	0.0
+259418	110	2013	100.0	Resistant	33.0	Resistant							I72V, L74M, T97A, I113V, Y143C, S230R, L234V	3.0
+259419	111	2013	10.0	Resistant	2.8	Susceptible							I72V, T97A, I113V, Y143C, L234V	4.0
+259420	112	2013	27.9	Resistant	4.9	Resistant							I72V, T97A, I113V, Y143C, G163R, L234V	1.0
+259421	113	2013	24.3	Resistant	7.1	Resistant							I72V, I113V, Y143G, S230R, L234V	0.0
+259422	114	2013	3.2	Susceptible	1.9	Susceptible							I72V, L74M, I113V, Y143H, L234V	2.0
+259423	115	2013	11.1	Resistant	3.0	Susceptible							I72V, L74M, I113V, Y143G, L234V	0.0
+259424	116	2013	15.6	Resistant	4.1	Resistant							I72V, L74I, I113V, Y143A, L234V	3.0
+259425	117	2013	100.0	Resistant	49.0	Resistant							I72V, T97A, I113V, Y143G, S230R, L234V	1.0
+259426	118	2013	15.3	Resistant	4.0	Resistant							I72V, L74M, I113V, Y143A, L234V	4.0
+259427	119	2013	13.0	Resistant	5.1	Resistant							I72V, T97A, I113V, Y143H, S230R, L234V	2.0
+259428	120	2013	70.0	Resistant	8.0	Resistant							I72V, T97A, I113V, Y143R, L234V	4.0
+259429	121	2013	4.1	Resistant	2.3	Susceptible							I72V, L74I, I113V, Y143H, L234V	0.0
+259430	122	2013	6.8	Resistant	2.6	Susceptible							I72V, T97A, I113V, Y143H, L234V	1.0
+259431	123	2013	38.9	Resistant	4.3	Resistant							I72V, L74I, I113V, Y143R, L234V	1.0
+259432	124	2013	6.2	Resistant	2.1	Susceptible							I72V, I113V, Y143G, L234V	3.0
+259433	125	2013	9.5	Resistant	2.4	Susceptible							I72V, I113V, Y143S, G163R, L234V	1.0
+259434	126	2013	39.0	Resistant	9.1	Resistant							I72V, I113V, Y143A, S230R, L234V	0.0
+259435	127	2013	32.9	Resistant	6.8	Resistant							I72V, L74M, T97A, I113V, Y143G, L234V	2.0
+259436	128	2013	100.0	Resistant	35.0	Resistant							I72V, L74I, T97A, I113V, Y143C, S230R, L234V	3.0
+259437	129	2013	60.3	Resistant	9.8	Resistant							I72V, T97A, I113V, Y143G, G163R, L234V	4.0
+259438	130	2013	4.8	Resistant	1.7	Susceptible							I72V, I113V, Y143S, L234V	2.0
+259439	131	2013	100.0	Resistant	66.0	Resistant							I72V, L74I, T97A, I113V, Y143A, S230R, L234V	3.0
+259440	132	2013	21.2	Resistant	4.2	Resistant							I72V, L74I, T97A, I113V, Y143C, L234V	0.0
+259441	133	2013	27.2	Resistant	7.1	Resistant							I72V, T97A, I113V, Y143A, L234V	4.0
+259442	134	2013	100.0	Resistant	29.0	Resistant							I72V, L74I, T97A, I113V, Y143R, L234V	1.0
+259443	135	2013	16.4	Resistant	4.0	Resistant							I72V, T97A, I113V, Y143G, L234V	0.0
+259444	136	2013	2.6	Susceptible	1.4	Susceptible							I72V, I113V, Y143H, L234V	2.0
+259445	137	2013	7.3	Resistant	2.2	Susceptible							I72V, L74I, I113V, Y143C, L234V	1.0
+259446	138	2013	24.2	Resistant	5.1	Resistant							I72V, L74I, T97A, I113V, Y143S, L234V	4.0
+259447	139	2013	15.0	Resistant	4.5	Resistant							I72V, I113V, Y143C, S230R, L234V	3.0
+259448	140	2013	37.9	Resistant	5.2	Resistant							I72V, T97A, I113V, Y143S, G163R, L234V	4.0
+402079	141	2016	1.4	Susceptible	5.0	Resistant	0.8	Susceptible					G140S	2.0
+402080	142	2016	1.0	Susceptible	2.8	Susceptible	1.2	Susceptible					H51Y	0.0
+402081	143	2016	1.4	Susceptible	1.4	Susceptible	1.6	Susceptible					E157K	3.0
+402083	144	2016	0.8	Susceptible	2.2	Susceptible	0.8	Susceptible					Q146K	1.0
+402086	145	2016	1.0	Susceptible	4.2	Resistant	0.6	Susceptible					I72A	1.0
+402087	146	2016	1.1	Susceptible	6.1	Resistant	0.6	Susceptible					I72N	3.0
+402089	147	2016	1.0	Susceptible	15.0	Resistant	1.3	Susceptible					Q146L	0.0
+402090	148	2016	1.3	Susceptible	1.8	Susceptible	1.1	Susceptible					E157Q	2.0
+402092	149	2016	1.2	Susceptible	1.6	Susceptible	1.0	Susceptible					E170A	4.0
+402093	150	2016	1.0	Susceptible	1.9	Susceptible	0.9	Susceptible					S119P	2.0
+402095	151	2016	1.4	Susceptible	2.7	Susceptible	0.8	Susceptible					V151A	4.0
+402096	152	2016	1.2	Susceptible	1.5	Susceptible	0.9	Susceptible					G163K	0.0
+402097	153	2016	1.4	Susceptible	2.9	Susceptible	0.6	Susceptible					T97A	2.0
+402098	154	2016	0.9	Susceptible	1.7	Susceptible	0.6	Susceptible					L68V	1.0
+402100	155	2016	0.9	Susceptible	1.9	Susceptible	0.7	Susceptible					L68I	4.0
+402101	156	2016	1.2	Susceptible	2.7	Susceptible	1.9	Susceptible					S153F	3.0
+402103	157	2016	0.7	Susceptible	28.0	Resistant	0.3	Susceptible					P145S	2.0
+402104	158	2016	1.1	Susceptible	6.1	Resistant	0.5	Susceptible					G140C	0.0
+402105	159	2016	1.2	Susceptible	1.7	Susceptible	0.7	Susceptible					L74M	1.0
+402106	160	2016	2.7	Susceptible	5.4	Resistant	0.7	Susceptible					G140A	3.0
+402107	161	2016	1.3	Susceptible	1.9	Susceptible	1.1	Susceptible					Q95K	0.0
+402109	162	2016	1.2	Susceptible	1.7	Susceptible	1.0	Susceptible					Q95R	1.0
+402110	163	2016	1.3	Susceptible	1.6	Susceptible	1.0	Susceptible					S119T	2.0
+402111	164	2016	0.8	Susceptible	1.2	Susceptible	0.9	Susceptible					E138K	3.0
+402113	165	2016	1.1	Susceptible	4.6	Resistant	1.7	Susceptible					R263K	4.0
+402114	166	2016	1.1	Susceptible	2.4	Susceptible	0.9	Susceptible					I72T	2.0
+402115	167	2016	0.8	Susceptible	6.5	Resistant	0.5	Susceptible					Q146P	4.0
+402116	168	2016	3.2	Susceptible	100.0	Resistant	2.2	Susceptible					Q146I	0.0
+402117	169	2016	1.3	Susceptible	1.8	Susceptible	1.1	Susceptible					G163R	1.0
+402118	170	2016	15.0	Resistant	20.0	Resistant	1.6	Susceptible					V151L	3.0
+402119	171	2016	1.2	Susceptible	1.5	Susceptible	1.1	Susceptible					A128T	3.0
+402120	172	2016	1.1	Susceptible	1.3	Susceptible	0.9	Susceptible					E138A	0.0
+402121	173	2016	1.6	Susceptible	4.9	Resistant	1.4	Susceptible					Q146R	1.0
+402122	174	2016	1.2	Susceptible	3.0	Susceptible	2.1	Susceptible					S153Y	2.0
+402123	175	2016	0.9	Susceptible	1.9	Susceptible	1.0	Susceptible					S153A	4.0
+402125	176	2016	1.2	Susceptible	1.5	Susceptible	1.1	Susceptible					M50I	2.0
+402127	177	2016	1.3	Susceptible	2.1	Susceptible	1.1	Susceptible					S119R	0.0
+402128	178	2016	1.1	Susceptible	1.5	Susceptible	0.9	Susceptible					S119G	1.0
+402130	179	2016	5.3	Resistant	16.0	Resistant	0.6	Susceptible					F121Y	3.0
+465597	180	2018	0.8	Susceptible	8.6	Resistant	0.4	Susceptible	0.4	Susceptible			T66I	4.0
+465598	181	2018	1.4	Susceptible	2.2	Susceptible	1.1	Susceptible	1.4	Susceptible			S153F	0.0
+465599	182	2018	0.6	Susceptible	30.0	Resistant	0.6	Susceptible	0.6	Susceptible			T66I, S153F	3.0
+465600	183	2018	1.3	Susceptible	0.8	Susceptible	0.8	Susceptible	1.0	Susceptible			E157K	1.0
+465601	184	2018	1.1	Susceptible	2.4	Susceptible	1.7	Susceptible	2.0	Susceptible			S153Y	4.0
+465602	185	2018	0.6	Susceptible	1.3	Susceptible	1.2	Susceptible	1.2	Susceptible			L234F	2.0
+465603	186	2018	0.7	Susceptible	3.0	Susceptible	1.9	Susceptible	2.2	Susceptible			S153Y, L234F	3.0
+465604	187	2018	100.0	Resistant	100.0	Resistant	1.0	Susceptible	2.1	Susceptible			T66I, Q148K	4.0
+465605	188	2018	100.0	Resistant	100.0	Resistant	3.2	Susceptible	4.4	Resistant			E138K, Q148K	0.0
+465606	189	2018	100.0	Resistant	100.0	Resistant	34.0	Resistant	54.0	Resistant			T66I, E138K, Q148K	1.0
+465607	190	2018	100.0	Resistant	100.0	Resistant	3.3	Susceptible	3.7	Resistant			T66I, E138K, Q148R	3.0
+465608	191	2018	22.0	Resistant	69.0	Resistant	0.7	Susceptible	0.9	Susceptible			Q148K	2.0
+465609	192	2018	0.7	Susceptible	0.9	Susceptible	0.7	Susceptible	0.8	Susceptible			E138K	4.0
+465610	193	2018	1.1	Susceptible	1.0	Susceptible	0.6	Susceptible	0.5	Susceptible				0.0
+465611	194	2018	0.7	Susceptible	2.1	Susceptible	1.2	Susceptible	2.0	Susceptible			S153Y	4.0
+465612	195	2018	1.2	Susceptible	2.8	Susceptible	0.6	Susceptible	0.6	Susceptible			G140A	1.0
+465613	196	2018	77.0	Resistant	100.0	Resistant	2.8	Susceptible	2.3	Susceptible			G140A, Q148R	3.0
+465614	197	2018	100.0	Resistant	100.0	Resistant	13.0	Resistant	18.0	Resistant			E138K, G140A, Q148R	2.0
+465615	198	2018	1.0	Susceptible	2.4	Susceptible	0.9	Susceptible	1.1	Susceptible			G140E	0.0
+465617	199	2018	0.7	Susceptible	3.3	Susceptible	1.1	Susceptible	1.1	Susceptible			S147G	4.0
+465618	200	2018	4.3	Resistant	24.0	Resistant	1.3	Susceptible	1.1	Susceptible			E92Q	1.0
+465619	201	2018	1.0	Susceptible	1.0	Susceptible	0.5	Susceptible	0.4	Susceptible			L74M	2.0
+465620	202	2018	25.0	Resistant	54.0	Resistant	2.3	Susceptible	1.4	Susceptible			E92Q, G140A	3.0
+465621	203	2018	51.0	Resistant	100.0	Resistant	1.7	Susceptible	1.6	Susceptible			E138K, Q148R	0.0
+465622	204	2018	99.0	Resistant	100.0	Resistant	2.2	Susceptible	2.1	Susceptible			Q148R, N155H	3.0
+465623	205	2018	27.0	Resistant	81.0	Resistant	0.6	Susceptible	0.6	Susceptible			Q148R	4.0
+465624	206	2018	7.2	Resistant	23.0	Resistant	1.5	Susceptible	1.5	Susceptible			L45Q, T115H	1.0
+465625	207	2018	0.6	Susceptible	3.2	Susceptible	0.7	Susceptible	0.7	Susceptible			I72A	2.0
+465626	208	2018	8.2	Resistant	36.0	Resistant	1.1	Susceptible	1.0	Susceptible			I72A, N155H	2.0
+465627	209	2018	4.6	Resistant	17.0	Resistant	1.5	Susceptible	1.4	Susceptible			S24G, N155H, D253E	0.0
+465628	210	2018	12.0	Resistant	30.0	Resistant	1.2	Susceptible	1.2	Susceptible			N155H	1.0
+465629	211	2018	0.7	Susceptible	84.0	Resistant	1.3	Susceptible	1.5	Susceptible			T66I, R263K	3.0
+465630	212	2018	1.0	Susceptible	2.6	Susceptible	1.5	Susceptible	1.6	Susceptible			R263K	4.0
+467183	213	2019	1.6	Susceptible	3.8	Susceptible	0.6	Susceptible	0.6	Susceptible			T97A	0.0
+467184	214	2018	1.1	Susceptible	2.0	Susceptible	0.7	Susceptible	0.8	Susceptible			T97S	1.0
+467185	215	2018	1.0	Susceptible	1.8	Susceptible	0.6	Susceptible	0.5	Susceptible			T97I	4.0
+467186	216	2018	1.5	Susceptible	2.8	Susceptible	0.6	Susceptible	0.4	Susceptible			T97V	3.0
+467187	217	2019	1.1	Susceptible	1.5	Susceptible	1.1	Susceptible	1.0	Susceptible			M50I	2.0
+467188	218	2018	1.2	Susceptible	2.0	Susceptible	1.1	Susceptible	0.9	Susceptible			G70R	4.0
+467189	219	2018	1.2	Susceptible	1.8	Susceptible	1.0	Susceptible	1.0	Susceptible				0.0
+467190	220	2018	1.1	Susceptible	1.7	Susceptible	1.0	Susceptible	0.9	Susceptible			L74I	1.0
+467191	221	2019	1.2	Susceptible	1.7	Susceptible	0.7	Susceptible	0.7	Susceptible			L74M	0.0
+467192	222	2018	0.8	Susceptible	1.1	Susceptible	0.7	Susceptible	0.7	Susceptible			A91E	3.0
+467193	223	2018	6.2	Resistant	4.9	Resistant	6.1	Resistant	3.4	Susceptible			G118R	2.0
+467194	224	2019	1.1	Susceptible	1.5	Susceptible	0.9	Susceptible	0.8	Susceptible			S119G	0.0
+467195	225	2019	1.0	Susceptible	1.9	Susceptible	0.9	Susceptible	0.9	Susceptible			S119P	2.0
+467196	226	2019	1.3	Susceptible	2.1	Susceptible	1.1	Susceptible	1.1	Susceptible			S119R	1.0
+467197	227	2019	1.3	Susceptible	1.6	Susceptible	1.0	Susceptible	0.9	Susceptible			S119T	4.0
+467198	228	2019	5.3	Resistant	16.0	Resistant	0.6	Susceptible	0.4	Susceptible			F121Y	3.0
+467199	229	2018	1.1	Susceptible	1.5	Susceptible	1.0	Susceptible	1.0	Susceptible			T122I	1.0
+467200	230	2019	1.3	Susceptible	1.8	Susceptible	1.1	Susceptible	1.1	Susceptible			G163R	0.0
+467201	231	2018	1.6	Susceptible	3.5	Susceptible	0.7	Susceptible	0.6	Susceptible			M50I, T97A	3.0
+467202	232	2018	2.0	Susceptible	3.7	Susceptible	0.6	Susceptible	0.5	Susceptible			T97A	2.0
+467203	233	2018	2.5	Susceptible	3.7	Susceptible	0.7	Susceptible	0.6	Susceptible			L74I, T97A	4.0
+467204	234	2018	2.8	Susceptible	4.9	Resistant	0.6	Susceptible	0.5	Susceptible			L74M, T97A	0.0
+467205	235	2018	20.0	Resistant	8.6	Resistant	11.0	Resistant	2.8	Susceptible			T97A, G118R	2.0
+467206	236	2018	2.5	Susceptible	5.8	Resistant	0.7	Susceptible	0.3	Susceptible			T97A, S119G	1.0
+467207	237	2018	2.2	Susceptible	9.5	Resistant	0.6	Susceptible	0.5	Susceptible			T97A, S119P	4.0
+467208	238	2018	3.5	Susceptible	13.0	Resistant	1.1	Susceptible	0.7	Susceptible			T97A, S119R	3.0
+467209	239	2018	2.0	Susceptible	5.2	Resistant	0.6	Susceptible	0.4	Susceptible			T97A, S119T	3.0
+467210	240	2018	2.2	Susceptible	2.9	Susceptible	1.2	Susceptible	1.0	Susceptible			T97A, G163R	1.0
+467211	241	2018	1.6	Susceptible	2.3	Susceptible	0.7	Susceptible	0.5	Susceptible			L74M	0.0
+467212	242	2018	1.5	Susceptible	1.7	Susceptible	1.1	Susceptible	0.9	Susceptible			T122I	4.0
+467213	243	2018	0.9	Susceptible	2.4	Susceptible	0.7	Susceptible	0.6	Susceptible			L74M, S119P	3.0
+467214	244	2018	1.7	Susceptible	2.8	Susceptible	0.9	Susceptible	0.7	Susceptible			L74M, S119R	4.0
+467215	245	2018	14.0	Resistant	74.0	Resistant	1.1	Susceptible	0.7	Susceptible			S119R, F121Y	1.0
+467216	246	2018	3.6	Susceptible	8.9	Resistant	0.5	Susceptible	0.4	Susceptible			L74M, T97A, S119G	2.0
+467217	247	2018	4.4	Resistant	17.0	Resistant	0.6	Susceptible	0.5	Susceptible			L74M, T97A, S119P	0.0
+467218	248	2018	4.2	Resistant	18.0	Resistant	0.8	Susceptible	0.6	Susceptible			L74M, T97A, S119R	1.0
+467219	249	2018	2.6	Susceptible	4.1	Resistant	0.6	Susceptible	0.5	Susceptible			T97A, G118R, S119R	2.0
+467220	250	2018	3.2	Susceptible	7.8	Resistant	0.5	Susceptible	0.5	Susceptible			L74M, T97A, S119T	0.0
+467221	251	2018	3.3	Susceptible	4.9	Resistant	0.6	Susceptible	0.5	Susceptible			L74M, T97A	1.0
+467222	252	2018	4.8	Resistant	26.0	Resistant	0.9	Susceptible	0.6	Susceptible			L74M, T97A, S119R	2.0
+467223	253	2018	1.9	Susceptible	4.0	Resistant	0.9	Susceptible	0.8	Susceptible			L74M, S119R	2.0
+467295	254	2015	1.0	Susceptible	2.1	Susceptible	1.4	Susceptible					E11D, K14R, S24N, V31I, M50I, H51Y, L74I, A91E, L101I, T112V, S119R, T124A, T125A, A133T, G134N, I135V, K136T, V165I, V201I, T206S, T218I, L234I, S283D	4.0
+467296	255	2015	17.2	Resistant	7.7	Resistant	15.5	Resistant					E11D, K14R, S24N, V31I, M50I, L74I, A91E, L101I, T112V, G118R, S119R, T124A, T125A, A133T, G134N, I135V, K136T, V165I, V201I, T206S, T218I, L234I, S283D	4.0
+467297	256	2015	0.8	Susceptible	1.0	Susceptible	0.8	Susceptible					E11D, K14R, S24N, V31I, M50I, L74I, A91E, L101I, T112V, S119R, T124A, T125A, A133T, G134N, I135V, K136T, E138K, V165I, V201I, T206S, T218I, L234I, S283D	3.0
+467298	257	2015	20.2	Resistant	5.2	Resistant	12.7	Resistant					E11D, K14R, S24N, V31I, M50I, L74I, A91E, L101I, T112V, G118R, S119R, T124A, T125A, A133T, G134N, I135V, K136T, E138K, V165I, V201I, T206S, T218I, L234I, S283D	2.0
+467299	258	2015	1.2	Susceptible	2.0	Susceptible	1.4	Susceptible					H51Y, I72V, I113V, V151I, L234V	0.0
+467300	259	2015	10.6	Resistant	5.5	Resistant	8.2	Resistant					I72V, I113V, G118R, V151I, L234V	1.0
+467301	260	2015	1.0	Susceptible	0.8	Susceptible	0.8	Susceptible					I72V, I113V, E138K, V151I, L234V	3.0
+467302	261	2015	14.1	Resistant	4.8	Resistant	8.0	Resistant					I72V, I113V, G118R, E138K, V151I, L234V	3.0
+467659	262	2015	1.0	Susceptible	50.0	Resistant	3.3	Susceptible					K14R, D25E, V31I, L45S, I72V, E96D, F100Y, L101I, T112V, T124A, T125A, K136Q, V201I, K219N, N222K, L234I, R263K, A265V, R269K, D278A	0.0
+467660	263	2015	0.5	Susceptible	25.0	Resistant	2.1	Susceptible					I72V, I113V, V151I, L234V, R263K	4.0
+467661	264	2016	0.7	Susceptible	2.4	Susceptible	0.6	Susceptible					I72V, I113V, Q148N, V151I, L234V	1.0
+467662	265	2016	0.6	Susceptible	3.1	Susceptible	0.6	Susceptible					I72V, I113V, G140S, Q148N, V151I, L234V	2.0
+467663	266	2016	19.0	Resistant	5.5	Resistant	0.6	Susceptible					I72V, I113V, Q148H, V151I, L234V	0.0
+467664	267	2016	100.0	Resistant	100.0	Resistant	3.4	Susceptible					I72V, I113V, G140S, Q148H, V151I, L234V	2.0
+467665	268	2016	0.6	Susceptible	4.2	Resistant	0.5	Susceptible					S17N, V32I, I36V, D41G, M50L, I72V, L101I, T124N, T125A, I135V, G140S, Q148N, V201I, I208L, D256E	3.0
+467666	269	2016	1.0	Susceptible	4.5	Resistant	0.7	Susceptible					S17N, V32I, I36V, D41G, M50L, I72V, L101I, T124N, T125A, I135V, Q148N, V201I, I208L, D256E	1.0
+467667	270	2016	1.0	Susceptible	1.3	Susceptible	1.1	Susceptible					S17N, V32I, I36V, D41G, M50L, I72V, L101I, T124N, T125A, I135V, V201I, I208L, D256E	4.0
+555677	271	2019	1.2	Susceptible	11.0	Resistant	0.4	Susceptible	0.4	Susceptible			E10D, T66A, I72V, S123G, T124A, K127R, D232N	1.0
+555678	272	2019	1.1	Susceptible	15.0	Resistant	0.4	Susceptible	0.3	Susceptible			E10D, T66I, I72V, S123G, T124A, K127R, D232N	0.0
+555679	273	2019	9.8	Resistant	50.0	Resistant	2.1	Susceptible	1.4	Susceptible			E10D, T66K, I72V, S123G, T124A, K127R, D232N	2.0
+555680	274	2019	2.1	Susceptible	16.0	Resistant	1.7	Susceptible	1.3	Susceptible			E10D, I72V, E92G, S123G, T124A, K127R, D232N	3.0
+555681	275	2019	4.9	Resistant	29.0	Resistant	1.4	Susceptible	1.2	Susceptible			E10D, I72V, E92Q, S123G, T124A, K127R, D232N	4.0
+555682	276	2019	4.3	Resistant	2.2	Susceptible	0.9	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, Y143C, D232N	0.0
+555683	277	2019	2.5	Susceptible	1.6	Susceptible	1.1	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, Y143H, D232N	3.0
+555684	278	2019	16.0	Resistant	3.4	Susceptible	1.2	Susceptible	1.3	Susceptible			E10D, I72V, S123G, T124A, K127R, Y143R, D232N	1.0
+555685	279	2019	1.3	Susceptible	5.8	Resistant	1.0	Susceptible	1.0	Susceptible			E10D, I72V, S123G, T124A, K127R, S147G, D232N	4.0
+555686	280	2019	4.3	Resistant	8.7	Resistant	0.8	Susceptible	0.7	Susceptible			E10D, I72V, S123G, T124A, K127R, Q148H, D232N	4.0
+555687	281	2019	41.0	Resistant	100.0	Resistant	0.6	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, Q148K, D232N	2.0
+555688	282	2019	28.0	Resistant	100.0	Resistant	0.6	Susceptible	0.7	Susceptible			E10D, I72V, S123G, T124A, K127R, Q148R, D232N	1.0
+555689	283	2019	13.0	Resistant	44.0	Resistant	1.4	Susceptible	1.3	Susceptible			E10D, I72V, S123G, T124A, K127R, N155H, D232N	2.0
+555690	284	2019	1.2	Susceptible	4.5	Resistant	1.7	Susceptible	1.7	Susceptible			E10D, I72V, S123G, T124A, K127R, D232N, R263K	0.0
+555691	285	2019	1.0	Susceptible	2.8	Susceptible	1.2	Susceptible	1.1	Susceptible			E10D, H51Y, I72V, S123G, T124A, K127R, D232N	3.0
+555692	286	2019	0.9	Susceptible	1.9	Susceptible	0.7	Susceptible	0.6	Susceptible			E10D, L68I, I72V, S123G, T124A, K127R, D232N	0.0
+555693	287	2019	0.8	Susceptible	1.8	Susceptible	0.6	Susceptible	0.7	Susceptible			E10D, L68V, I72V, S123G, T124A, K127R, D232N	1.0
+555694	288	2019	1.0	Susceptible	4.2	Resistant	0.6	Susceptible	0.5	Susceptible			E10D, I72A, S123G, T124A, K127R, D232N	3.0
+555695	289	2019	1.1	Susceptible	6.1	Resistant	0.6	Susceptible	0.5	Susceptible			E10D, I72N, S123G, T124A, K127R, D232N	2.0
+555696	290	2019	1.1	Susceptible	2.4	Susceptible	0.9	Susceptible	0.7	Susceptible			E10D, I72T, S123G, T124A, K127R, D232N	4.0
+555697	291	2019	1.3	Susceptible	1.9	Susceptible	1.1	Susceptible	0.9	Susceptible			E10D, I72V, Q95K, S123G, T124A, K127R, D232N	2.0
+555698	292	2019	1.2	Susceptible	1.7	Susceptible	1.0	Susceptible	1.0	Susceptible			E10D, I72V, Q95R, S123G, T124A, K127R, D232N	4.0
+555699	293	2019	1.2	Susceptible	1.5	Susceptible	1.1	Susceptible	1.0	Susceptible			E10D, I72V, S123G, T124A, K127R, A128T, D232N	3.0
+555700	294	2019	1.1	Susceptible	1.3	Susceptible	0.9	Susceptible	0.7	Susceptible			E10D, I72V, S123G, T124A, K127R, E138A, D232N	0.0
+555701	295	2019	0.9	Susceptible	1.4	Susceptible	0.8	Susceptible	0.8	Susceptible			E10D, I72V, S123G, T124A, K127R, E138K, D232N	1.0
+555702	296	2019	2.7	Susceptible	5.4	Resistant	0.7	Susceptible	0.6	Susceptible			E10D, I72V, S123G, T124A, K127R, G140A, D232N	2.0
+555703	297	2019	1.4	Susceptible	7.5	Resistant	0.5	Susceptible	0.4	Susceptible			E10D, I72V, S123G, T124A, K127R, G140C, D232N	0.0
+555704	298	2019	1.6	Susceptible	5.0	Resistant	0.8	Susceptible	0.8	Susceptible			E10D, I72V, S123G, T124A, K127R, G140S, D232N	1.0
+555705	299	2019	0.7	Susceptible	28.0	Resistant	0.3	Susceptible	0.2	Susceptible			E10D, I72V, S123G, T124A, K127R, P145S, D232N	3.0
+555706	300	2019	3.2	Susceptible	100.0	Resistant	2.2	Susceptible	2.3	Susceptible			E10D, I72V, S123G, T124A, K127R, Q146I, D232N	4.0
+555707	301	2019	0.8	Susceptible	2.2	Susceptible	0.8	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, Q146K, D232N	0.0
+555708	302	2019	1.0	Susceptible	15.0	Resistant	1.3	Susceptible	1.4	Susceptible			E10D, I72V, S123G, T124A, K127R, Q146L, D232N	3.0
+555709	303	2019	0.8	Susceptible	6.5	Resistant	0.5	Susceptible	0.3	Susceptible			E10D, I72V, S123G, T124A, K127R, Q146P, D232N	4.0
+555710	304	2019	1.6	Susceptible	4.9	Resistant	1.4	Susceptible	1.3	Susceptible			E10D, I72V, S123G, T124A, K127R, Q146R, D232N	1.0
+555711	305	2019	1.4	Susceptible	2.7	Susceptible	0.8	Susceptible	0.7	Susceptible			E10D, I72V, S123G, T124A, K127R, V151A, D232N	3.0
+555712	306	2019	15.0	Resistant	20.0	Resistant	1.6	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, V151L, D232N	4.0
+555713	307	2019	1.1	Susceptible	2.1	Susceptible	1.1	Susceptible	1.0	Susceptible			E10D, I72V, S123G, T124A, K127R, S153A, D232N	2.0
+555714	308	2019	1.2	Susceptible	2.7	Susceptible	1.9	Susceptible	1.5	Susceptible			E10D, I72V, S123G, T124A, K127R, S153F, D232N	0.0
+555715	309	2019	1.2	Susceptible	3.0	Susceptible	2.1	Susceptible	1.6	Susceptible			E10D, I72V, S123G, T124A, K127R, S153Y, D232N	1.0
+555716	310	2019	1.4	Susceptible	1.4	Susceptible	1.6	Susceptible	1.4	Susceptible			E10D, I72V, S123G, T124A, K127R, E157K, D232N	4.0
+555717	311	2019	1.3	Susceptible	2.0	Susceptible	1.2	Susceptible	1.2	Susceptible			E10D, I72V, S123G, T124A, K127R, E157Q, D232N	2.0
+555718	312	2019	1.2	Susceptible	1.5	Susceptible	0.9	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, G163K, D232N	3.0
+555719	313	2019	1.2	Susceptible	1.6	Susceptible	1.1	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, E170A, D232N	0.0
+555720	314	2019	1.2	Susceptible	20.0	Resistant	0.4	Susceptible	0.3	Susceptible			E10D, M50I, T66I, I72V, S123G, T124A, K127R, D232N	1.0
+555721	315	2019	1.1	Susceptible	20.0	Resistant	0.3	Susceptible	0.3	Susceptible			E10D, T66I, I72V, S119P, S123G, T124A, K127R, D232N	2.0
+555722	316	2019	1.6	Susceptible	31.0	Resistant	0.4	Susceptible	0.3	Susceptible			E10D, T66I, I72V, S123G, T124A, K127R, E157Q, D232N	2.0
+555723	317	2019	5.1	Resistant	43.0	Resistant	1.3	Susceptible	1.1	Susceptible			E10D, M50I, I72V, E92Q, S123G, T124A, K127R, D232N	0.0
+555724	318	2019	8.0	Resistant	76.0	Resistant	1.5	Susceptible	1.4	Susceptible			E10D, I72V, E92Q, S119P, S123G, T124A, K127R, D232N	3.0
+555725	319	2019	7.1	Resistant	40.0	Resistant	1.8	Susceptible	1.3	Susceptible			E10D, I72V, E92Q, S123G, T124A, K127R, E157Q, D232N	4.0
+555726	320	2019	1.3	Susceptible	6.5	Resistant	1.2	Susceptible	0.9	Susceptible			E10D, M50I, I72V, S123G, T124A, K127R, S147G, D232N	1.0
+555727	321	2019	1.3	Susceptible	9.3	Resistant	1.0	Susceptible	1.0	Susceptible			E10D, I72V, S119P, S123G, T124A, K127R, S147G, D232N	0.0
+555728	322	2019	1.8	Susceptible	11.0	Resistant	1.4	Susceptible	1.3	Susceptible			E10D, I72V, S123G, T124A, K127R, S147G, E157Q, D232N	3.0
+555729	323	2019	33.0	Resistant	100.0	Resistant	0.8	Susceptible	0.7	Susceptible			E10D, M50I, I72V, S123G, T124A, K127R, Q148R, D232N	4.0
+555730	324	2019	30.0	Resistant	100.0	Resistant	0.9	Susceptible	1.0	Susceptible			E10D, I72V, S119P, S123G, T124A, K127R, Q148R, D232N	1.0
+555731	325	2019	52.0	Resistant	100.0	Resistant	0.9	Susceptible	0.9	Susceptible			E10D, I72V, S123G, T124A, K127R, Q148R, E157Q, D232N	2.0
+555732	326	2019	13.0	Resistant	35.0	Resistant	1.5	Susceptible	1.4	Susceptible			E10D, M50I, I72V, S123G, T124A, K127R, N155H, D232N	0.0
+555733	327	2019	13.0	Resistant	40.0	Resistant	1.6	Susceptible	1.2	Susceptible			E10D, I72V, S119P, S123G, T124A, K127R, N155H, D232N	2.0
+555734	328	2019	21.0	Resistant	66.0	Resistant	1.7	Susceptible	1.6	Susceptible			E10D, I72V, S123G, T124A, K127R, N155H, E157Q, D232N	1.0
+555735	329	2019	100.0	Resistant	100.0	Resistant	3.3	Susceptible	2.0	Susceptible			E10D, I72V, S123G, T124A, K127R, G140S, Q148R, D232N	3.0
+555736	330	2019	100.0	Resistant	100.0	Resistant	3.3	Susceptible	2.2	Susceptible			E10D, I72V, S123G, T124A, K127R, G140S, Q148H, D232N	4.0
+555737	331	2019	100.0	Resistant	100.0	Resistant	45.0	Resistant	28.0	Resistant			E10D, I72V, S123G, T124A, K127R, G140S, Q148K, D232N	0.0
+308620	143913	2012	0.8	Susceptible	1.3	Susceptible							S119T, M154L, V201I, T218S	1.0
+308448	143822	2012	0.9	Susceptible	1.2	Susceptible							S17N, L28I, S39C, V201I, K211Q	1.0
+308399	143800	2012	1.1	Susceptible	1.1	Susceptible							V201I, S230N, L234I, A265V, D270N	4.0
+308355	143783	2012	0.9	Susceptible	0.9	Susceptible							V31I, L101I, K111Q, A265V	1.0
+308127	143696	2012	0.9	Susceptible	0.9	Susceptible							V31I, L101I, T112I, T124A, T125V, I135V, G163Q, A179G, F181L, V201I, T206S, L234I, D256E, I268L, D270H	1.0
+612757	296656	2020	100.0	Resistant	100.0	Resistant	6.6	Resistant	3.0	Susceptible			E10D, L101I, S119G, T122I, T124N, T125A, G140S, Q148H, G163E, D256E	1.0
+308541	143869	2012	1.0	Susceptible	1.1	Susceptible							K7R, E11D, D25E, V31I, L101I, K111T, V201I, Q216H	0.0
+308539	143868	2012	0.6	Susceptible	0.9	Susceptible							S17N, L101I, K156N, D256E	3.0
+308281	143756	2012	1.1	Susceptible	1.4	Susceptible							S17N, T125A, G193E, V201I, D232E, D286N	1.0
+308616	143911	2012	0.8	Susceptible	1.2	Susceptible							E10A, E11D, S17N, V32I, K42R, I84L, L101I, S119P, T124A, T125A, I135V, K136Q, V165I, V201I, T218I, D256E, S283G	3.0
+308134	143698	2012	0.6	Susceptible	0.8	Susceptible							L101I, T124A, K156N, V201I, I217V, P261S, R262L	1.0
+308291	143759	2012	1.0	Susceptible	1.2	Susceptible							K14R, A91E, L101I, S119R, T124N, G193D, V201I, T206S, I268L	0.0
+663471	319984	2022	1.1	Susceptible	1.3	Susceptible	1.0	Susceptible					K7R, S17N, I72V, L74V, L101I, I220L, R284G, D286N	2.0
+663443	319984	2022	1.4	Susceptible	2.3	Susceptible	2.0	Susceptible					K7R, S17N, I72V, L101I, I220L, R263K, R284G, D286N	2.0
+612760	296658	2020	100.0	Resistant	100.0	Resistant	4.8	Resistant	2.3	Susceptible			L101I, T122I, T124N, G140S, Q148H, V201I	2.0
+612761	296659	2020	100.0	Resistant	100.0	Resistant	100.0	Resistant	66.0	Resistant			V31I, D41N, L74M, I113L, T124A, T125A, G140S, Q148H, G149A, V201I, K215N, S283G	4.0
+612762	296659	2020	1.0	Susceptible	1.6	Susceptible	1.2	Susceptible	1.0	Susceptible			V31I, V54I, T124A, T125A, V201I, K215N, S283G	4.0
+308536	143866	2012	0.9	Susceptible	1.1	Susceptible							K14R, V31I, S39C, L45Q, K111T, V201I, S230N, L234I, D256E	4.0
+308583	143892	2012	0.8	Susceptible	1.0	Susceptible							S24G, S39C, V79A, L101I, T124N, V201I, Q216R, K219Q, A265V, S283G	2.0
+308357	143784	2012	0.8	Susceptible	1.2	Susceptible							A91T, L101I, S119P, T122I, I208M, S255G, S283G, R284G	2.0
+308286	143758	2012	0.5	Susceptible	1.1	Susceptible							E10D, T124A, T125A, K156N, V201I, I220V	4.0
+308139	143699	2012	0.7	Susceptible	2.1	Susceptible							V31I, L101I, T125A, M154L, K173R, F181L, G193E, T206S, T210I, T218I, I220V, L234H, D279G	0.0
+308408	143805	2012	0.6	Susceptible	0.9	Susceptible							L101I, K111T, I135V, K173R, V176L, A205T, K211R, T218S, S230N, D256E, D270E	2.0
+308349	143781	2012	0.9	Susceptible	1.1	Susceptible							S17N, L101I, K211Q, D256E	3.0
+308248	143742	2012	0.8	Susceptible	1.3	Susceptible							V31I, L45I, L101I, S119P, I135V, F181L, T206S, K211R	4.0
+308411	143807	2012	1.0	Susceptible	1.6	Susceptible							E10D, T124N, T125A, M154I, P261F, R262F	0.0
+308164	143712	2012	0.9	Susceptible	1.1	Susceptible							E11D, E13D, A21T, L101I, S119G, T122I, T124S, K136N, D256E	0.0
+308621	143914	2012	0.7	Susceptible	1.5	Susceptible							S17N, T124S, K156N, I203M, D256E	2.0
+308622	143914	2012	2.2	Susceptible	42.0	Resistant							S17N, I84L, E92Q, T124S, K156N, I203M, D256E	2.0
+308471	143832	2012	1.4	Susceptible	1.5	Susceptible							E11D, S24N, V31I, L101I, S119P, T122I, T125A, V201I, I220L, D232E	0.0
+302972	139490	2015	14.3	Resistant	29.6	Resistant	1.7	Susceptible					R20K, V31I, L45I, L101I, N155H, E157Q, K160Q, V201I, K215N, A265V	2.0
+302970	139490	2015	1.3	Susceptible	1.6	Susceptible	1.1	Susceptible					R20K, V31I, L45I, L101I, E157Q, K160Q, V201I, K215N	2.0
+308295	143760	2012	0.9	Susceptible	1.2	Susceptible							S17N, M50L, T124A, T125A, A205S, T206S	2.0
+308296	143760	2012	4.6	Resistant	34.0	Resistant							S17N, K34R, M50L, E92Q, T124A, T125A, V201I, A205S, T206S, I208L, K211R, E212A	2.0
+308185	143721	2012	0.9	Susceptible	1.2	Susceptible							R20K, V201I	0.0
+308112	143686	2012	0.9	Susceptible	1.8	Susceptible							P90S, E212A, K215N, I220L	4.0
+308379	143793	2012	1.0	Susceptible	1.6	Susceptible							L101I, K103R, S119G, T122I, T124N	2.0
+308517	143855	2012	3.3	Susceptible	27.0	Resistant							E92Q, L101I, T112V, I220V, D253E, R284G	4.0
+308516	143855	2012	1.1	Susceptible	0.9	Susceptible							L101I, T112V, I220V, D253E	4.0
+665889	318860	2022	0.6	Susceptible	13.0	Resistant	0.3	Susceptible					E11D, S24N, V31I, T66I, A91E, L101I, T112A, H114R, S119R, T124N, I203M, S230N, R284G	2.0
+308544	143871	2012	0.8	Susceptible	1.1	Susceptible							D6E, D25E, L101I, V110T, T112V, K156N, E157Q, K215N, D232E, L234H, D253E, D256E, D270N	3.0
+612763	296660	2020	100.0	Resistant	100.0	Resistant	5.6	Resistant	2.6	Susceptible			K14R, S17C, L45V, G106A, T124A, G140S, Q148H, V165I, F185Y, K219N, N222K	2.0
+308519	143857	2012	1.1	Susceptible	1.6	Susceptible							E11D, S119P, K219T, I220L, D232E, L234F	2.0
+308551	143874	2012	0.7	Susceptible	1.4	Susceptible							S17C, G163E, K188R, K211R, Q216N	1.0
+308217	143733	2012	1.0	Susceptible	1.6	Susceptible							E11D, V31I, V37I, L101I, I113L, T124N, T125A, V201I	4.0
+308425	143813	2012	1.0	Susceptible	1.4	Susceptible							D6E, E10D, A91S, S119G, T122I, T124A, T125A, I220L, Y227F, L234I	1.0
+308155	143708	2012	1.3	Susceptible	1.4	Susceptible							E11D, R20K, L101I, S195T	1.0
+308157	143709	2012	0.8	Susceptible	1.8	Susceptible							A21T, M50I	2.0
+308192	143724	2012	1.1	Susceptible	1.6	Susceptible							V31I, T112A, T124S, T125A, V165I, A205S	4.0
+308633	143922	2012	1.1	Susceptible	2.1	Susceptible							E11D, S17T, M50V, L101I, T112I, S119P, T124N, I135V, F181L, V201I, T206S, A265V	4.0
+308595	143900	2012	1.7	Susceptible	1.3	Susceptible							E11D, D25E, S119P, K136N	1.0
+308596	143900	2012	10.7	Resistant	36.0	Resistant							E11D, D25E, L101I, S119P, T122I, K136N, N155H	1.0
+308495	143843	2012	0.9	Susceptible	1.2	Susceptible							K7R, L28I, S39C, M50I, L101I, F181L, V201I, A205S, K215N, Q221R, N222K	2.0
+308496	143844	2012	1.1	Susceptible	1.2	Susceptible							S17N, S39C, L101I, T124N, I203M, T206S, D256E	1.0
+308607	143907	2012	1.4	Susceptible	2.4	Susceptible							S17C, M50I, L101I, T112R, T124A, T125A, E157Q, K160Q, K219N, N222K	1.0
+308152	143706	2012	1.4	Susceptible	2.0	Susceptible							V31I, L101I, S119G, T122I, T124N, F181L, V201I, S283G, R284G	0.0
+308153	143706	2012	0.9	Susceptible	2.1	Susceptible							V31I, L101I, S119G, T122I, T124N, F181L, V201I, S283G, R284G	0.0
+308376	143791	2012	0.9	Susceptible	1.2	Susceptible							V54I, L101I, T124N, T125M, G163T, D253E, N254S	3.0
+308602	143905	2012	0.9	Susceptible	1.3	Susceptible							D6E, E10D, G106A, S119P, T122I, T124N, V201I, T206S, I208L, K211R, D256E	4.0
+308189	143723	2012	1.2	Susceptible	1.9	Susceptible							K14R, Y99H, L101I, I135V, E157Q, G193D, S195C, A265V	2.0
+308428	143814	2012	0.6	Susceptible	1.8	Susceptible							S17N, T124A, K160N	0.0
+308095	143677	2012	1.0	Susceptible	1.3	Susceptible							A21T, L45V, T124Q, T125V, I182V, D256E, R262L	1.0
+308092	143675	2012	4.7	Resistant	15.0	Resistant							K14R, V31I, N155H, K215N, S230N, R231K, D253E, N254Q, S255G, D256E, K258N, V259L, V260L	2.0
+308091	143675	2012	1.0	Susceptible	1.1	Susceptible							K14R, V31I, K215N, S230N, R231K, D253E, N254Q, S255G, D256E	2.0
+308547	143873	2012	1.0	Susceptible	1.9	Susceptible							E11D, A21T, K111Q, T112A	0.0
+308220	143734	2012	1.1	Susceptible	1.3	Susceptible							S39C, M50I, L101I, S119P, M154L, V201I, T206S, T218S	2.0
+612772	296667	2020	100.0	Resistant	28.0	Resistant	0.8	Susceptible	0.6	Susceptible			S17N, S24N, T97A, L101I, G106A, T112A, S119G, T122I, T125A, Y143R, G163R, V165I, V201I, K211R, T218I, Q221G, D256E	3.0
+308507	143850	2012	0.9	Susceptible	1.3	Susceptible							V31I, M50I, L63I, L74V, E96D, L101I, T124N, T125A, G193E, V201I, T218S, S230N, D232E, D256E	3.0
+308211	143731	2012	1.4	Susceptible	1.4	Susceptible							E11D, K14R, V32I, V201I, I208L, E212A, D232E, L234F	1.0
+308421	143811	2012	0.9	Susceptible	0.8	Susceptible							V31I, G106A, T112I, T124A, T125A, G134D, K136Q, D167E, V201I, L234I	2.0
+308114	143688	2012	1.1	Susceptible	1.0	Susceptible							S17N, S39C, T124N, T125A, V201I, T206S, K219N, N222K	0.0
+612768	296665	2020	100.0	Resistant	100.0	Resistant	7.4	Resistant	3.4	Susceptible			K14R, V31I, M50R, L101I, K111T, T124A, E138A, F139Y, G140S, Q148H, G193E, V201I, I220M, D253E, S255R	3.0
+308382	143794	2012	1.1	Susceptible	1.7	Susceptible							M50I, V54I, E96D, L101I, T112S, T124N, T125A	1.0
+308115	143689	2012	1.0	Susceptible	1.3	Susceptible							E11D, S24N, I84M, A91T, L101I, T125V, V201I, S230N, R262L, S283G	1.0
+308116	143689	2012	100.0	Resistant	100.0	Resistant							E11D, S24N, K34R, I84M, A91T, L101I, T125V, G140S, Q148H, I161T, V201I, S230N, V260L, P261F, S283G	1.0
+308312	143767	2012	0.9	Susceptible	1.0	Susceptible							M50I, L101I, G193E, V201I, S230N, D256E, D286N	1.0
+308567	143882	2012	0.7	Susceptible	1.3	Susceptible							K156N, I161L, V201I, T218S, Q221E, N222K	2.0
+308492	143841	2012	1.1	Susceptible	1.3	Susceptible							D6E, E10D, S17N, A23V, E35Q, S39N, L45V, M50I, V201I	1.0
+308306	143765	2012	0.8	Susceptible	1.0	Susceptible							K7R, S17N, T124N, I220M, Y227F, A265V	0.0
+308575	143887	2012	1.1	Susceptible	1.3	Susceptible							R20K, L101I, K111T, T122I, T124A, V201I, D286N	3.0
+308576	143887	2012	1.1	Susceptible	1.5	Susceptible							R20K, L101I, K111T, T122I, T124A, V201I, R284G, D286N	3.0
+308572	143885	2012	0.9	Susceptible	1.4	Susceptible							S17N, L45V, I73V, P90S, L101I, T124N, G163H, I208L, I220L, D256E, S283G	0.0
+308106	143683	2012	0.6	Susceptible	1.7	Susceptible							K111T, S119G, T122I, T125A, V201I	1.0
+308300	143762	2012	1.2	Susceptible	1.6	Susceptible							E11D, V31I, A91E, L101I, T112V, S119R, T122I, T206S	4.0
+308142	143701	2012	0.8	Susceptible	2.1	Susceptible							M50I, G70D, L101I, S119R, T124N, T125A, I135V, F181L, T206S, D256E	2.0
+308386	143796	2012	1.1	Susceptible	1.2	Susceptible							S24G, D25E, L28I, L45V, V201I, S230N, R284G	3.0
+308387	143796	2012	100.0	Resistant	89.0	Resistant							S24G, D25E, L28I, E35Q, L45V, T125A, G140S, Q148H, V201I, S230N, S283R, R284G	3.0
+665908	318862	2022	1.1	Susceptible	2.8	Susceptible	1.8	Susceptible					R20K, D25E, V31I, I84M, L101I, T112V, T124A, K136Q, K173R, V201I, T218I, K219Q, L234I, R263K, D278A, S283G	4.0
+612765	296662	2020	0.8	Susceptible	1.3	Susceptible	1.1	Susceptible	1.1	Susceptible			K111T, Q216H	1.0
+308231	143736	2012	100.0	Resistant	100.0	Resistant							N27G, L28I, L45Q, G140S, Q148H	2.0
+308229	143736	2012	0.9	Susceptible	1.2	Susceptible							S17N, N27G, L28I, L45Q	2.0
+308560	143879	2012	0.5	Susceptible	1.0	Susceptible							M50I, K156N, V201I	1.0
+308205	143728	2012	1.1	Susceptible	1.4	Susceptible							E11D, V201I	1.0
+308433	143816	2012	0.8	Susceptible	1.3	Susceptible							D25E, V201I, S230N	4.0
+308208	143729	2012	1.0	Susceptible	1.0	Susceptible							S17N, R20K, S119G, T122V, T124A, T125A, V201I, T206S, D288N	2.0
+308147	143704	2012	1.0	Susceptible	1.3	Susceptible							E11D, S24N, V31I, L101I, K136N	4.0
+308559	143878	2012	1.0	Susceptible	1.3	Susceptible							E11D, S39C, L45Q, V201I, T218S	0.0
+308598	143902	2012	0.8	Susceptible	1.6	Susceptible							S17N, K34R, S119P, T124N, T125A, V201I, S230N, D256E	4.0
+308599	143902	2012	28.0	Resistant	100.0	Resistant							K14R, S17N, K34R, G59E, S119P, T124N, T125A, G140C, Q148R, V201I, S230N, D256E	4.0
+308630	143920	2012	1.0	Susceptible	1.3	Susceptible							E11D, L101I, S119R, G193E, V201I	1.0
+308501	143846	2012	0.3	Susceptible	0.8	Susceptible							C56Y, S57N, K156N, K211R, L234I	0.0
+308506	143849	2012	0.7	Susceptible	1.0	Susceptible							D6E, P30S, S39C, V201I, T206S, S230H	4.0
+308237	143738	2012	9.7	Resistant	59.0	Resistant							L101I, N155H, K156N, I208L	0.0
+308236	143738	2012	0.6	Susceptible	1.0	Susceptible							L101I, K156N, I208L	0.0
+308439	143818	2012	0.8	Susceptible	1.5	Susceptible							E11D, E13D, V31I, L101I, S119P, T122I, G163E, D256E	0.0
+308102	143681	2012	1.0	Susceptible	1.1	Susceptible							S17C	2.0
+308199	143726	2012	1.2	Susceptible	2.7	Susceptible							D6E, E11D, S17N, V31I, L63I, L74I, E96D, L101I, T112V, T124N, T125A, G134N, K136T, E157Q, K160N, V201I, T206S, K211R, L234I, R269K, S283G, D288N	3.0
+308441	143819	2012	1.0	Susceptible	1.4	Susceptible							M50I, K215N, I220L, D256E	2.0
+308240	143739	2012	1.4	Susceptible	1.9	Susceptible							E11D, S24N, D25E, V31I, I84M, Q95P, Y99F, L101I, T112A, S119P, K136N, K160R, V201I, I203M, I208L, T218S, L234H, D253E	1.0
+308505	143848	2012	1.0	Susceptible	1.5	Susceptible							S17N, V31I, L101I, T124N, I135V, G163E, K173R, V201I, A205S, S230N	2.0
+308557	143876	2012	1.1	Susceptible	1.1	Susceptible							K7R, S17N, L28I, V151I, Y227F, D253Y, D256E, R284G	3.0
+308511	143852	2012	1.4	Susceptible	1.8	Susceptible							E11D, K14R, S24N, D25E, M50I, T124A, T125A, I220L, I268L	0.0
+308393	143798	2012	0.9	Susceptible	1.2	Susceptible							V31I, M50I, T124N, T125A, E138D, D167E, V201I, A265V, D286N	0.0
+308107	143684	2012	1.2	Susceptible	1.4	Susceptible							E11D, S24G, D25E, L28I, S39C, L101I, K215N, S230N	2.0
+308397	143799	2012	1.0	Susceptible	1.0	Susceptible							K34R, T112V, V201I, L234I	1.0
+308562	143880	2012	1.0	Susceptible	1.2	Susceptible							V31I, L101I, K103R, T112I, T124A, T125A, V201I, A205T, K211R, I220L, Y227F, D253Y, A265V, R284G	4.0
+308320	143770	2012	0.8	Susceptible	1.0	Susceptible							S39C, G59E, T124N, T125A, V126L, M154L, V201I	2.0
+308171	143715	2012	0.9	Susceptible	2.2	Susceptible							E11D, M50I, K111T, S119P, T124A, T206S	4.0
+308624	143916	2012	1.2	Susceptible	1.5	Susceptible							D6E, E10D, E11D, K14R, V31I, M50T, I60L, K111Q, T124A, T206S	0.0
+308481	143837	2012	0.8	Susceptible	0.9	Susceptible							K7R, D25E, F100Y, L101I, T112V, T124A, T125A, K136Q, V165I, V201I, T218I, K219Q, L234I, S255G, R269K, D278A, S283G	1.0
+308176	143717	2012	0.9	Susceptible	1.1	Susceptible							M50L, L101I, K111T, T125A, A128T, Y227F, S230N, D256E, A265V	1.0
+308477	143835	2012	0.8	Susceptible	1.1	Susceptible							N254K, A265V, S283G	4.0
+308478	143835	2012	100.0	Resistant	100.0	Resistant							G140S, Q148H, N254K, S283G	4.0
+308401	143802	2012	0.9	Susceptible	1.6	Susceptible							L101I, T112V, I113L	3.0
+308402	143802	2012	16.0	Resistant	36.0	Resistant							E11D, A21T, L101I, T112V, I113L, N155H	3.0
+308444	143820	2012	1.1	Susceptible	1.4	Susceptible							S17N, K219Q, I220L, S255K	2.0
+308526	143861	2012	0.9	Susceptible	1.0	Susceptible							D6E, S17N, A98G, L101I, T124N, K136N, F181L, V201I, A265V	0.0
+308255	143745	2012	0.9	Susceptible	1.7	Susceptible							T112A, T125A, E212A, Q216H, T218S, K219N	3.0
+308261	143747	2012	100.0	Resistant	100.0	Resistant							V31I, K111T, S119G, T122I, T125A, G140S, Q148H, R231K, D288N	2.0
+308363	143786	2012	18.0	Resistant	67.0	Resistant							S39C, Y99H, N155H, V201I	4.0
+308361	143786	2012	0.9	Susceptible	1.4	Susceptible							S39C, Y99H, V201I	4.0
+308588	143895	2012	1.1	Susceptible	1.2	Susceptible							K14R, C56S, L101I, V201I, I220L, Y227F, D256E	1.0
+308122	143693	2012	1.1	Susceptible	0.9	Susceptible							E11D, L101I, T124A, F181L, G193R, V201I, T206S, D253E, D256E	4.0
+308590	143897	2012	1.0	Susceptible	0.9	Susceptible							L101I, V201I, K219Q, D256E	4.0
+308532	143864	2012	0.9	Susceptible	1.0	Susceptible							S17C, T112R, T125A, K188R, T218I, A265V	2.0
+612753	296653	2020	100.0	Resistant	100.0	Resistant	6.0	Resistant	3.1	Susceptible			K7Q, E11D, S24N, L101I, T124N, G140S, Q148H, G193R, T206S, T218S	3.0
+663524	319986	2022	0.8	Susceptible	1.1	Susceptible	0.9	Susceptible					S17N, L101I, I113V, S119T, T125A, V151I, K211Q, E212Q, T218I, L234V, S255N, D256E, S283G	1.0
+663515	319986	2022	12.6	Resistant	6.0	Resistant	9.6	Resistant					S17N, L101I, I113V, G118R, S119T, T124A, T125A, V151I, K211Q, E212Q, T218I, L234V, S255N, D256E, S283G	1.0
+308274	143753	2012	1.3	Susceptible	1.2	Susceptible							V31I, T124N, T125A, D232E, L234I, D253E, D256E	0.0
+308367	143788	2012	1.1	Susceptible	1.4	Susceptible							E10D, E11D, G193D, S195C, T206S, I208L, E212A, N254Q, R269K, D286N	2.0
+308275	143754	2012	0.8	Susceptible	2.0	Susceptible							E11D, S24N, D25E, L68I, I73V, T124A, D167E, I220L	2.0
+308581	143890	2012	1.1	Susceptible	1.0	Susceptible							S17N, V54I, L101I, T124A, T125A, I208L, K215N, L234I, N254K, A265V	4.0
+308530	143863	2012	1.0	Susceptible	1.5	Susceptible							E10D, K34R, L101I, K111R, T124N, T125A, A175T, V201I, K211R, S230N, S283G	1.0
+308124	143694	2012	1.0	Susceptible	1.3	Susceptible							E11D, V37I, I60V, S119G, T124N, T125A, V201I, I203M	3.0
+308370	143789	2012	1.2	Susceptible	1.2	Susceptible							S17N, V31I, L101I, K111T, T124A, V165I, F181L, D256E	0.0
+308627	143918	2012	0.8	Susceptible	1.5	Susceptible							V31I, M50I, T124A, T206S, Y227F, A265V	1.0
+308119	143691	2012	0.6	Susceptible	1.1	Susceptible							E10D, M50I, G106A, K156N, V201I, T206S, D232E, L234H	2.0
+308242	143740	2012	0.9	Susceptible	1.3	Susceptible							E10D, E11D, S39C, L45Q, L101I, T124A, I135V, Q216H	2.0
+308455	143825	2012	0.7	Susceptible	1.3	Susceptible							E10D, M50I, L101I, T112I, S119P, T124A, T125A, I135L, T206S	4.0
+308460	143827	2012	1.2	Susceptible	1.4	Susceptible							E10D, S24A, L101I, K111T, S119T, T125A, K160R, K188R, G193E, D279G, D286N	0.0
+308160	143710	2012	0.7	Susceptible	1.3	Susceptible							L101I, M154I, V165I, H171L, K211R	3.0
+308333	143775	2012	1.0	Susceptible	1.2	Susceptible							E11D, L28I, T218I	4.0
+308339	143777	2012	0.8	Susceptible	1.1	Susceptible							K14R, S17N, V31I, C56Y, L101I, T124S, T125A, I135V, K160Q, T218S, I251L	4.0
+308271	143751	2012	7.6	Resistant	58.0	Resistant							S17N, A49P, T124A, N155H, G193E, V201I, T218S, I220L, D253E, S255R	2.0
+308629	143919	2012	1.2	Susceptible	2.0	Susceptible							A23V, N27D, M50I, A91T, Q95P, L101I, T112A, S119R, T125P, V201I, T206S	4.0
+308467	143830	2012	1.0	Susceptible	1.0	Susceptible							S17N, V54I, T112I, T124N, V201I, D256E	4.0
+308168	143714	2012	0.9	Susceptible	1.1	Susceptible							V31I, L101I, T206S, K211R, Q216H, I268L, D270H, R284G	3.0
+308329	143773	2012	0.8	Susceptible	1.0	Susceptible							M50L, T112V, V201I, T218S, Q221R	0.0
+308618	143912	2012	0.7	Susceptible	0.9	Susceptible							S17N, L28I, T124A, T125A, G163E, V201I, K240R	4.0
+308476	143834	2012	0.7	Susceptible	1.9	Susceptible							S24G, L101I, T124A, S153A, M154I, I200M, V201I, Q216H, Q221R, D256E	3.0
+308253	143744	2012	0.9	Susceptible	0.9	Susceptible							E10D, V201I, R284G	1.0
+308451	143823	2012	0.6	Susceptible	0.9	Susceptible							S17N, K34R, L74V, L101I, T124A, K173R, A265V	3.0
+308409	143806	2012	0.8	Susceptible	1.1	Susceptible							L101I, M154L	3.0
+308582	143891	2012	1.1	Susceptible	2.5	Susceptible							L74I, G163E, H171Q	0.0
+308587	143894	2012	1.0	Susceptible	1.5	Susceptible							S17N, V31I, V32I, S39C, L101I, T112I, T124N, V201I, A205S, T206S, K211R, S230N	0.0
+308538	143867	2012	1.0	Susceptible	1.0	Susceptible							E11D, F26Y, L28I, V37I, S39C, M50I, G106A, T112R, T125A, V126L, V201I, T206S, K211R, K219N, N222K, S255N, I268L, M275V, V281M, S283G	4.0
+308534	143865	2012	1.4	Susceptible	1.5	Susceptible							S17N, S24D, D25E, S39C, L101I, T124N, V165I, D286N	3.0
+308352	143782	2012	1.0	Susceptible	1.2	Susceptible							D6E, S17N, V31I, T112V, T124N, T125V, L158F, D232E, A265V	0.0
+308244	143741	2012	0.9	Susceptible	1.3	Susceptible							E11D, S24N, L101I, I135V, K136T, T206S, I208L, T218S, S230N	3.0
+308268	143750	2012	0.9	Susceptible	1.4	Susceptible							S17N, S57G, T124N, T218S, K219N, N222K, S230N	4.0
+308470	143831	2012	0.9	Susceptible	0.8	Susceptible							S17N, I84L, T112I, T124S, T125A, V201I, I203M, L234I, D256E, A265V	2.0
+308163	143711	2012	0.9	Susceptible	1.2	Susceptible							M154I	1.0
+308279	143755	2012	0.8	Susceptible	1.4	Susceptible							K14R, L28I, S39C, A91T, T124S, G193E, V201I, T218S, S230N, D279N, S283G	0.0
+308284	143757	2012	0.8	Susceptible	1.1	Susceptible							D6E, E10D, L45V, L101I, S119P, T122I, T124A	3.0
+308324	143771	2012	1.0	Susceptible	1.2	Susceptible							E10D, V31I, L101I, G106A, V151I	3.0
+308130	143697	2012	0.6	Susceptible	1.3	Susceptible							S17N, L28I, D41E, L45V, M50L, T112I, A128T, I220L, Q221H, N222T, D270H, R284G	2.0
+612756	296655	2020	0.8	Susceptible	1.4	Susceptible	0.9	Susceptible	0.9	Susceptible			S17N, V31I, L101I, T112I, S119P, T122I, T124N, T206S, T218S, Y227F, D256E	0.0
+308585	143893	2012	1.0	Susceptible	1.9	Susceptible							E10D, L101I, S119P, T122I, T124N, T125S, T218S	3.0
+308586	143893	2012	8.7	Resistant	22.0	Resistant							E10D, L101I, S119P, T122I, T124N, T125S, Q148R, T218S	3.0
+308125	143695	2012	0.6	Susceptible	1.5	Susceptible							V31I, T112V, T124A, M154L, K211R, T218S, S230N, S283G	0.0
+612759	296657	2020	1.3	Susceptible	1.6	Susceptible	1.0	Susceptible	1.2	Susceptible			E11D, V32I, V37I, L101I, T112A, I113L, T122I, T125A, V165I, V201I	0.0
+308525	143860	2012	3.8	Susceptible	100.0	Resistant							E11D, S17T, A23V, I73V, E92Q, T124A, S153A, G193E, V201I, I208M, E212Y, Q216H, I220L	3.0
+308524	143860	2012	1.1	Susceptible	1.2	Susceptible							E11D, S17T, A23V, T124A, G193E, V201I, I208M, E212S, Q216H, I220L	3.0
+308446	143821	2012	1.1	Susceptible	1.3	Susceptible							S17N, L101I, S119T, T124S, T125A, T206S	0.0
+308417	143809	2012	0.9	Susceptible	1.3	Susceptible							T124A, T125A, I135V, D167E, R284G	3.0
+308453	143824	2012	1.1	Susceptible	1.1	Susceptible							R20K, L101I, G193E, D256E	4.0
+308251	143743	2012	1.0	Susceptible	0.9	Susceptible							K14R, D25E, K34R, F100Y, L101I, T112V, S119T, T124A, T125A, K136Q, V201I, T218I, L234I, D278A, S283G	0.0
+308332	143774	2012	0.8	Susceptible	1.0	Susceptible							E11D, L101I, K111T, T112V, S119P, T125A, V126A, V150A, V201I	1.0
+308474	143833	2012	0.9	Susceptible	1.2	Susceptible							E11D, L101I, F181L, G193E, V201I, I220L, Y227F, D256E, D279N	1.0
+308166	143713	2012	1.0	Susceptible	1.2	Susceptible							G59E, L101I, T206S, D256E	2.0
+308414	143808	2012	1.3	Susceptible	1.1	Susceptible							S17N, G59A, L101I, T124S, T125A, K136N, V201I, I203M, S255R	4.0
+308309	143766	2012	0.8	Susceptible	1.0	Susceptible							D6E, S17N, L74I, L101I, T124A, G163D, R187K, K211T, E212A, Q221S	1.0
+308101	143680	2012	1.0	Susceptible	1.2	Susceptible							L101I, M154I, V201I, K215N, D279G	1.0
+308377	143792	2012	1.0	Susceptible	1.1	Susceptible							S17N, E96D, L101I, T124A, V165I, V201I, S255K	0.0
+308522	143858	2012	0.9	Susceptible	1.3	Susceptible							E11D, A21S, A23V, S24G, V37I, S39C, I60V, L101I, K219N, N222K	1.0
+308570	143884	2012	0.9	Susceptible	1.0	Susceptible							S17N, M50I, L101I, T124A, G163E, G193E, V201I, D279N	2.0
+612771	296666	2020	100.0	Resistant	100.0	Resistant	4.4	Resistant	3.0	Susceptible			K14R, A23V, S24G, D25E, L28I, S39C, L101I, T112V, S119P, G140S, Q148H, V165I, V201I, T218S	0.0
+308523	143859	2012	1.1	Susceptible	1.5	Susceptible							D6E, L74I, T124A, V201I, T206S, I208L, E212A, K215N, S283G	4.0
+308423	143812	2012	0.6	Susceptible	1.1	Susceptible							L101I, T125A, V126L, L234I	3.0
+308093	143676	2012	1.0	Susceptible	1.2	Susceptible							K14R, V31I, L101I, T112I, T124A, T125A, G134N, I135V, K136T, V201I, I203M, T206S, Y227F, L234I, S255N, D256E, S283G	4.0
+308214	143732	2012	1.1	Susceptible	1.0	Susceptible							S17N, K111T, T124A, D256E	0.0
+308565	143881	2012	0.9	Susceptible	1.8	Susceptible							S17N, L28I, L45I, L101I, S119G, T122I, T124A, T125A, G163E, T218S	3.0
+308493	143842	2012	0.9	Susceptible	1.1	Susceptible							L101I, S119T, G193S, T206S, N254Q, S283G	0.0
+308635	143923	2012	0.8	Susceptible	1.0	Susceptible							S17N, S39C, L101I, T112V, T124A, V201I, T218S, I268L	2.0
+308603	143906	2012	0.8	Susceptible	1.3	Susceptible							S17N, L101I, T124N, T125V, G163E	3.0
+308150	143705	2012	1.1	Susceptible	1.9	Susceptible							V31I, L101I, T112V, T124A, T125A, G134N, I135V, K136T, T206S, L234I, S283G	4.0
+308188	143722	2012	41.0	Resistant	100.0	Resistant							E10D, V31I, M50T, L101I, S119R, K136Q, N155H, G163Q, K211R, S283G	1.0
+308187	143722	2012	0.9	Susceptible	1.4	Susceptible							E10D, V31I, M50T, L101I, K136Q, G163Q, K211R, S283G	1.0
+308140	143700	2012	1.3	Susceptible	1.4	Susceptible							S17N, V31I, I60L, T124N, T125A, K173R, I182V, Y227F, D253Y, D256E	3.0
+308097	143678	2012	0.7	Susceptible	1.2	Susceptible							P30A, L101I, T112A, S123C, T124N, V201I, T218I, D256E, S283G	3.0
+308611	143909	2012	1.0	Susceptible	1.4	Susceptible							K14R, S24N, L101V, K111R, T112V, T124A, V126M, K160Q, V201I, K211R, S230N	0.0
+308545	143872	2012	1.0	Susceptible	1.6	Susceptible							S24T, L101I, K111T, T112A, T124A, I135V, F181L, E212S, K215N, Q216H, T218S, S230N	2.0
+308609	143908	2012	1.1	Susceptible	1.5	Susceptible							E11D, K14R, T112V, T125A, G163T	2.0
+308100	143679	2012	1.0	Susceptible	1.9	Susceptible							L28I, P30S, S39C, T112A, V201I, I220L, D253E	0.0
+308315	143768	2012	0.8	Susceptible	1.3	Susceptible							L74I, E96D	3.0
+308518	143856	2012	1.0	Susceptible	1.1	Susceptible							S17C, T124N, T125A, I182V, K219N, N222K, D288N	0.0
+308568	143883	2012	1.1	Susceptible	2.1	Susceptible							E11D, V88I, K111T, S119P, V201I	4.0
+612773	296668	2020	1.2	Susceptible	1.4	Susceptible	1.2	Susceptible	1.0	Susceptible			P30S, L101I, G163E, K173R, V201I, T206S, Y227F, D253Y, D256E	1.0
+308109	143685	2012	0.8	Susceptible	1.1	Susceptible							E11D, L101I, K111T, T122I, V201I, T206S	3.0
+308632	143921	2012	0.8	Susceptible	2.5	Susceptible							E11D, S24N, N27S, A91T, E96D, L101I, S119R, T124S, T125A, K156N, V165I, V201I, I208L, T210S, K211T, E212A, M275V, S283G	0.0
+308113	143687	2012	1.2	Susceptible	1.7	Susceptible							D6E, S17N, E35Q, S39N, D55S, L101I, T124A, F181L, V201I, I220L, R284G	3.0
+308318	143769	2012	1.0	Susceptible	1.9	Susceptible							V31I, S119P, T122I, D256E	4.0
+308302	143763	2012	0.5	Susceptible	1.0	Susceptible							S17N, A91T, L101I, T124A, K156N, V201I, Y227F, D229E, D253Y, D256E, A265V	2.0
+308374	143790	2012	0.8	Susceptible	1.0	Susceptible							S17N, V31I, L101I, T124A, E157Q, K160Q, D232E, A265V	1.0
+308104	143682	2012	0.5	Susceptible	0.9	Susceptible							T125A, K156N, E157Q, K211Q, D256E, R284G, D288N	0.0
+308580	143889	2012	0.5	Susceptible	1.3	Susceptible							R20K, L45I, K156N	1.0
+308579	143888	2012	0.8	Susceptible	0.9	Susceptible							S17N, V31I, T124A, E157Q, K160Q, V201I, K211R, L213S, N222K, S255G, A265V, R284G	4.0
+308515	143854	2012	6.2	Resistant	100.0	Resistant							E11D, K14R, S17T, S39C, I60V, L68V, E92Q, T112I, T124A, T206S, E212A	3.0
+308514	143854	2012	1.2	Susceptible	1.1	Susceptible							E11D, K14R, S17T, I60V, T124A, T206S, E212A	3.0
+612766	296663	2020	0.9	Susceptible	1.4	Susceptible	0.9	Susceptible	0.9	Susceptible			S17N, R20K, T124N, T125A, M154L, T206S, D256E	4.0
+665948	318863	2022	4.4	Resistant	10.0	Resistant	11.0	Resistant					S17N, D25E, V31I, I72V, I84M, L101I, T112V, G118R, T125A, K136Q, E138K, V201I, L234I, R263K, R269K, D278A, S283G, R284G	0.0
+665952	318863	2022	2.0	Susceptible	11.0	Resistant	13.0	Resistant					S17N, D25E, V31I, D41N, H51Y, I72V, I84M, L101I, T112V, G118R, T124A, T125A, K136Q, V201I, L234I, R269K, D278A, S283G, R284G	0.0
+308086	143673	2012	0.9	Susceptible	0.8	Susceptible							E11D, D25E, V31I, K111T, V201I, S230N, A265V	4.0
+308553	143875	2012	0.9	Susceptible	1.0	Susceptible							K14R, K34R, V201I, T206S, N254Q, S255G	2.0
+308419	143810	2012	0.9	Susceptible	1.9	Susceptible							L101I, T124A, T125A, M154I, H171Y, R187K, T206S, K211R	4.0
+308509	143851	2012	0.8	Susceptible	1.3	Susceptible							T125A, I135V, V201I, K215N, L234I	2.0
+308510	143851	2012	3.6	Susceptible	44.0	Resistant							M50I, E92Q, T125A, I135V, M154I, I162V, V201I, K215N, L234I	2.0
+308209	143730	2012	1.1	Susceptible	1.2	Susceptible							A23V, S39C, L101I, T124N, T125A, I135V, D167E, F181L, V201I, K215N, D270N	4.0
+308558	143877	2012	0.9	Susceptible	1.2	Susceptible							S17N, L101I, T112I, T124N, G163E, V201I, A205S, T206S, D256E	4.0
+308196	143725	2012	0.9	Susceptible	1.5	Susceptible							T112I, V201I	3.0
+308489	143840	2012	0.5	Susceptible	1.6	Susceptible							V31I, T125V, K156N, D167E	3.0
+308600	143903	2012	0.8	Susceptible	1.1	Susceptible							L101I, T125A, I135V, F181L, K188R, G193R, V201I, T206S, T218I, A265V, V281M	2.0
+308202	143727	2012	1.0	Susceptible	1.6	Susceptible							G106A, K111T, E157Q, K160Q, V201I, D256E	0.0
+308499	143845	2012	0.7	Susceptible	1.7	Susceptible							T124A, T210I, K211R, A265V, D279G	3.0
+308144	143702	2012	1.0	Susceptible	1.1	Susceptible							K111T, Q216H	3.0
+308183	143720	2012	1.0	Susceptible	2.6	Susceptible							E11D, V32I, L68V, I73V, T125A, I135V, V201I, R284G	4.0
+308298	143761	2012	1.0	Susceptible	1.1	Susceptible							V31I, G106A, S230N, D232E	3.0
+308601	143904	2012	0.6	Susceptible	1.2	Susceptible							K156N, K188R, V201I, D256E	0.0
+308503	143847	2012	1.1	Susceptible	1.6	Susceptible							E11D, M50I, S119P, T122I, S195T, V201I, T218I, A265V	1.0
+308504	143847	2012	19.3	Resistant	59.0	Resistant							E11D, M50I, S119P, T122I, N155H, S195T, V201I, T218I	1.0
+308430	143815	2012	1.0	Susceptible	1.1	Susceptible							V31I, L101I, K111T, I135V, V201I, T206S, K211R, E212T, K219N	3.0
+308431	143815	2012	3.8	Susceptible	30.0	Resistant							V31I, I84M, E92Q, L101I, K111T, I135V, V201I, T206S, K211R, E212T, K219N	3.0
+308232	143737	2012	0.8	Susceptible	1.4	Susceptible							E11D, S24N, K34R, L101I, S119P, I135V, K211R, D256E	4.0
+308542	143870	2012	1.0	Susceptible	1.1	Susceptible							K14R, R20K, S24N, D25E, V31I, G59E, I60V, L101I, T124A, N222K	1.0
+308543	143870	2012	3.0	Susceptible	36.0	Resistant							K14R, R20K, S24N, D25E, V31I, G59E, I60V, E92Q, L101I, T124A, T125A, K215R, N222K	1.0
+612764	296661	2020	17.0	Resistant	33.0	Resistant	1.5	Susceptible	1.4	Susceptible			D6E, E11D, S24G, V32I, A80S, L101I, S119A, T124N, T125V, N155H, G163R, K173R, D232E	0.0
+308437	143817	2012	1.1	Susceptible	1.9	Susceptible							K14R, R20K, V31I, T97A, L101I, T112V, T124A, T125A, G134N, I135V, G163Q, G193E, V201I, T206S, Y227F, L234I, S255N, D256E, D279G, S283G	1.0
+308088	143674	2012	0.4	Susceptible	1.0	Susceptible							S17N, V31I, L101I, T124S, T125A, K156N, E198D, V201I, T206S, D232E, A265V	3.0
+308224	143735	2012	1.5	Susceptible	1.3	Susceptible							E11D, A23V, L28I, V37I, L101I, T206S, K215N, D256E, S283G	3.0
+308228	143735	2012	57.0	Resistant	73.0	Resistant							E11D, A23V, L28I, V37I, L101I, N155H, V201I, T206S, K215N, D256E, S283G	3.0
+612767	296664	2020	100.0	Resistant	100.0	Resistant	6.2	Resistant	3.2	Susceptible			S17N, S24N, L101I, K111Q, T124N, T125A, G140S, Q148H, M154I, V165I, V201I	1.0
+308512	143853	2012	2.6	Susceptible	6.1	Resistant							E11D, V31I, G70E, T97A, L101I, T112I, S119R, T124N, D167E, V201I, T206S, I208L, E212A, T218S, S255N, D256E, R284G	1.0
+308385	143795	2012	0.7	Susceptible	1.1	Susceptible							M50I, L101I, V176L, A205S, T206S, T218S, Y227F, S255N, D256E	4.0
+308597	143901	2012	0.9	Susceptible	0.9	Susceptible							E11D, L101I, S119G, T124N, S195T, V201I, T206S, Y227F, L234I, S255N, D256E, S283G	3.0
+308574	143886	2012	1.1	Susceptible	1.5	Susceptible							V31I, S39C, T124N, V201I, K215Q, T218S, S230N, D232E, L234H, D253E, N254D	1.0
+308389	143797	2012	0.7	Susceptible	0.9	Susceptible							K14R, S17N, I60M, L101I, T112V, T124A, E138D, V201I, A265V, S283G, D286N	2.0
+308304	143764	2012	0.6	Susceptible	1.1	Susceptible							S17N, V31I, M50I, T124A, K156N, V165I, V201I, S255K, I268L	1.0
+308181	143719	2012	0.9	Susceptible	1.2	Susceptible							S17N, L45V, T112I, T124N, T125A, T206S, D256E	3.0
+308335	143776	2012	1.4	Susceptible	1.5	Susceptible							K14R, S17N, N18D, A21T, T124A, S195C, I203M, S230N, D278A, R284G	0.0
+308614	143910	2012	1.1	Susceptible	1.9	Susceptible							S119R, T125S, G193E, L234I, N254S, S255G, D279G	2.0
+308486	143839	2012	0.9	Susceptible	1.1	Susceptible							K7R, L28I, S39C, T124A, I208L, Q216H	4.0
+308262	143748	2012	1.0	Susceptible	1.4	Susceptible							L101I, T124A, V201I, K211R, K215N	0.0
+308264	143749	2012	0.8	Susceptible	1.5	Susceptible							E11D, D25E, L101I, K111R, S119P, T122I, T124A, M154L, D256E	1.0
+308483	143838	2012	0.7	Susceptible	0.9	Susceptible							S17C, S119P, T124N, T125A, V126L, I182V, T206S	2.0
+308458	143826	2012	0.8	Susceptible	1.2	Susceptible							S17N, L28I, P30A, G59E, I60V, L101I, T124A, V201I, T206S	2.0
+308180	143718	2012	13.0	Resistant	98.0	Resistant							S17N, D25E, M50I, L101I, T124A, N155H, K156N, Q221S, N222K	2.0
+308178	143718	2012	0.6	Susceptible	0.9	Susceptible							S17N, D25E, M50I, L101I, K156N, Q221S, N222K, D253E	2.0
+308403	143803	2012	0.9	Susceptible	1.4	Susceptible							E11D, V31I, M50I, L101I, K111T, F181L, V201I, S283G	0.0
+308594	143899	2012	1.0	Susceptible	2.1	Susceptible							E11D, D25E, V31I, M50I, M154L, V201I	0.0
+612752	296652	2020	1.0	Susceptible	1.9	Susceptible	1.0	Susceptible	1.0	Susceptible			D6N, K7E, L28I, P30A, K211R, D286N	3.0
+308348	143780	2012	1.6	Susceptible	20.0	Resistant							E11D, A21T, M50I, E92G, S119P, T124A, D256E	3.0
+308347	143780	2012	0.8	Susceptible	1.0	Susceptible							E11D, S24N, M50I, S119P, T124A, D253E, D256E	3.0
+308121	143692	2012	0.9	Susceptible	1.4	Susceptible							E11D, S24N, S39C, V201I, S230N	4.0
+308272	143752	2012	0.7	Susceptible	1.6	Susceptible							M50I, S119P, T125A, M154L, D167E, V201I, K211R, T218I	3.0
+308591	143898	2012	0.9	Susceptible	1.2	Susceptible							V31I, D41G, K42Q, L45Q, F100Y, L101I, T112V, T124A, T125A, K136Q, V201I, L234I, D278A, S283G, R284G	3.0
+663488	319985	2022	36.0	Resistant	31.0	Resistant	22.0	Resistant					E11D, S17T, I72L, L74M, V88I, I113V, G118R, T125A, I141V	3.0
+663498	319985	2022	1.0	Susceptible	1.8	Susceptible	0.9	Susceptible					E11D, S17T, V88I, I113V, T125A, I141V	3.0
+308364	143787	2012	0.9	Susceptible	1.3	Susceptible							E11D, D25E, K111T	4.0
+308528	143862	2012	1.2	Susceptible	1.0	Susceptible							E11D, K14R, A21T, A23V, L101I, S119T	2.0
+308400	143801	2012	1.0	Susceptible	1.3	Susceptible							L101I, K111R, V201I, T206S, K211R, E212I, T218Q, K219Q, S255K	4.0
+308589	143896	2012	1.1	Susceptible	1.2	Susceptible							S39C, M50I, L101I, T124A, T125A, D253E, S283G, R284G	2.0
+308359	143785	2012	1.0	Susceptible	1.3	Susceptible							M50I, V151I	3.0
+308466	143829	2012	1.1	Susceptible	1.1	Susceptible							S17N, L101I, T112I, T124A, T125A, G134N, K136T, V201I, T206S, Y227F, L234I, S255N, D256E, S283G	3.0
+308406	143804	2012	0.8	Susceptible	1.2	Susceptible							L45V, L101I, G163E, S195C, Q216H, K219Q, D278A	1.0
+308407	143804	2012	0.9	Susceptible	1.3	Susceptible							L101I, G163E, S195C, Q216H, K219Q, D278A	1.0
+308258	143746	2012	0.8	Susceptible	1.1	Susceptible							S17N, L63M, T124A, T125A, K215N, I220L, D279G	4.0
+308342	143778	2012	1.1	Susceptible	1.3	Susceptible							V31I, K136N, V201I, S230N, D256E	1.0
+308344	143779	2012	1.2	Susceptible	1.5	Susceptible							D41N, L45Q, L101I, T125A, F181L, V201I, K219N, N222K, S283G	2.0
+308626	143917	2012	1.0	Susceptible	1.0	Susceptible							E10D, L101I, S119G, T122I, T124A, V201I, I220L	3.0
+308479	143836	2012	1.1	Susceptible	1.3	Susceptible							K14R, S24N, L74I, T112V, T124N, T125A, G134N, K136T, V201I, T206S, L234I, S255N, D256E, S283G, R284G, D286N	0.0
+308623	143915	2012	1.2	Susceptible	1.4	Susceptible							D6E, E10D, T124N, V201I, D232E, D256E	4.0
+308174	143716	2012	0.8	Susceptible	1.1	Susceptible							S17N, L101I, T112V, T124N, I135V, G193D, S195C, D256E, A265V, D278A	0.0
+308463	143828	2012	1.1	Susceptible	1.5	Susceptible							E11D, V31I, T112V, T122I, A196P, V201I, S230N	1.0
