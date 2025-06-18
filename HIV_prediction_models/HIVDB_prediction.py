@@ -74,10 +74,10 @@ def HIVDB_prediction(path_to_mutations_df):
 
 
 ###We load the datasets
-ini_dataset = pd.read_csv("datasets/INI_dataset.tsv", sep='\t')
-nnrti_dataset = pd.read_csv("datasets/NNRTI_dataset.tsv", sep='\t')
-nrti_dataset = pd.read_csv("datasets/NRTI_dataset.tsv", sep='\t')
-pi_dataset = pd.read_csv("datasets/PI_dataset.tsv", sep='\t')
+ini_dataset = pd.read_csv("../datasets/INI_dataset.tsv", sep='\t')
+nnrti_dataset = pd.read_csv("../datasets/NNRTI_dataset.tsv", sep='\t')
+nrti_dataset = pd.read_csv("../datasets/NRTI_dataset.tsv", sep='\t')
+pi_dataset = pd.read_csv("../datasets/PI_dataset.tsv", sep='\t')
 
 ini_dataset['gene'] = 'IN'
 nnrti_dataset['gene'] = 'RT'
@@ -87,13 +87,13 @@ pi_dataset['gene'] = 'PR'
 
 ###We predict the resistance of all four databases and save the results
 ini_preds = HIVDB_prediction(ini_dataset)
-ini_preds.to_csv('method_predictions/HIVDB/HIVDB_INI_predictions.tsv', sep='\t')
+ini_preds.to_csv('../method_predictions/HIVDB/HIVDB_INI_predictions.tsv', sep='\t')
 
 nnrti_preds = HIVDB_prediction(nnrti_dataset)
-nnrti_preds.to_csv('method_predictions/HIVDB/HIVDB_NNRTI_predictions.tsv', sep='\t')
+nnrti_preds.to_csv('../method_predictions/HIVDB/HIVDB_NNRTI_predictions.tsv', sep='\t')
 
 nrti_preds = HIVDB_prediction(nrti_dataset)
-nrti_preds.to_csv('method_predictions/HIVDB/HIVDB_NRTI_predictions.tsv', sep='\t')
+nrti_preds.to_csv('../method_predictions/HIVDB/HIVDB_NRTI_predictions.tsv', sep='\t')
 
 pi_preds = HIVDB_prediction(pi_dataset)
-pi_preds.to_csv('method_predictions/HIVDB/HIVDB_PI_predictions.tsv', sep='\t')
+pi_preds.to_csv('../method_predictions/HIVDB/HIVDB_PI_predictions.tsv', sep='\t')
