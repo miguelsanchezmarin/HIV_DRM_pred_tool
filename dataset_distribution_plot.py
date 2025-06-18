@@ -108,5 +108,5 @@ for drug_class in ["INI", "NNRTI", "NRTI", "PI"]:
                      fold_distribution.append([drug, fold+1, dataset_table_fold.shape[0], res_table_fold.shape[0], sus_table_fold.shape[0]])
 
 fold_distribution_df = pd.DataFrame(fold_distribution, columns = ["Drug", "Fold", "Total size", "Resistant size", "Susceptible size"])
-fold_distribution_df.to_csv("datasets/dataset_fold_distribution.tsv", sep = "\t")
+fold_distribution_df.to_csv("datasets/dataset_fold_distribution.tsv", sep = "\t", index = False)
               

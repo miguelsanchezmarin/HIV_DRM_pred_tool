@@ -1,0 +1,709 @@
+	seqID	BIC	CAB	DTG	EVG	RAL
+0	100673	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+1	100674	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+2	100675	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+3	100676	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+4	100677	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	Intermediate Resistance
+5	100678	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+6	100679	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+7	100680	Intermediate Resistance	Intermediate Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+8	100681	Intermediate Resistance	Intermediate Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+9	100682	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+10	100683	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+11	100684	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance
+12	100685	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+13	100686	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+14	105335	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+15	105336	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+16	105337	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+17	105338	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+18	105339	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Potential Low-Level Resistance
+19	105340	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+20	105341	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+21	105342	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+22	105343	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+23	105344	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+24	105345	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+25	105346	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+26	105347	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+27	105348	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+28	123016	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+29	123017	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+30	123018	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+31	123019	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+32	123020	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+33	123021	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+34	123022	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+35	123023	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+36	123024	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+37	123025	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+38	123026	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+39	123027	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+40	123028	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+41	123029	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+42	123030	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+43	123031	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+44	123032	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+45	123033	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+46	152019	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+47	152020	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+48	152021	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+49	152022	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+50	152023	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+51	152024	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+52	152025	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+53	152026	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+54	152027	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+55	152028	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+56	170341	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+57	170342	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+58	170343	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+59	170344	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+60	170345	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+61	170346	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+62	170347	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+63	170348	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+64	170349	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+65	170350	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+66	170351	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+67	181531	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+68	181535	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+69	181539	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+70	181541	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+71	181543	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+72	181547	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+73	181549	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+74	181551	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+75	181553	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+76	181555	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+77	181557	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+78	219526	Susceptible	Susceptible	Susceptible	High-Level Resistance	Low-Level Resistance
+79	219527	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Potential Low-Level Resistance
+80	219528	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+81	219529	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+82	219530	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+83	219531	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+84	219532	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+85	219533	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+86	219534	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+87	219535	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+88	219536	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+89	219537	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+90	219538	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+91	219539	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+92	219540	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	Low-Level Resistance
+93	219541	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+94	219542	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+95	219543	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+96	219544	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+97	219545	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+98	255237	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+99	255238	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+100	255239	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	Intermediate Resistance
+101	259377	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+102	259378	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+103	259379	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+104	259380	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+105	259381	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+106	259382	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+107	259383	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+108	259384	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+109	259385	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+110	259386	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+111	259387	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+112	259388	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+113	259389	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+114	259390	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+115	259391	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+116	259392	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+117	259393	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+118	259394	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+119	259395	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+120	259396	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+121	259397	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+122	259398	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+123	259399	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+124	259400	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+125	259401	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+126	259402	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+127	259403	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+128	259404	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+129	259405	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+130	259406	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+131	259407	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+132	259408	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+133	259409	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+134	259410	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+135	259411	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+136	259412	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+137	259413	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+138	259414	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+139	259415	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+140	259416	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+141	259417	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+142	259418	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+143	259419	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+144	259420	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+145	259421	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+146	259422	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+147	259423	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+148	259424	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+149	259425	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+150	259426	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+151	259427	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+152	259428	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+153	259429	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+154	259430	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+155	259431	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+156	259432	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+157	259433	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+158	259434	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+159	259435	Susceptible	Intermediate Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+160	259436	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+161	259437	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+162	259438	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+163	259439	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+164	259440	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+165	259441	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+166	259442	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+167	259443	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+168	259444	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	High-Level Resistance
+169	259445	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+170	259446	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+171	259447	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	High-Level Resistance
+172	259448	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+173	402079	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+174	402080	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+175	402081	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+176	402083	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+177	402086	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+178	402087	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+179	402089	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	Susceptible
+180	402090	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+181	402092	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+182	402093	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+183	402095	Susceptible	Susceptible	Susceptible	Intermediate Resistance	Low-Level Resistance
+184	402096	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+185	402097	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+186	402098	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+187	402100	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+188	402101	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+189	402103	Susceptible	Susceptible	Susceptible	High-Level Resistance	Susceptible
+190	402104	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+191	402105	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+192	402106	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+193	402107	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+194	402109	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+195	402110	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+196	402111	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+197	402113	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+198	402114	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+199	402115	Susceptible	Low-Level Resistance	Susceptible	High-Level Resistance	Susceptible
+200	402116	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+201	402117	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+202	402118	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+203	402119	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+204	402120	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+205	402121	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+206	402122	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+207	402123	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+208	402125	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+209	402127	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+210	402128	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+211	402130	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+212	465597	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+213	465598	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+214	465599	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+215	465600	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+216	465601	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+217	465602	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+218	465603	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+219	465604	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+220	465605	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+221	465606	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+222	465607	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+223	465608	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+224	465609	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+225	465611	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance
+226	465612	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+227	465613	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+228	465614	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+229	465615	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+230	465617	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Potential Low-Level Resistance
+231	465618	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+232	465619	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+233	465620	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+234	465621	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+235	465622	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+236	465623	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+237	465624	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+238	465625	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+239	465626	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+240	465627	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+241	465628	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+242	465629	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	Intermediate Resistance
+243	465630	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+244	467183	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+245	467184	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+246	467185	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+247	467186	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+248	467187	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+249	467188	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+250	467190	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+251	467191	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+252	467192	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+253	467193	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+254	467194	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+255	467195	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+256	467196	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+257	467197	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+258	467198	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+259	467199	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+260	467200	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+261	467201	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+262	467202	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+263	467203	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+264	467204	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+265	467205	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+266	467206	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+267	467207	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+268	467208	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+269	467209	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+270	467210	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+271	467211	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+272	467212	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+273	467213	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+274	467214	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+275	467215	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+276	467216	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+277	467217	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+278	467218	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+279	467219	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+280	467220	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+281	467221	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+282	467222	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+283	467223	Susceptible	Potential Low-Level Resistance	Susceptible	Susceptible	Susceptible
+284	467295	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+285	467296	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+286	467297	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+287	467298	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+288	467299	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+289	467300	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+290	467301	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+291	467302	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+292	467659	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+293	467660	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+294	467661	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+295	467662	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+296	467663	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+297	467664	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+298	467665	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+299	467666	Susceptible	Potential Low-Level Resistance	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+300	467667	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+301	555677	Susceptible	Susceptible	Susceptible	High-Level Resistance	Low-Level Resistance
+302	555678	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+303	555679	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+304	555680	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	Low-Level Resistance
+305	555681	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+306	555682	Susceptible	Potential Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+307	555683	Susceptible	Potential Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+308	555684	Susceptible	Potential Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+309	555685	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+310	555686	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+311	555687	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+312	555688	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+313	555689	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+314	555690	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+315	555691	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+316	555692	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+317	555693	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+318	555694	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+319	555695	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+320	555696	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+321	555697	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+322	555698	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+323	555699	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+324	555700	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+325	555701	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Low-Level Resistance	Low-Level Resistance
+326	555702	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+327	555703	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+328	555704	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	Intermediate Resistance	Intermediate Resistance
+329	555705	Susceptible	Susceptible	Susceptible	High-Level Resistance	Potential Low-Level Resistance
+330	555706	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+331	555707	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+332	555708	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	Potential Low-Level Resistance
+333	555709	Susceptible	Low-Level Resistance	Susceptible	High-Level Resistance	Potential Low-Level Resistance
+334	555710	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+335	555711	Susceptible	Susceptible	Susceptible	Intermediate Resistance	Low-Level Resistance
+336	555712	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+337	555713	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+338	555714	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance
+339	555715	Low-Level Resistance	Low-Level Resistance	Low-Level Resistance	Intermediate Resistance	Low-Level Resistance
+340	555716	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+341	555717	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+342	555718	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+343	555719	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+344	555720	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+345	555721	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+346	555722	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Intermediate Resistance
+347	555723	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+348	555724	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+349	555725	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+350	555726	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+351	555727	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Low-Level Resistance
+352	555728	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+353	555729	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+354	555730	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+355	555731	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+356	555732	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+357	555733	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+358	555734	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+359	555735	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+360	555736	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+361	555737	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+362	178678	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+363	308620	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+364	308448	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+365	308399	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+366	178721	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+367	467176	Susceptible	Susceptible	Susceptible	Low-Level Resistance	Low-Level Resistance
+368	221109	Susceptible	Low-Level Resistance	Susceptible	Low-Level Resistance	High-Level Resistance
+369	308355	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+370	88611	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+371	308127	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+372	612757	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+373	308541	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+374	308539	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+375	308281	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+376	308616	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+377	308134	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+378	308291	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+379	88894	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+380	663471	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+381	663443	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+382	612760	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+383	612761	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+384	612762	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+385	89665	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+386	308536	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+387	308583	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+388	661965	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+389	661966	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+390	308357	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+391	308286	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+392	308139	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+393	308408	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+394	308349	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+395	308248	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+396	308411	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+397	221098	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+398	308164	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+399	308621	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+400	308622	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+401	308471	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+402	302972	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+403	302970	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+404	308295	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+405	308296	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+406	308185	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+407	308112	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+408	308379	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+409	308517	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+410	308516	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+411	665889	Susceptible	Potential Low-Level Resistance	Susceptible	High-Level Resistance	Low-Level Resistance
+412	661967	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+413	661968	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+414	308544	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+415	612763	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+416	308519	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+417	308551	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+418	308217	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+419	308425	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+420	308155	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+421	308157	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+422	308192	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+423	308633	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+424	308595	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+425	308596	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+426	308495	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+427	308496	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+428	308607	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+429	308152	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+430	308153	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+431	308376	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+432	308602	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+433	308189	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+434	308428	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+435	308095	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+436	308092	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+437	308091	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+438	308547	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+439	308220	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+440	612772	Susceptible	Low-Level Resistance	Susceptible	Intermediate Resistance	High-Level Resistance
+441	661977	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+442	661978	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+443	308507	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+444	308211	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+445	308421	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+446	308114	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+447	612768	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+448	178663	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+449	178661	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+450	308382	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+451	308115	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+452	308116	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+453	308312	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+454	257389	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+455	308567	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+456	308492	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+457	308306	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+458	308575	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+459	308576	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+460	221117	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+461	308572	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+462	308106	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+463	308300	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+464	308142	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+465	308386	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+466	308387	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+467	661971	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+468	665908	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	Intermediate Resistance	Low-Level Resistance
+469	178672	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+470	612765	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+471	308231	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+472	308229	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+473	308560	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+474	308205	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+475	308433	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+476	308208	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+477	308147	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+478	308559	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+479	308598	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+480	308599	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+481	308630	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+482	308501	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+483	89729	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+484	308506	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+485	308237	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+486	308236	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+487	308439	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+488	308102	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+489	308199	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+490	308441	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+491	308240	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+492	308505	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+493	308557	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+494	308511	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+495	308393	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+496	308107	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+497	308397	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+498	308562	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+499	308320	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+500	308171	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+501	308624	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+502	308481	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+503	308176	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+504	308477	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+505	308478	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+506	308401	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+507	308402	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+508	308444	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+509	308526	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+510	308255	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+511	308261	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+512	308363	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+513	308361	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+514	308588	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+515	308122	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+516	308590	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+517	308532	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+518	612753	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+519	663524	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+520	663515	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+521	308274	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+522	308367	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+523	308275	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+524	308581	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+525	308530	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+526	308124	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+527	308370	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+528	308627	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+529	308119	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+530	308242	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+531	308455	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+532	308460	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+533	308160	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+534	308333	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+535	308339	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+536	308271	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+537	308629	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+538	308467	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+539	308168	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+540	308329	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+541	308618	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+542	308476	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+543	467179	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+544	467182	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+545	308253	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+546	308451	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+547	308409	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+548	308582	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+549	308587	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+550	308538	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+551	88596	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+552	308534	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+553	308352	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+554	308244	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+555	308268	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+556	308470	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+557	308163	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+558	308279	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+559	308284	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+560	308324	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+561	308130	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+562	612756	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+563	308585	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+564	308586	Low-Level Resistance	High-Level Resistance	Low-Level Resistance	High-Level Resistance	High-Level Resistance
+565	308125	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+566	612759	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+567	308525	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+568	308524	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+569	308446	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+570	308417	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+571	308453	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+572	467173	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+573	308251	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+574	308332	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+575	308474	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+576	308166	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+577	308414	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+578	308309	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+579	308101	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+580	308377	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+581	308522	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+582	308570	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+583	612771	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+584	308523	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+585	308423	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+586	308093	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+587	308214	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+588	308565	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+589	308493	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+590	308635	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+591	308603	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+592	308150	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+593	308188	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+594	308187	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+595	308140	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+596	221095	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+597	308097	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+598	308611	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+599	308545	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+600	308609	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+601	221116	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+602	308100	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+603	89727	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+604	308315	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+605	178741	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+606	308518	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+607	308568	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+608	612773	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+609	308109	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+610	308632	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+611	308113	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+612	308318	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+613	308302	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+614	308374	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+615	308104	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+616	308580	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+617	308579	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+618	308515	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+619	308514	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+620	612766	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+621	661974	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+622	665948	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+623	665952	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+624	308086	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+625	308553	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+626	308419	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+627	308509	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+628	308510	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+629	308209	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+630	308558	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+631	308196	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+632	308489	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+633	308600	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+634	308202	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+635	178769	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+636	308499	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+637	308144	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+638	308183	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+639	308298	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+640	308601	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+641	308503	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+642	308504	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+643	88608	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+644	308430	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+645	308431	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+646	308232	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+647	308542	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+648	308543	Potential Low-Level Resistance	Low-Level Resistance	Potential Low-Level Resistance	High-Level Resistance	Intermediate Resistance
+649	612764	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+650	308437	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+651	308088	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+652	661970	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+653	308224	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+654	308228	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+655	661976	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+656	612767	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+657	308512	Susceptible	Susceptible	Susceptible	Potential Low-Level Resistance	Potential Low-Level Resistance
+658	308385	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+659	308597	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+660	308574	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+661	308389	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+662	308304	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+663	308181	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+664	308335	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+665	308614	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+666	308486	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+667	308262	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+668	308264	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+669	308483	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+670	308458	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+671	308180	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+672	308178	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+673	308403	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+674	308594	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+675	612752	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+676	308348	Susceptible	Potential Low-Level Resistance	Susceptible	Intermediate Resistance	Low-Level Resistance
+677	308347	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+678	308121	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+679	308272	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+680	308591	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+681	221121	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+682	221126	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+683	108572	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+684	663488	Intermediate Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+685	663498	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+686	178673	Potential Low-Level Resistance	Intermediate Resistance	Potential Low-Level Resistance	High-Level Resistance	High-Level Resistance
+687	178677	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+688	308364	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+689	467670	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance	High-Level Resistance
+690	88697	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+691	308528	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+692	308400	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+693	308589	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+694	308359	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+695	308466	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+696	308406	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+697	308407	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+698	308258	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+699	308342	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+700	308344	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+701	308626	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+702	178699	Intermediate Resistance	High-Level Resistance	Intermediate Resistance	High-Level Resistance	High-Level Resistance
+703	178698	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+704	308479	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+705	308623	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+706	308174	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible
+707	308463	Susceptible	Susceptible	Susceptible	Susceptible	Susceptible

@@ -1,0 +1,6 @@
+n_samples	time_4_cores	time_32_cores
+1	22s	20s
+20	1m 45s	29s
+50	4m 21s	52s
+500	54m 46s	7m 50s
+1000	1h 36m 56s	12m 18s
