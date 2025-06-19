@@ -37,6 +37,8 @@ def convert_seconds_to_time_format(seconds):
 
 scaling_data['time_4_cores'] = scaling_data['time_4_cores'].apply(convert_time_to_seconds)
 scaling_data['time_32_cores'] = scaling_data['time_32_cores'].apply(convert_time_to_seconds)
+
+##We plot the scaling analysis results (Figure 4)
 plt.figure(figsize=(10, 6))
 plt.plot(scaling_data['n_samples'], scaling_data['time_4_cores'], marker='o', label='4 cores')
 plt.plot(scaling_data['n_samples'], scaling_data['time_32_cores'], marker='o', label='32 cores')

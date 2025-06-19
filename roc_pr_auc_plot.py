@@ -29,7 +29,7 @@ for n in range(predictions_df.shape[0]):
         predictions_df.at[n, 'HIVDB'] = 0
 
 
-###We plot the ROC and precision-recall curves for each drug (summing the 5 folds)
+###We plot the ROC and precision-recall curves for each drug (summing the 5 folds) (Supplementary Figures 5-8)
 letters = ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)', '(g)', '(h)', '(i)']
 
 for m,test_drugs in enumerate([INIs, PIs, NNRTIs, NRTIs]):
