@@ -101,13 +101,13 @@ def write_ensemble_table(ensemble_results, sample_id, handle):
     handle.write(r"\textcolor{green}{green}")
     handle.write("\nand resistant results are shown in \n")
     handle.write(r"\textcolor{red}{red}.")
-    handle.write("\n\n")
+    handle.write("\nLinear regression and random forest models were trained on phenotypic data from PhenoSense assays.\n\n")
     
     for dataset in ["INI", "NNRTI", "NRTI", "PI"]:
         ensemble_results_dataset = ensemble_results[ensemble_results["Drug_Class"] == dataset]
         # print(ensemble_results_dataset["Mutations"])
         if 'No mutations' in ensemble_results_dataset["Mutations"].tolist(): #we skip the empty keys
-            handle.write("\nNo mutations found for the " + dataset + " dataset.\n")
+            handle.write("\nNo mutations found for the " + dataset + " drug class.\n")
             continue
 
         handle.write("\n**" + dataset + "** predictions:\n\n")
@@ -200,7 +200,7 @@ def write_coverage_disclaimer(coverage_tsv, robustness_data, sample_id, handle):
         sample_drm_coverage = coverage_dataset["DRM_Coverage"].values[0]
         handle.write(f"\n* {dataset} coverage\n")
         if sample_drm_coverage == 0:
-            handle.write(f"\nNo DRM positions were covered for the {dataset} dataset.\n")
+            handle.write(f"\nNo DRM positions were covered for the {dataset} drug class.\n")
             continue
 
         robustness_step_plot(robustness_data, dataset, coverage_dataset, sample_id, handle) #we plot the robustness step plot
@@ -234,7 +234,7 @@ def robustness_step_plot(robustness_data, dataset: str , coverage_tsv_dataset, s
     
     #we get the accuracy for the coverage step
     # y_coverage = y.loc[coverage_step]["Balanced_Accuracy"]
-    handle.write(f"\nThe estimated balanced accuracy for the {dataset} drug resistance prediction is **{round(y_coverage, 2)}** at {round(coverage_value, 2)}% DRM positions coverage. The reported balanced accuracy for a 100% coverage is {round(max_accuracy,2)}.\n\n")
+    handle.write(f"\nThe estimated balanced accuracy for the {dataset} ensemble drug resistance prediction is **{round(y_coverage, 2)}** at {round(coverage_value, 2)}% DRM positions coverage. The reported balanced accuracy for a 100% coverage is {round(max_accuracy,2)}.\n\n")
     
     axs.axvline(x=((100-coverage_value)/10)*0.5 +1, color='red', linewidth = 2, label=f'Your sample ({round(coverage_value, 2)}% coverage)')#we plot a red line at the coverage value
     axs.step(x, y, where = 'post', alpha = 0.7, linewidth = 2, color='blue')
