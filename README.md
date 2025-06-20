@@ -1,4 +1,4 @@
-# HIV_DRM_pred_tool
+# HIV drug resistance assessment tool
 Drug resistance prediction tool for HIV NGS .vcf files. For results replication of the report, see branch *method_comparison*.
 
 ![img1](graphical_abstract.png)
